@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data on Gerardo Gutiérrez</title>
+    <link>http://gerardogutierrez.co/en/data/</link>
+    <description>Recent content in Data on Gerardo Gutiérrez</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-co</language>
+    <lastBuildDate>Mon, 17 Jun 2013 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://gerardogutierrez.co/en/data/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Complex Networks</title>
+      <link>http://gerardogutierrez.co/en/data/cn/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/data/cn/</guid>
+      <description>Everything in nature can be explained as a set of interactions between entieties, flock of birds, chemical reactions, gossip spreading, etc. A network is just a structure in which we can describe those interactions. Here, the entities are called nodes or vertices and the connections between them are called links or edges. When the edges are not regular nor random we are talking about a complex network.
+Since this is merely a methodology that can be applied to every field of knowledge, I have been toying around with complex networks long time ago to study basic principles of social networks, the votig intention for local elections and consumer behaviour in physical and virtual purchase channels.</description>
+    </item>
+    
+    <item>
+      <title>Finance</title>
+      <link>http://gerardogutierrez.co/en/data/finance/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/data/finance/</guid>
+      <description>I have always had an interest in economics and how computers can help develop that knowledge either with data or phenomenologial models.
+As of last year I am developing a set of tools that aid trading decisions, starting from very basic statistical crunching of stock market data to getting my way up to machine learning inference. In this topic I am very intereste in a kind of learning based in genetic algorithms.</description>
+    </item>
+    
+    <item>
+      <title>Geophysics</title>
+      <link>http://gerardogutierrez.co/en/data/geophysics/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/data/geophysics/</guid>
+      <description>From 2014 to 2018 I worked as a developer for a project funded by [Ecopetrol] in which the main goal was to come up with new techniques to analize data in order to find more accurately deposits of oil and gas.
+I started as a high performance computing consultant and teacher, but as the years passed I got really interested in the subject and ideas started to flow. AI entered the scene and right now, with some friends, we are solving what is called the inverse problem with generative adversarial neural networks.</description>
+    </item>
+    
+    <item>
+      <title>Politics</title>
+      <link>http://gerardogutierrez.co/en/data/politics/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/data/politics/</guid>
+      <description>UNDER CONSTRUCTION</description>
+    </item>
+    
+    <item>
+      <title>Social Networks</title>
+      <link>http://gerardogutierrez.co/en/data/sn/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/data/sn/</guid>
+      <description>UNDER CONSTRUCTION</description>
+    </item>
+    
+  </channel>
+</rss>

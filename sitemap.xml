@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://gerardogutierrez.co/coffee/coffee1/</loc>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/about/</loc>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/courses/hpc/</loc>
+    <lastmod>2014-12-05T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/doc/courses/</loc>
+    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/courses/dev/</loc>
+    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/data/finance/</loc>
+    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/courses/bash/</loc>
+    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/data/geophysics/</loc>
+    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/iot/marbles/</loc>
+    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/data/politics/</loc>
+    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/data/cn/</loc>
+    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/data/sn/</loc>
+    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/iot/security/</loc>
+    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/doc/tutorials/</loc>
+    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/service/service4/</loc>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/service/service2/</loc>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/coffee/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/courses/</loc>
+    <lastmod>2014-12-05T12:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/data/</loc>
+    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/doc/</loc>
+    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/</loc>
+    <lastmod>2014-12-05T12:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/service/service3/</loc>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/iot/</loc>
+    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/service/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

@@ -1,0 +1,22 @@
+<html><head><title>Gerardo Gutiérrez</title>
+<!--meta http-equiv="refresh" content="0; url=http://c3.itm.edu.co/es"-->
+
+<script type="text/javascript">
+function myfunc(){
+var language = navigator.browserLanguage || navigator.language;
+var lang=language.toLowerCase();
+console.log(lang);
+
+if (language.indexOf('en') > -1) {
+	console.log("Is in english")
+	document.location.href = 'http://gerardogutierrez.co/en';
+} else {
+	document.location.href = 'http://gerardogutierrez.co/es';
+}
+}
+</script>
+</head>
+<body onload="myfunc()">
+</body>
+</html>
+

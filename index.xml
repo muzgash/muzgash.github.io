@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gerardo Gutiérrez</title>
+    <link>http://gerardogutierrez.co/</link>
+    <description>Recent content on Gerardo Gutiérrez</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-co</language>
+    <lastBuildDate>Fri, 05 Dec 2014 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://gerardogutierrez.co/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Coffee</title>
+      <link>http://gerardogutierrez.co/coffee/coffee1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/coffee/coffee1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://gerardogutierrez.co/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/about/</guid>
+      <description>Educación  Physics. Universidad de Antioquia (2018). Inversión Sísmica con aprendizaje profundo.  Experiencia  Google Inc.. Desarrollo de interfaz gráfica en Qt para IPython. (May - Ago, 2016) Universitat Rovira i Virgili. Estancia de investigación: Dinámicas competitivas en redes complejas multicapa . (Ene - Mar, 2015) Instituto Tecnológico Metropolitano. Consultor, desarollador e investicador en computación de alto rendimiento para la exploración sísmica. (Feb 2014 - Abr 2017) i!O. Desarrollador y analista de datos.</description>
+    </item>
+    
+    <item>
+      <title>Computación de alto desempeño en C</title>
+      <link>http://gerardogutierrez.co/courses/hpc/</link>
+      <pubDate>Fri, 05 Dec 2014 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/courses/hpc/</guid>
+      <description>Contenido  OpenMP Introducción a la comunicación de procesos con MPI Introducción a la programación en aceleradoras de video con OpenACC  OpenMP En la sección anterior vimos cuan complejo puede ser el trabajo con bifuraciones o con hilos, aún más si queremos compartir información entre procesos. OpenMP fue creado para facilitar este trabajo, consiste en un conjunto de instrucciones para loslenguajes C/C++ y fortran de facil despliegue para resolver problemas complejos.</description>
+    </item>
+    
+    <item>
+      <title>Cursos</title>
+      <link>http://gerardogutierrez.co/doc/courses/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/doc/courses/</guid>
+      <description>Durante mi trabajo en el ITM di algunas clases de GNU/Linux, programación científica y computación de alto rendimeinto que iré compartiendo por este medio.
+ GNU/Linux y BaSH Herramientas de desarrollo en Linux Computación de alto rendimiento  </description>
+    </item>
+    
+    <item>
+      <title>Development tools in GNU/Linux</title>
+      <link>http://gerardogutierrez.co/courses/dev/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/courses/dev/</guid>
+      <description>Herramientas de desarrollo GNU/Linux Contenido Construcción  Construcción de librerías en C Makefile Scons CMake  Control de versiones  Subversion Mercurial git  Construcción de librerías en C Realizaremos un ejercicio manual para la intriducción de un código que usaremos a través de todo el curso y para visualizar las ventajas de las herramientas automáticas de construcción.
+Creemos los siguientes archivos de código en C:
+libreriaPi.h
+void funcion (double *t, double *k, double *l);  libreriaPi.</description>
+    </item>
+    
+    <item>
+      <title>Finanzas</title>
+      <link>http://gerardogutierrez.co/data/finance/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/data/finance/</guid>
+      <description>Siempre he tenido un interés por las ciencias econḿicas y como los computadores pueden ayudar a desarrollar conocimientos ya sea desde los datos o la fenomenología.
+Desde el año pasado estoy desarrollando un conjunto de herramienas para ayudar al comerciante de acciones o divisas, comenzando con el analisis estadístico básico de las series de tiempo de los mercados hasta llegar a algoritmos más sofisticados como los de inteligencia artificial.
+Con este horizonte he estado trabajando en un tipo de aprendizaje basado en algoritmos genéticos.</description>
+    </item>
+    
+    <item>
+      <title>GNU/Linux y BaSH</title>
+      <link>http://gerardogutierrez.co/courses/bash/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/courses/bash/</guid>
+      <description>#!/bin/bash
+Duración: 40 Hours
+Profesor: Gerardo Gutiérrez
+Contacto: muzgash@gmail.com
+Contenido  Línea de Comandos  Línea de comandos Variables de entorno Redirecciones y encomillado Expresiones regulares SED AWK  Bash - Scripting  Scripting
+ Bucles y condicionales
+ Manejo de Archivos
+ bc
+ Arreglos  “Parallel” BaSH
+ BaSH y qsub
+   Línea de comandos Para familiarizarnos un poco con el sistema en esta sección nos dedicaremos a realizar las tareas básicas necesarias para desarrollar el quehacer diario en cualquier sistema computacional, reconozcamos algunos comandos:</description>
+    </item>
+    
+    <item>
+      <title>Geofísica</title>
+      <link>http://gerardogutierrez.co/data/geophysics/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/data/geophysics/</guid>
+      <description>Desde 2014 trabajé como desarrollador de un proyecto patrocinado por [Ecopetrol] cuyo principal objetivo era encontrar nuevas metodologías y algoritmos para analizar datos del subsuelo y así encontrar mas eficientemente depósitos de gas y petróleo.
+Comencé como consultor y profesor en computación de alto rendimiento, luego de comprometerme más con los temas del proyecto comencé a desarrollar ideas propias. La inteligencia artificial hizo su aparición y con unos amigos decidimos abordar el problema inverso con redes neuronales adversarias generativas.</description>
+    </item>
+    
+    <item>
+      <title>M.A.R.B.L.E.S.</title>
+      <link>http://gerardogutierrez.co/iot/marbles/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/iot/marbles/</guid>
+      <description>MARBLES es del inglés Marvelous Arduino &amp;amp; Raspberrypi Biorreactor Lightweight Electronic System. Es un sistema electrónico controlado remotamente que ajusta la intensidad de la luz, prender y apagar la inyección de CO2 y medir la densidad de algas en un biorreactor pequeño. Puede ser controlado desde un celular o vualquier navegador. Guarda un registro y las graficas de las medidas y la intensidad.
+Toda la información (incluyendo esquemas electrónicos) puede encontrarse en el cuaderno de protocolo creado durante su desarrollo project MARBLES</description>
+    </item>
+    
+    <item>
+      <title>Política</title>
+      <link>http://gerardogutierrez.co/data/politics/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/data/politics/</guid>
+      <description>EN CONSTRUCCIÓN</description>
+    </item>
+    
+    <item>
+      <title>Redes Complejas</title>
+      <link>http://gerardogutierrez.co/data/cn/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/data/cn/</guid>
+      <description>Todo en la naturalesza puede ser explicado como la interacción entre entidades, por ejemplo, el movimiento de una bandada de pájaros, la propagación de un chisme oalgunas reacciones químicas, entre otros. Una red es simplemente una estructura en la cual describir estas interacciones. En las redes las entidades mencionadas son llamadas nodos o vértices y las conexiones entre ellas vínculos o aristas. Cuando las conexiones no son regulares ni aleatorias estamos hablando de una red compleja.</description>
+    </item>
+    
+    <item>
+      <title>Redes Sociales</title>
+      <link>http://gerardogutierrez.co/data/sn/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/data/sn/</guid>
+      <description>EN CONSTRUCCIÓN</description>
+    </item>
+    
+    <item>
+      <title>Sistema de Seguridad con Raspberry Pi</title>
+      <link>http://gerardogutierrez.co/iot/security/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/iot/security/</guid>
+      <description>Los sitemas o servicios de seguridad son muy costosos sobre todo para una casa. Un kit de RaspberryPi con cámara puede costar al rededor de $100 USD.
+Desarrollé un sistema de seguridad que detecta personas y envía un reporte a través de un bot de telegram. Usando una RaspberryPi con cámara infrarroja puede obtener estas imágenes.
+La documentación y los códigos del proyecto están aún por ser subidos a github, pero en el entretanto, estas son las herramientas que usé para su desarrollo:</description>
+    </item>
+    
+    <item>
+      <title>Tutoriales</title>
+      <link>http://gerardogutierrez.co/doc/tutorials/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/doc/tutorials/</guid>
+      <description>En construcción</description>
+    </item>
+    
+    <item>
+      <title>Café</title>
+      <link>http://gerardogutierrez.co/service/service4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/service/service4/</guid>
+      <description>&lt;p&gt;Viajar por Colombia en busca de café, tener su constante fragancia en la casa y saberse preparar una buena taza, hace que todas las actividades sean más placenteras.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ciencia de Datos</title>
+      <link>http://gerardogutierrez.co/service/service2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/service/service2/</guid>
+      <description>&lt;p&gt;Porque el término está de moda y mis amigos dicen que lo ejerzo. Y es que hoy hay muchos datos y con ellos todavía mucho para hacer.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Internet de las cosas</title>
+      <link>http://gerardogutierrez.co/service/service3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/service/service3/</guid>
+      <description>&lt;p&gt;Tan importante es la obtención de los datos como su analisis. Y ahora con tantos dispositivos vestibles (wearables), los carros y los electrodomésticos conectados a internet, vemos un crecimiento en la cantidad de datos disponibles para procesar. Mientras más dispositivos, más datos, y mientras más datos somos más felices.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

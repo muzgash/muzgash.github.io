@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+
+	<title>GNU/Linux and BaSH</title>
+
+	<link rel="shortcut icon" href="http://gerardogutierrez.co/en/images/favicon.png">
+
+	
+	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	
+	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+	
+	<link rel="stylesheet" href="http://gerardogutierrez.co/en/css/styles.css">
+
+	
+
+    
+        <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=&product=inline-share-buttons"></script>
+    
+
+</head>
+<body class="home">
+
+<header id="header">
+	<div id="head" class="parallax" parallax-speed="2">
+		<h1 id="logo" class="text-center">
+			<img class="img-circle" src="http://gerardogutierrez.co/en/images/guy.jpg" alt="">
+			<span class="title">Gerardo Gutiérrez</span>
+			<span class="tagline"><br>
+				<a href="">ggutierg@gmail.com</a>
+            </span>
+		</h1>
+	</div>
+
+    <nav class="navbar navbar-default navbar-sticky">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">
+                
+                
+                <li class="active"><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data Science & AI <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+						
+						<li>
+							<a href="/en/data/cn">Complex Networks</a>
+						</li>
+						
+						<li>
+							<a href="/en/data/finance">Finance</a>
+						</li>
+						
+						<li>
+							<a href="/en/data/geophysics">Geophysics</a>
+						</li>
+						
+						<li>
+							<a href="/en/data/politics">Politics</a>
+						</li>
+						
+						<li>
+							<a href="/en/data/sn">Social Networks</a>
+						</li>
+						
+                        
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">IoT <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+						
+						<li>
+							<a href="/en/iot/marbles">Biorreactor</a>
+						</li>
+						
+						<li>
+							<a href="/en/iot/security">Security System</a>
+						</li>
+						
+                        
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Education <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+						
+						<li>
+							<a href="/en/doc/courses">Courses</a>
+						</li>
+						
+						<li>
+							<a href="/en/doc/tutorials">Tutorials</a>
+						</li>
+						
+                        
+                    </ul>
+                </li>
+                <li class="active"><a href="/coffee">Coffee</a></li>
+                <li class="active"><a href="/about">About</a></li>
+                
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+</header>
+
+
+<main id="main">
+
+	<div class="container">
+
+		<div class="row topspace">
+			<div class="col-sm-8 col-sm-offset-2">
+
+ 				<article class="post">
+					<header class="entry-header">
+ 						<div class="entry-meta">
+ 							<span class="posted-on"><time class="entry-date published" date="2013-06-17 12:00:00 &#43;0000 &#43;0000">June 17, 2013</time></span>
+ 						</div>
+ 						<h1 class="entry-title"><a href="http://gerardogutierrez.co/en/courses/bash/" rel="bookmark">GNU/Linux and BaSH</a></h1>
+					</header>
+					<div class="entry-content">
+						
+
+<h1 id="under-translation">UNDER TRANSLATION</h1>
+
+<p>#!/bin/bash</p>
+
+<p><strong>Duration:</strong> 40 Hours<br />
+<strong>Teacher:</strong> Gerardo Gutiérrez<br />
+<strong>Contacto:</strong>  muzgash@gmail.com</p>
+
+<h2 id="sylabus">Sylabus</h2>
+
+<ul>
+<li><strong>Command Line</strong>
+
+<ul>
+<li><a href="#cli">Command Line</a></li>
+<li><a href="#envirionment">Environment variables</a></li>
+<li><a href="#redireccion">Redirectoins and quoting</a></li>
+<li><a href="#regexp">Regular Expressions</a></li>
+<li><a href="#sed">SED</a></li>
+<li><a href="#awk">AWK</a></li>
+</ul></li>
+<li><strong>Bash - Scripting</strong>
+
+<ul>
+<li><a href="#scripting">Scripting</a><br /></li>
+<li><a href="#stream">Loops</a><br /></li>
+<li><a href="#files">File IO</a><br /></li>
+<li><a href="#bc">bc</a><br /></li>
+<li><a href="#arrays">Arrays</a></li>
+</ul></li>
+<li><strong>“Parallel” BaSH</strong><br />
+
+<ul>
+<li><a href="#torque">BaSH &amp; qsub</a><br /></li>
+</ul></li>
+</ul>
+
+<h2 id="a-name-cli-a-command-line"><a name="cli"></a>Command Line</h2>
+
+<p>In order to get familiar with the system, in this section we are going to do basic commands that help us in any unix-like system.</p>
+
+<pre><code>$ whoami
+$ pwd
+$ mkdir carpeta
+$ cd carpeta
+$ touch carpeta/archivo
+$ ls -r carpeta/
+$ asd
+</code></pre>
+
+<p>Every command has a manual inside the system, the set of manuals is called &ldquo;manpages&rdquo;. Let&rsquo;s see</p>
+
+<pre><code>$ man ls
+</code></pre>
+
+<p>To delete files or move between folder we can use these commands with some options. Let&rsquo;s explore:</p>
+
+<pre><code>$ rm
+$ mv
+$ cd ~
+$ cd -
+$ cd /
+</code></pre>
+
+<p>In the previous box we used some arguments for the commands that are called wildcards:</p>
+
+<ul>
+<li>~ is the route to the user folder (also called home). It is an alias for /home/user</li>
+<li>- is the previous folder</li>
+<li>/ is the main folder of the system (called root folder)</li>
+</ul>
+
+<p>The edistribution of files and folders of linux systems is somewhat similar through the distributions. Here we are going to describe the most important
+|/bin|Contains the base software for the system|
+|/etc|Contains configuration files|
+|/dev|Is where the kernel is going to look for peripherals or devices (everything in linux is a file)|
+|/home|It is where the users folders are stored|
+|/media|Contains the folders where the usb drives or cdroms are going to be placed (mounted)|</p>
+
+<p>To see the content of a file you can use commands like cat, more or less. Let&rsquo;s explore some files</p>
+
+<pre><code>$ more /etc/passwd
+$ less ~/.bashrc
+$ cat /dev/random
+</code></pre>
+
+<p>We haven&rsquo;t defined whats a command. A command can be:
+* An executable program in /usr/bin or builint the intereter (like cd)
+* A BaSH script
+* An alias</p>
+
+<p>THe following instructions will give you information about commands just like &ldquo;man&rdquo;</p>
+
+<pre><code>$ type
+$ which
+$ apropos
+$ info
+$ whatis
+</code></pre>
+
+<p>Commands can be executed in sequence by using the separator &ldquo;;&rdquo;, What does the following line do?</p>
+
+<pre><code> $ alias mkcd='mkdir test;cd test'
+</code></pre>
+
+<p>The alias command can rename another commando or set of them. In this example we are going to rename mkdir and cd command to mkcd to create a folder and access it immediately.</p>
+
+<p>Podríamos decir que diariamente se comprimen y descomprimen archivos descargados a través de la red, esto por su facilidad para ser transferidos por ella. Linux viene por defecto con un solo método de compresión llamado &ldquo;tarball&rdquo;. Realicemos lo siguiente:</p>
+
+<pre><code>$ touch foo
+$ touch bar
+$ tar -cf foobar.tar foo bar
+$ ls -l *
+</code></pre>
+
+<p>En este bloque creamos 2 archivos vacios que a continuación comprimimos con el comando tar(ver man), luego investigamos los archivos con el comando ls -l. ¿Por qué si los archivos vacíos pesan 0 bits, el comprimido pesa más?.</p>
+
+<h3 id="a-name-environment-a-variables-de-entorno-y-ambiente-de-trabajo"><a name="environment"></a>Variables de entorno y ambiente de trabajo</h3>
+
+<p>Linux pone a disposición del usuario información en una sesión de trabajo, información como donde se encuentran los comandos y los comandos mismos. Ésta la podemos categorizar en: Comandos y variables.
+Las variables se subdividen en varibales del shell(que veremos más adelante) y variables de entorno que investigamos así:</p>
+
+<pre><code>$ printenv
+</code></pre>
+
+<p>Se puede ver el contenido de la variable usando el comando echo:</p>
+
+<pre><code>$ echo $USER
+</code></pre>
+
+<p>He aquí algunas de las variables con su descripción:
+|HOME|La ruta al home del usuario|
+|USER|El usuario actual|
+|PWD|El directorio de trabajo actual|
+|TZ|La zona horaria|
+|LANG|El idioma|
+|PATH|Lista de rutas donde el sistema busca comandos|</p>
+
+<p>Cuando iniciamos una sesión el programa BaSH comienza y lee archivos de configuración que definen el entorno, estos archivos se llaman archivos de arranque (startup files) y depende del sistema pueden ser:</p>
+
+<ul>
+<li>/etc/profile</li>
+<li>/etc/bash.bashrc</li>
+<li>~/.bash_profile</li>
+<li>~/.bash_login</li>
+<li>~/.profile</li>
+<li>~/.bashrc</li>
+</ul>
+
+<p>Estos archivos pueden cambiar dependiendo del tipo de shell o de distribución de linux que estemos usando.</p>
+
+<p>Para modificar el entorno basta con editar los archivos anteriormente mencionados para que realicen la tarea que queramos o si simplemente queremos cambiar una variable lo hacemos en 2 pasos: creando la variable y exportándola. Analicemos el ejemplo:</p>
+
+<pre><code>$ saludo=&quot;hola &quot;
+$ echo $saludo
+hola 
+$ saludo=$saludo&quot;mundo&quot;
+$echo $saludo
+hola mundo
+</code></pre>
+
+<p>Aquí creamos la variable a través del caracter &ldquo;=&rdquo; y mostramos que se pueden concatenar.
+Hasta ahora no hemos exportado la variable, pero ella existe en el entorno de trabajo. ¿Qué pasa si abro una nueva sesión de BaSH(ejecute el comando bash) y busco la variable?
+Exportemos ahora la variable con el comando:</p>
+
+<pre><code>export $saludo
+</code></pre>
+
+<p>¿Qué pasa ahora si abro una ===nueva=== sesión de BaSH?</p>
+
+<p><strong>HOMEWORK</strong>
+*Agregue a su .bashrc un alias para conectarse al servidor de la sala cluster c3.
+*Discutamos la siguiente secuencia de comandos:</p>
+
+<pre><code>$ mkdir bin
+$ echo &quot;ls -a -l --color&quot; &gt; bin/ll
+$ chmod u+x bin/ll
+$ PATH=$PATH:$PWD/bin
+$ export PATH
+</code></pre>
+
+<p><strong>ANSWER</strong></p>
+
+<pre><code>$ echo &quot;alias ='ssh usuario@c3.itm.edu.co -X'&quot; &gt;&gt; ~/.bashrc
+La secuencia crea un directorio bin en $PWD.
+Redirecciona el comando ls -al con color a un achivo nuevo dentro de esta carpeta.
+Vuelve éste ejecutable solo para $USER
+Redefine la variable de entorno $PATH al agregarle la carpeta $PWD/bin y exportandola.
+</code></pre>
+
+<h3 id="a-name-redireccion-a-redirections-and-quoting"><a name="redireccion"></a>Redirections and Quoting</h3>
+
+<p>En las secciones anteriores hemos usado un poco de redirecciones de una manera muy básica, pero esta es una de las herramientas más importantes de los sitemas Unix.
+Todos los comandos producen algún mensaje, ya sea de error o el resultado de la operación que realiza. Estos mensajes pasan a través de un flujo (stream) de datos llamado <strong>stderr</strong>(de standard error) y <strong>stdout</strong> (de standard output), el primero para el error y el segundo para el resultado del comando.
+Adicionalmente la información que es requerida por el comando se toma del flujo llamado <strong>stdin</strong>(de standard input).</p>
+
+<p><strong>Las redirecciones</strong> redefinen a donde van los flujos de salida (stdout y stderr) y de donde proviene el de entrada.
+Creemos un archivo con el contenido del home y su espacio en disco:</p>
+
+<pre><code>$ du -csh ~/* &gt; home.log
+$ cat home.log
+</code></pre>
+
+<p>Con el caracter «mayor que» estamos redirigiendo el stdout del comando du con sus opciones, al archivo home.log. Tratemos de hacer lo mismo pero con un mensaje de error:</p>
+
+<pre><code>$ asd
+$ asd &gt; error.log
+$ cat error.log
+</code></pre>
+
+<p>El comando asd no existe pero el error salió en pantalla a diferencia del caso anterior donde dirigimos el flujo a un archivo. Veamos la instrucción</p>
+
+<pre><code>$ asd 2&gt; error.log
+$ cat error.log
+</code></pre>
+
+<p>El sistema tiene unos indicadores numéricos para estos flujos, como vimos en el ejemplo anterior el 2 corresponde a stderr, 1 y 0 a stdout y stdin respectivamente.
+Para redirigir ambos flujos de salida a un archivo podemos usar estos comandos:</p>
+
+<pre><code>$ cat /etc/sh* &gt; ls-output 2&gt;&amp;1
+$ cat /etc/sh* &amp;&gt; ls-output
+</code></pre>
+
+<p>Note que el orden de las redirecciones es importante. ¿Qué pasa si redireccionamos a /dev/null? ¿Qué utilidad podría tener esto?</p>
+
+<p>Para llevar el stdout de un comando al stdin de otro podemos usar un operador llamado <strong>pipe</strong>, vemoslo en un ejemplo:</p>
+
+<pre><code>$ ls /home/ | wc -l
+</code></pre>
+
+<p>El comando wc cuenta los renglones del stdin, en este caso la salida del comando ls, es decir, cuenta el número de usuarios.</p>
+
+<p><strong>HOMEWORK</strong>
+Investiguemos los comandos: grep, sort, uniq, tee, tail y head.
+Descargue el [<a href="http://c3.itm.edu.co/bash/actividad2.tar.gz|archivo" target="_blank">http://c3.itm.edu.co/bash/actividad2.tar.gz|archivo</a>], descomprímalo y:
+* ¿Cuantos pacientes hay en el archivo patients.csv?
+* Usando solo una línea de comandos, haga una lista de todas las palabras diferentes que encuentra en el archivo words y cuéntelas.
+* Usando solo una línea de comandos, encuentre todas las ocurrencias de zzzz, cuéntelas y cree un archivo con todos los datos excepto estos.
+* En una sola línea de comandos, cree un archivo de 100 datos intermedios del archivo att.dat y muéstrelos en terminal.</p>
+
+<p><strong>ANSWERS</strong></p>
+
+<pre><code>$ whatis {grep,sort,uniq,tail,head}
+$ wget http://c3.itm.edu.co/bash/actividad2.tar.gz; tar -zxvf actividad2.tar.gz
+$ grep -i gsp patients.csv | wc -l
+$ sort words | uniq | wc -l
+$ N=$(cat words|wc -l);grep -v zzzz words&gt;wordz.txt;n=$(cat wordz.txt|wc -l);echo $(($N+$n))
+$ N=$(cat att.dat|wc -l);head -n $(($N/2+50)) att.dat | tail -n 100 &gt; 100data.txt
+</code></pre>
+
+<p>En varias ocasiones hemos usado el caracter ~ para denotar la ruta al home, hagamos:</p>
+
+<pre><code>$ ls ~/..
+$ echo /*
+</code></pre>
+
+<p>Vemos que el caracter * en echo no imprime un « * » sino las carpetas ubicadas en /, como si fuera un ls. A esta forma de usar el * y ~ se les llama <strong>expansiones</strong>.
+|Expanssion|Description|Example|
+|&mdash;|&mdash;:|:&mdash;|
+|<code>$((expresion))</code>|Evalua una expresión aritmética|<code>$ echo $(( 2**8 ))</code>|
+|<code>{a,b,c}</code>|Crea una colleción de argumetos con a, b y c |<code>$ mkdir folder_{a,b,c}</code>|
+|<code>{1..5}</code>|Crea una colleción de argumentos con los números del 1 al 5 |<code>$ touch photo_{1..5}</code>|
+|<code>{M..D}</code>|También funciona con letras |<code>$ echo {M..D}</code>|</p>
+
+<p>Algo que usaremos mucho en el capítulo de scripts es el <strong>encomillado</strong>. Los caracteres especiales que hemos usado en algunas ocasiones no dan los resultados esperado, por ejemplo:</p>
+
+<pre><code>$ mkdir nombre espaciado
+$ echo hola             mundo
+$ echo El PIB per capita es US$7.7
+</code></pre>
+
+<p>Para evitar estos errores usaremos <strong>comillas dobles</strong>, con éstas cualquier caracter especial que esté dentro de ellas perderá su significado, y será tratado con un caracter común.</p>
+
+<pre><code>$ mkdir &quot;nombre espaciado&quot;
+$ ls -l &quot;nombre espaciado&quot;
+$ echo &quot;hola           mundo&quot;
+</code></pre>
+
+<p>Excepciones a esta regla son «$»,«\»(backslash) y «`»(comilla invertida o acento grave).</p>
+
+<pre><code>$ echo &quot;El PIB per capita es US$$((3+4)).$((2*3))&quot;
+$ echo &quot;2 y 2 son $((2+2)), 4 y 2 son $((4+2))&quot;
+</code></pre>
+
+<p>Si necesitamos retirar todas las influencias de los caracteres especiales usamos <strong>comillas simples</strong>:</p>
+
+<pre><code>$ echo 'El PIB per capita es US$$((3+4)).$((2*3))'
+$ echo '2 y 2 son $((2+2)), 4 y 2 son $((4+2))'
+</code></pre>
+
+<p>Sin embargo a veces necesitamos que solo uno de los caracteres especiales no sea interpretado como tal, para esto usamos «\»(backslash) llamado el caracter de escape:</p>
+
+<pre><code>$ echo &quot;El PIB per capita es US\$$((3+4)).$((2*3))&quot;
+</code></pre>
+
+<h3 id="a-name-regexp-a-regular-expressions"><a name="regexp"></a>Regular Expressions</h3>
+
+<p>Las expresiones regulares son un conjunto de caracteres que determinan un patrón. Estos caracteres servirán para encontrar líneas de texto específicas con un patrón particular.
+Las expresiones regulares se componen de 3 tipos de metacaracteres:
+* <strong>Anchors</strong>: Especifican la posición del patrón en relación a una línea de texto.
+* <strong>Conjunto de caracteres</strong>: Especifican uno o más caracteres en una sola posición.
+* <strong>Modificadores</strong>: Especifican cuantas veces el caracter anterior será repetido.</p>
+
+<p>Las anclas <code>^ y $</code> significan el principio y el final de una línea, es decir <code>^asd</code> buscará todas las líneas que comiencen con asd y <code>asd$</code> buscará todas las líneas que terminen con asd, veamos un ejemplo:</p>
+
+<pre><code>$ ls /usr/bin/ | grep '^zip'
+$ ls /usr/bin/ | grep 'zip$'
+</code></pre>
+
+<p>Un solo caracter cualquiera es reemplazado por <strong>.</strong>, un conjunto de caracteres es determinado entre corchetes:</p>
+
+<pre><code>$ grep -i '^[ae][ou]$' /usr/share/dict/spanish
+$ grep -i '^[a-w]...t$' /usr/share/dict/spanish
+</code></pre>
+
+<p>Estos últimos tienen sus excepciones
+|Expresión regular|reemplaza|
+|&mdash;|:&mdash;:|
+|<code>[]}</code>|<code>Los caracteres [ y ]</code>|
+|<code>[1]</code>| El caracter 1|
+|<code>[^0-9]</code>| Cualquier caracter excepto un número|
+|<code>[a-z]]</code>| <code>Cualquier letra seguida de ]</code>|
+|<code>[]0-9]</code>| <code>Cualquier número o ]</code>|</p>
+
+<p>Observamos que <code>^</code> dentro de los corchetes niega la expresión regular. Elcaracter ** * ** reemplaza cualquiér número(0 o más) de ocurrencias del caracter que le precede.</p>
+
+<p>Para encontrar un número de veces la expresión en la línea usamos los caracteres <strong>{</strong> y <strong>}</strong>, por ejemplo <code>'^A\{4,\}'</code> encuentra la línea con 4 o más aes.
+Encontramos una palabra completa insertándola entre <strong>&lt;</strong> y <strong>&gt;</strong>.
+Las expresiones regulares se pueden recordar marcando la expresion entre <strong>(</strong> y <strong>)</strong> e invocarlo nuevamente con \ seguido de un solo dígito. Se pueden recordar hasta 9 patrones diferentes. Por ejemplo la siguiente expresión regular encuentra palíndromos de 5 letras como «radar»:
+<code>\([a-z]\)\([a-z]\)[a-z]\2\1</code></p>
+
+<p><strong>HOMEWORK</strong>
+Decargue el [<a href="http://c3.itm.edu.co/bash/nombres.txt|archivo" target="_blank">http://c3.itm.edu.co/bash/nombres.txt|archivo</a>] retírele las líneas repetidas si exiten y realice:
+* Busque los nombres que contengan «ana».
+* Busque nombres que contengan ab en un lugar diferente del principio o del final.
+* Busque palíndromos de 4 y 5 letras en el diccionario /usr/share/dict/spanish
+* Busque los nombres que tengan tíldes.
+* Busque nombres de menos de 4 letras que tengan diptongos.
+* Busque los nombres que tengan alguna letra doble i.e. Vanessa.
+* ¿Qué problemas podría presentar la expresión A.*B?</p>
+
+<p>Existen otro tipo de expresiones regulares que no requieren  que los caracteres <code>( ) y { }</code> sean designados como <code>\(\) y \{\}</code>. A éstas se les llama expresiones regulares extendidas, pero no todos los lenguajes o programas las soportan.
+En las expresiones regulares extendidas el caracter ? reemplaza cero o más caracteres que le preceden y el caracter + reemplaza uno o más.
+La expresión entre los caracteres ( | ) reemplaza una escogencia de patrones, veamos mejor su uso con un par de ejemplos:</p>
+
+<pre><code>$ grep '^(From|Subject): ' /var/spool/mail/$USER
+$ grep -E '^(From|Subject): ' /var/spool/mail/$USER
+$ echo &quot;expresion regular&quot; | egrep 'expresion[es]?( regular| irregular)?[es]?'
+</code></pre>
+
+<p>En esta tabla podrá consultar si la expresión se puede usar en la versión extendida o en la básica así como su función:
+|Expresión|clase|función|
+|&mdash;|&mdash;:|:&mdash;|
+|.|Todas|Un solo caracter.|
+|^|Todas|Principio de la línea.|
+|$|Todas|Final de la línea.|
+|[]|Todas|Conjunto de caracteres.|
+|*|Todas|Cero o más duplicados.|
+|&lt;|Básico|Principio de la palabra.|
+|&gt;|Básico|Final de la palabra.|
+|(..)|Básico|Recuerda un patrón.|
+|\1..\9|Básico|invoca el patron recordado.|
+|+|Extendido|Uno o más duplicados.|
+|?|Extendido|Cero o más duplicados.|
+|{M,N}|Extendido|M a N duplicados.|
+|()|Extendido|Una u otra expresión.|</p>
+
+<p><strong>EJERCICIOS</strong>
+* Encuentre en el diccionario la palabras que tengan 2 o más consonantes consecutivas.
+* Descargue el archivo [<a href="http://c3.itm.edu.co/bash/carros_perdidos.csv|carros_perdidos.csv" target="_blank">http://c3.itm.edu.co/bash/carros_perdidos.csv|carros_perdidos.csv</a>]
+* Reporte las placas delos carros perdidos en Medellín y Bogotá en los años 2007, 2009 y 2011.
+* Encuentre las ocurrencias de una palca inválida.
+* Separe en diferentes archivos los carros por día de pico y placa.
+* Separe en diferentes archivos los carros por marca.</p>
+
+<h3 id="a-name-sed-a-sed"><a name="sed"></a>SED</h3>
+
+<p><strong>sed</strong> (Short EDitor)  es un simple editor de flujos de texto que funciona por línea de comandos de la siguiente manera:</p>
+
+<pre><code>$ echo &quot;foo&quot; | sed s/foo/bar
+$ cat nombres.txt | sed s/ana/anita/
+$ grep 'anita' nombres.txt
+</code></pre>
+
+<p>Gracias a la opción s, sed sustituye las ocurrencias de foo(ana) por bar(anita) haciendo una copia del flujo en stdout. Creemos un archivo y cambiamos hola por HOLA</p>
+
+<pre><code>$ cat &gt; file.txt
+hola mundo, hola
+pirinhola hola
+HoLa hola
+$ cat file.txt | sed 's/hola/HOLA/'
+</code></pre>
+
+<p>Podemos observar que nada más las primeras ocurrencias de la palabra hola fueron cambiadas, el comando es sensible a las mayúsculas y es estricto con la ocurrencia, es decir, si la palabra existe en medio de otra, la cambia. La inclusión de comillas es necesaria cuando se usan caracteres especiales, pero es buena práctica utilizarlas siempre.
+Es de notar que para encontrar un patrón a ser reemplazado por sed también se pueden usar expresiones regulares.</p>
+
+<p><strong>HOMEWORK</strong>
+* Discutamos las siguientes líneas:</p>
+
+<pre><code>$ cat file.txt | sed '2s/hola/HOLA/'
+$ cat file.txt | sed 's/hola/HOLA/I'
+$ cat file.txt | sed 's/hola/HOLA/g'
+$ cat file.txt | sed 's/,/\n/g'
+$ echo abcd123 | sed 's/\([a-z]*\).*/\1/'
+</code></pre>
+
+<ul>
+<li>Elimine la parte que va luego de la e del siguiente comando, incluyendo la e
+<code>$ echo 1.4518e+25</code></li>
+<li>Elimine los números de
+<code>$ echo abc10002def</code></li>
+<li>Elimine la primera columna y la primera fila del archivo patients.cvs y cambie los separadores «, » por espacios tabulados(\t).</li>
+<li>Elimine las líneas que contengan números negativos del archivo att.dat</li>
+<li>Cambie las ocurrencias de nombres con letras repetidas por una sola letra en el archivo nombres.txt.</li>
+</ul>
+
+<p><strong>ANSWERS</strong></p>
+
+<pre><code>Solo aplica la sustitución en la segunda línea.
+La I ignora si es mayúscula o minúscula.
+La g cambia todas las ocurrencias en todas las líneas.
+Cambia cada , por un salto de línea.
+Quita las letras.
+$ echo 1.4518e+25 | sed 's@e.*@@'
+$ echo abc10002def | sed 's@[0-9]*@@g'
+$ sed -e '1d' -e 's@gsp[0-9]\{1,3\},@@gI' -e 's@,@\t@g' patients.csv
+$ sed '/-/d'
+$ wc -l nombres.txt; sed 's@\([a-z]\)\1@\1@g' nombres.txt | sort | uniq | wc -l
+</code></pre>
+
+<p>Podemos realizar un script en sed que haga varias operaciones en secuencia sobre un archivo. Creemos el archivo patients.sed con las siguientes instrucciones</p>
+
+<pre><code>1d
+s@gsp[0-9]\{1,3\},@@gI
+s/,/\t/g
+</code></pre>
+
+<p>Corremos este script con la instrucción</p>
+
+<pre><code>$ sed -f patients.sed patients.csv
+</code></pre>
+
+<p>Vemos que resuelve uno de los ejercicios al quitar la primera línea, la primera columna y cambiar las comas por un espacio tabulado. Podemos también correr el script si invocamons en él el comando de la siguiente manera(10att.sed):</p>
+
+<pre><code>#!/bin/sed -f
+1,10s@\(.*\) \(.*\) \(.*\)@\1\t\2@pw att1-2.dat
+</code></pre>
+
+<p>Cambiamos los permisos de ejecución del script y luego lo ejecutamos</p>
+
+<pre><code>$ chmod u+x 10att.sed
+$ ./10att.sed -n att.dat
+</code></pre>
+
+<p>Este ejemplo usamos la opción -n para que no muestre en pantalla, la opción p para que imprima solamente lo modificado y w para que guarde en el archivo1-2.dat. Ejecute el ejemplo y identifique la expresión regular y la instrucción inicial (1,10s@).</p>
+
+<p><strong>Ejercicios</strong>
+* Cree scripts que a partir de un archivo con más de 3 columnas se obtengan 3 archivos:
+    * Con las columnas 3 y 2, en ese orden, separadas por un espacio tabulado.
+    * Con los números negativos de las columnas 2 y 3, eliminando la fila entera si lo encuentra.
+    * Con los 100 primeros datos de las columnas 3, 1 y 2 separados por ;.</p>
+
+<h3 id="a-name-awk-a-awk"><a name="awk"></a>AWK</h3>
+
+<p><strong>AWK</strong> es un lenguaje de programación diseñado principalmente para la búsqueda y el procesamiento de texto. Como todos los lenguajes de programación tiene variables e instrucciones de control del flujo, como condicionales y bucles, AWK procesa cada línea de un archivo buscando patrones y realiza allí las acciones. Su sintaxis es:</p>
+
+<pre><code>$ awk '/patrón1/ {acciones}; /patrón2/ {acciones}' archivo
+</code></pre>
+
+<p>Los patrones son expresiones regulares y recordemos que las comillas simples son para evitar que el shell no interprete los caracteres especiales.
+Descarguemos el archivo [<a href="http://c3.itm.edu.co/bash/people.txt|people.txt" target="_blank">http://c3.itm.edu.co/bash/people.txt|people.txt</a>] y realicemos los siguientes ejemplos:</p>
+
+<pre><code>$ awk '{print;}' people.txt
+$ awk '/Sagan/' people.txt
+$ awk '/Sagan/;/Asimov/' people.txt
+</code></pre>
+
+<p>Vemos que la acción «print» muestra(imrpime) todo el archivo y el patrón «Sagan» muestra solamente las líneas que contienen duicho patrón. Podemos también incluir varias operaciones para cada patrón:</p>
+
+<pre><code>$ awk -F'[&amp;,;-]' '/Sagan/{print $2 $1};/Asimov/{print $2 $1}' people.txt
+</code></pre>
+
+<p>La opción -F nos permite indicarle a awk cuales son los caracteres que nos delimitarán los campos que son llamados por las variables $1 y $2 en este caso. El comando print también puede mostrar caracteres para construir expresiones como</p>
+
+<pre><code>$ awk -F'[&amp;,;-]' '/Sagan/{print $2&quot; &quot; $1&quot; fue un gran &quot;$3&quot; y &quot;$4};/Asimov/{print &quot;Además de &quot;$3 &quot;, &quot;$2&quot; &quot; $1 &quot; era también&quot;$4}' people.txt
+$ awk -F'[&amp;,;-]' '/Sagan/{printf &quot;%s %s fue un gran %s y %s \n&quot;,$2,$1,$3,$4};/Asimov/{printf &quot;Además de %s, %s %s era también %s\n&quot;,$3,$2,$1,$4}' people.txt
+</code></pre>
+
+<p>El comando printf a diferencia de print nos permite de manera más cómoda darle formato a la expresión a mostrar, en este caso usamos %s para imprimir cadenas de caracteres(strings), %d nos permitirá imprimir enteros y %f reales.
+Vemos tambień que una instrucción con awk puede volverse tan compleja como ilegible, por ejemplo:</p>
+
+<pre><code>$ awk -F'[;,-]' '{printf &quot;%s %s (%s)&quot;,$2,$1,$3;if(NF &gt; 6){age=$7-$4;printf&quot; murió en %d, a los %d años\n&quot;,$7,age}else{printf&quot; aún vive\n&quot;}}' people.txt
+</code></pre>
+
+<p>Por claridad y comodidad construimos un script llamado people.awk:</p>
+
+<pre><code>BEGIN{FS=&quot;[;,-]&quot;} {
+  $2 = substr($2,2) #Quita el espacio en blanco del nombre
+  printf &quot;%s %s (%s) &quot;, $2, $1, $3
+  if( NF &lt; 6 ) {
+    edad = $7 -$4
+    printf &quot;Murió en %d, a los %d años&quot;, $7, edad
+  }
+  else {
+    printf &quot;Nació en %d y aún vive&quot;, $4
+  }
+}
+</code></pre>
+
+<p>En este script vemos que la opción -F se convierte en una acción de la instrucción BEGIN -FS significa Field Separator. Entre las llaves después de BEGIN van instrucciones que se ejecutarán antes de que awk comience a procesar el archivo de entrada; allí podemos inicializar variables, los separadores de campo, imprimir mensajes de inicio, etc.
+<strong>substr</strong> toma un substring, i.e. una cadena de caracteres más corta tomada desde el segundo caracter de la variable 2.
+La condición del <strong>if</strong> se cumple si el número de campos(<strong>NF</strong>) es mayor a 6, es decir, si la persona tiene fecha de muerte; calculamos la edad a la que murió tomando la diferencia. Si no ha muerto imrpimimos un mensaje diferente.</p>
+
+<p>También podemos hacer ciclos en awk.</p>
+
+<pre><code>BEGIN{
+  a=1
+  b=1
+  while(++x&lt;=10){
+    print a
+    t=a
+    a=a+b
+    b=t
+  }
+  exit
+}
+</code></pre>
+
+<p>También podemos definir funciones en awk:</p>
+
+<pre><code>BEGIN{}
+  function mod(a,b)
+  {
+    return (a&gt;=0) ? a%b : a%b+b
+  }
+  {
+    a=mod($1,$2)
+  }
+END{print a}
+</code></pre>
+
+<p>La función mod returna a%b si a es positivo y a%b+b de otro modo. Esto permite definir correctamente la operación módulo para incluir números negativos.</p>
+
+<p><strong>HOMEWORK</strong>
+*Descargue el archivo [<a href="http://c3.itm.edu.co/bash/equipos.txt|equipos.txt" target="_blank">http://c3.itm.edu.co/bash/equipos.txt|equipos.txt</a>] y escriba un script de awk que:
+**Calcule el promedio para cada persona
+**Calcle el promedio por cada examen
+**Calcule el promedio por cada equipo
+Debe obtener un resultado como el siguiente</p>
+
+<pre><code>Nombre       Promedio
+------       --------
+Astrid       14.67
+Ana María    13.00
+Luisa        15.00
+Camilo       13.33
+Jairo        19.50
+Rubén        15.67
+Andrés       13.00
+Luis         15.00
+------------------
+Promedio del examen 1 : 5.00
+promedio del examen 2 : 15.75
+promedio del examen 3 : 22.12
+-------------------
+Promedio del equpo rojo: 16.12
+promedio del equipo verde: 14.44
+Promedio del equipo azul: 13.17
+</code></pre>
+
+<ul>
+<li>Haga una función recursiva que invierta las palabras de un texto dado.</li>
+<li>Decargue el archivo [http.//c3.itm.edu.co/bash/distancias.dat|distancias.dat] el cual es una lista de coordenadas 2D. Calcule la distancia entre las 2 posiciones en cada línea.</li>
+<li>En una sola línea del comando awk, encuentre el máximo de cada columna del archivo att.dat.</li>
+</ul>
+
+<p><strong>ANSWERS</strong></p>
+
+<pre><code>$ cat rev.awk
+BEGIN{}
+function rev(str, start)
+{
+    #note que no se necesitan los corchetes, también co una indentación es suficiente
+    if (start == 0)
+	    return &quot;&quot;
+	#Retorna una cadena de caracteres con el último caracter seguida de una nueva
+	#instancia de la función
+	return (substr(str, start, 1) rev(str, start - 1))
+}
+{
+    print rev($0,length($0))
+}
+$ echo &quot;dabale arroz a la zorra el abad&quot; | awk -f rev.awk
+</code></pre>
+
+<pre><code>$ sed 's/e[+-].\{1,2\}//g' distancias.dat | awk '{print sqrt(($4-$2)^2+($3-$1)^2)}'
+$awk 'BEGIN{a=-1000;b=-1000;c=-1000}{if($1&gt;a) a=$1;if($2&gt;b) b=$2;if($3&gt;c) c=$3} END{printf &quot;max of each colum %f %f %f\n&quot;,a,b,c}' att.dat
+</code></pre>
+
+<p>Este último queda mejor en un archivo, max.awk:</p>
+
+<pre><code>$cat max.awk
+BEGIN{
+  a=-1000
+  b=-1000
+  c=-1000
+}
+{
+  if($1&gt;a) a=$1
+  if($2&gt;b) b=$2
+  if($3&gt;c) c=$3
+}
+END{printf &quot;max of each colum %f %f %f\n&quot;,a,b,c}
+$ awk -f max.awk att.dat
+</code></pre>
+
+<h2 id="bash-scripting">BaSH scripting</h2>
+
+<h3 id="a-name-scripting-a-scripting"><a name="scripting"></a>Scripting</h3>
+
+<p>Un script es un archivo que contiene una serie de comandos a ser ejecutados por el shell. Éste puede interpretar dicho archivo así como cada entrada en la línea de comandos.
+Para crear un script abrimos un editor de texto (nano,pico,vim,emacs,gedit,kate) y en él podemos escribir cualesquier comandos vistos hasta el momento que serán ejecutados en el orde de aparición en el archivo. Veamos un ejemplo:</p>
+
+<pre><code>$ cat script.bash
+mkdir prueba
+touch prueba/testfile
+ls
+rm prueba/ 2&gt; rm.log
+cat rm.log
+$ bash script
+</code></pre>
+
+<p>Creamos el archivo script. Al finalizar podemos ejecutar el script invocando al shell, en este caso bash.</p>
+
+<p>Existen otro tipo de programas(lenguajes o interpretes) de scripting como python o R, así como otros shells coo ksh, csh, zsh o sh, cada uno de ellos con características diferentes. sh fue por muchos años el que venía por defecto con la instalación de linux pero éste ahora instala BaSH que es uan versión mejorada, probemos el siguiente comando:</p>
+
+<pre><code>$ echo &quot;whatis {sed, awk, bc}&quot; | sh
+$ echo &quot;whatis {sed, awk, bc}&quot; | bash
+</code></pre>
+
+<p>Notemos que sh no entiende las extensiónes que vimos en sesiones anteriores mientras qeu bash sí.
+los archivos de scripting se suelen nombrar con la extensión del programa que los debe ejecutar, es decir, tomaremos la costumbre de nombrar los archivos que correran con bash, script.bash, los de sed, script.sed y los de awk, script.awk.</p>
+
+<p>Podemos hacer estos scripts ejecutables agregando al principio del archivo una línea que le indica al sistema cuál es el programa que va a interpretar dicho script:</p>
+
+<pre><code>#!/ruta/al/interprete
+</code></pre>
+
+<p>Este caso el interprete será bash, o bien puede ser awk, python, etc. A continuación dedemos cambiar los permisos del archivo pues por defecto no tiene la posibilidad de ejecutarse, recordemos:</p>
+
+<pre><code>$ chmod +x script.bash
+</code></pre>
+
+<p>Para ejecutarlos damos la ruta completa al script, recordemos las opciones:</p>
+
+<pre><code>$ /home/usuario/carpeta/script.bash
+$ ./script.bash
+$ $PWD/script.bash
+</code></pre>
+
+<p><strong>HOMEWORK</strong>
+* Haga que los archivos .awk sen ejecutables.
+* Cree un script que liste los usuarios y su carpeta de home tomando los datos del archivo /etc/passwd
+* Haga que los archivos .sed sean ejecutables.</p>
+
+<p>Recordemos la asignación y el uso de las variables con el siguiente ejemplo, creamos un archivo con el nombre variables.bash</p>
+
+<pre><code>var1=a var2=b
+string1=&quot;dos palabras&quot;
+string2=&quot;$string1 y otras 2&quot;
+comando=$(seq 1 2 20)
+operacion=$((7%5))
+
+echo $var1 $var2
+echo $string1
+echo $string2
+echo $comando
+echo $operacion
+</code></pre>
+
+<p>En el ejemplo podemos notar que se pueden hacer varias asignaciones en la misma línea, las cadenas de caracteres con espacios se deben indicar con comillas y podemos usar el valor de una variable para crear otra.</p>
+
+<p>Realicemos los siguientes comandos:</p>
+
+<pre><code>$ file=&quot;texto&quot;
+$ touch $file
+$ ls
+$ mv $file $file1
+</code></pre>
+
+<p>No es posible renombrar el archivo &ldquo;texto&rdquo; a &ldquo;texto1&rdquo; pues la variable file1 no existe:</p>
+
+<pre><code>$ mv $file ${file}1
+</code></pre>
+
+<p>BaSH así como AWK también tiene funciones, es decir, fragmentod de código con nombre que se pueden invocar posteriormente. Su sintaxis es igual:</p>
+
+<pre><code>#!/bin/bash 
+function wait {
+  echo &quot;waiting...&quot;
+  sleep 2
+}
+
+echo &quot;La terminal entra en modo de espera&quot;
+wait
+echo &quot;Bienvenido nuevamente&quot;
+</code></pre>
+
+<p>Las funciones en BaSH también pueden tener argumentos y &ldquo;retornar&rdquo; valores:</p>
+
+<pre><code>#!/bin/bash
+function suma() {
+  resultado=$(($1+$2))
+}
+
+suma 3 2
+echo &quot;la suma entre 3 y 2 es&quot; $resultado
+</code></pre>
+
+<p>Vemos que la variable resultado definida en la función es una variable global, es decir, podemos acceder a ella desde cualquier parte del script. Podemos también definir variables locales, esto es, que solo existen dentro de la función:</p>
+
+<pre><code>#! /bin/bash
+var=0
+function func1 {
+  local var
+  var=1
+  echo &quot;la variable var en func1 es: $var&quot;
+}
+function func2 {
+  local var
+  echo &quot;la variable en func 2: $var&quot;
+}
+
+echo &quot;var es: $var&quot;
+func1
+func2
+echo &quot;var sigue siendo $var&quot;
+</code></pre>
+
+<p>Observamos que la variable var a pesar de ser redefinida con el mismo nombre en cada función, esta redefinición solo tiene efecto dentro de la susodicha.
+Podemos también pedirle al usuario que ingrese datos por stdin:</p>
+
+<pre><code>#!/usr/bin/env bash
+echo &quot;Ingrese su nombre&quot;
+read input
+echo &quot;Bienvenido $input&quot;
+</code></pre>
+
+<p><strong>HOMEWORK</strong>
+* Discuta la siguiente línea</p>
+
+<pre><code>$ a=asd;b=1;a+=$b
+</code></pre>
+
+<p>*Imprima la variable $0 en un script de BaSH
+*Cree un script que imprima $1 y $2 y ejecute</p>
+
+<pre><code>$ ./script.bash hola mundo
+</code></pre>
+
+<ul>
+<li>Cree una función que duerma la cantidad de segundos dada como argumento.</li>
+<li>Modifique el script anterior para que el tiempo sea ingresado como argumento por línea de comandos.</li>
+<li>Cree un script que pida el usuario y revise si se encuentra en el sistema, dado el caso que reporte la ruta al home, cuantos carpetas tiene y cuantos archivos.</li>
+<li>El comando ps aux entrega varias columnas: usuario pid %cpu %mem vsz rss tty stat start time command. Cree un script que dado un usuario imprima: las tareas que está corriendo(solo el nombre, no al ruta completa); el PID; el uso de procesador y memoria; y el tiempo que lleva corriendo, solo si cumple las condiciones:
+
+<ul>
+<li>Memoria usada != 0.0</li>
+<li>%CPU usada != 0.0</li>
+</ul></li>
+</ul>
+
+<p><strong>ANSWERS</strong><br />
+* La secuencia de comandos a=asd;b=1;a+=$b toma los valores de las variables como cadens de caracteres y los concatena.<br />
+* Imprime el nombre del script.<br />
+* Imprime &ldquo;Hola Mundo&rdquo; pues $1 y $2 son el primer y segundo argumento del script respectivamente.<br />
+* Una reescritura del comando sleep con algunos mensajes wait.bash</p>
+
+<pre><code>#!/bin/bash
+function wait() {
+    echo &quot;Esperando...&quot;
+    sleep $1
+}
+
+echo &quot;La Terminal entra en modo de espera&quot;
+wait 3
+echo &quot;Bienvenido Nuevamente&quot;
+</code></pre>
+
+<ul>
+<li>Como $1 es el primer argumento del script así como de la función, reescribimos:<br /></li>
+</ul>
+
+<pre><code>#!/bin/bash
+function wait() {
+    echo &quot;Esperando...&quot;
+    sleep $1
+}
+
+echo &quot;La Terminal entra en modo de espera&quot;
+wait $1
+echo &quot;Bienvenido Nuevamente&quot;
+</code></pre>
+
+<ul>
+<li>El script debe ser algo similar a este:<br /></li>
+</ul>
+
+<pre><code>#!/bin/bash
+
+folders=$(ls -lr /home/$1 | grep -c '^d')
+files=$(ls -lr /home/$1 | grep -v -c '^d')
+
+echo &quot;El usuario $1 tiene $folders carpetas y $files archivos.&quot;
+</code></pre>
+
+<h3 id="a-name-stream-a-loops-and-conditionals"><a name="stream"></a>Loops and Conditionals</h3>
+
+<p>Así como en awk y en todos los lenguajes, deben existir herramientas de control de flujo: condicionales y bucles.
+Los bucles nos permiten realizar un conjunto de tareas varias veces, veamos un ejemplo básico:</p>
+
+<pre><code>#!/bin/bash
+contador=0
+for i in $(ls)
+do
+contador=$((contador+1))
+echo $i
+done
+echo &quot;En total hay $contador archivos&quot;
+</code></pre>
+
+<p>Este script cuenta los archivos en $PWD luego de listarlos.
+La variable i toma uno por uno los valores del comando ls en este caso, que son impresos con echo. Notemos que el contador es una operación aritmética que tiene una sintaxis particular, las variables pueden ir sin el caracter de moneda.
+La instrucción que se repetirá a través del <strong>for</strong> debe ir entre las palabras claves, do y done, al igual que en el caso del bucle <strong>while</strong>.</p>
+
+<pre><code>#!/bin/bash
+x=1
+while [ $x -le 5 ]
+do
+  echo &quot;$x todavia es menor que 5&quot;
+  x=$(( $x + 1 ))
+done
+</code></pre>
+
+<p>While realiza las operaciones internas mientras la condición sea válida.
+El comando <strong>until</strong> es similar pero se detiene cuando la condición lógica se cumple:</p>
+
+<pre><code>#!/bin/bash
+x=1
+until [ $x -ge 5 ]
+do
+  echo &quot;$x todavia es menor que 5&quot;
+  x=$(( $x + 1 ))
+done
+</code></pre>
+
+<p><strong>HOMEWORK</strong><br />
+* Cree un script que duerma un segundo e imprima un punto por cada archivo en $PWD y finalmente imprima el espacio en disco que ocupa la suma de los archivos.
+* Modifique el script anterior para que la ruta sea entrada como argumento por línea de comandos.</p>
+
+<p>Otro mencanismo de control de flujo es condicional <strong>if</strong>, su sintaxis es:</p>
+
+<pre><code>if comando
+then
+    comando
+else
+    otro comando
+fi
+</code></pre>
+
+<p>Como <strong>if</strong> evalua una condición, no es de mucho sentido que su argumento sea un comando. Los comandos siempre devuelven un estado (exit status) verdadero si el comando se realizó con éxito y falso de otro modo, vemos un ejemplo:</p>
+
+<pre><code>$ ls asd; echo $?
+$ ls ~; echo $?
+$ false; echo $?
+$ true; echo $?
+$ [ 4 = 1 ] ; echo $?
+$ [ 1 = 1 ] ; echo $?
+</code></pre>
+
+<p>Vemos que un comando realizado exitosamente nos retorna un 0 (que podemos ver en la variable $?) y un valor de retorno diferente a 0 significa que el comando tuvo un error.
+Vemos allí también la forma de evaluar expresiones lógicas y el significado de los comandos <strong>true</strong> y <strong>false</strong>.
+Consideremos el script:</p>
+
+<pre><code>#!/bin/bash
+
+FILE = $1
+if [ -e &quot;$FILE&quot; ]; then
+  if [ -f &quot;$FILE&quot; ]; then
+    echo &quot;$FILE es un archivo regular&quot;
+  fi
+  if [ -d &quot;$FILE&quot; ]; then
+    echo &quot;$FILE es un directorio.&quot;
+  fi
+  if [ -r &quot;$FILE&quot; ]; then
+    echo &quot;$FILE es legible.&quot;
+  fi
+  if [ -w &quot;$FILE&quot; ]; then
+    echo &quot;$FILE es escribible.&quot;
+  fi
+  if [ -x &quot;$FILE&quot; ]; then
+    echo &quot;$FILE es ejecutable o navegable.&quot;
+  fi
+else
+  echo &quot;$FILE does not exist&quot;
+  exit 1
+fi
+exit
+</code></pre>
+
+<p>Podemos evaluar el status de archivos, las expresiones se encuentran en la siguiente tabla:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Expresión</strong></th>
+<th align="left"><strong>Verdadera si</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">file1 -nt file2</td>
+<td align="left">file1 es más nuevo que file2</td>
+</tr>
+
+<tr>
+<td align="left">file1 -ot file2</td>
+<td align="left">file1 es más nuevo que file2</td>
+</tr>
+
+<tr>
+<td align="left">-b file</td>
+<td align="left">file existe y es un dispositivo</td>
+</tr>
+
+<tr>
+<td align="left">-d file</td>
+<td align="left">file existe y es un directorio</td>
+</tr>
+
+<tr>
+<td align="left">-e file</td>
+<td align="left">file existe</td>
+</tr>
+
+<tr>
+<td align="left">-f file</td>
+<td align="left">file existe y es un archivo regular</td>
+</tr>
+
+<tr>
+<td align="left">-L file</td>
+<td align="left">file existe y es un link simbólico</td>
+</tr>
+
+<tr>
+<td align="left">-O file</td>
+<td align="left">file existe y el usuario es su dueño</td>
+</tr>
+
+<tr>
+<td align="left">-r file</td>
+<td align="left">file existe y es legible</td>
+</tr>
+
+<tr>
+<td align="left">-r file</td>
+<td align="left">file existe y tiene un tamaño maor a cero</td>
+</tr>
+
+<tr>
+<td align="left">-w file</td>
+<td align="left">file existe y es escribible</td>
+</tr>
+
+<tr>
+<td align="left">-x file</td>
+<td align="left">file existe y es ejecutable</td>
+</tr>
+</tbody>
+</table>
+
+<p>También podemos hacer comparaciones de cadenas de caracteres y enteros:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Expresión</strong></th>
+<th align="left"><strong>Verdadera si</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">string</td>
+<td align="left">No es null</td>
+</tr>
+
+<tr>
+<td align="left">-n string</td>
+<td align="left">La longitud es diferente de cero</td>
+</tr>
+
+<tr>
+<td align="left">-z string</td>
+<td align="left">La longitud es igual a cero</td>
+</tr>
+
+<tr>
+<td align="left">string1 == string 2</td>
+<td align="left">Son iguales</td>
+</tr>
+
+<tr>
+<td align="left">string1 != string2</td>
+<td align="left">Son diferentes</td>
+</tr>
+
+<tr>
+<td align="left">string1 &gt; string2</td>
+<td align="left">string1 organiza primero que string2</td>
+</tr>
+
+<tr>
+<td align="left">string2 &lt; string2</td>
+<td align="left">string2 organiza primero que string1</td>
+</tr>
+
+<tr>
+<td align="left">int1 -eq int2</td>
+<td align="left">Iguales</td>
+</tr>
+
+<tr>
+<td align="left">int1 -ne int2</td>
+<td align="left">Diferentes</td>
+</tr>
+
+<tr>
+<td align="left">int1 -le int2</td>
+<td align="left">int1 menor o igual a int2</td>
+</tr>
+
+<tr>
+<td align="left">int1 -lt int2</td>
+<td align="left">int1 menor que int2</td>
+</tr>
+
+<tr>
+<td align="left">int1 -ge int2</td>
+<td align="left">int1 mayor o igual a int2</td>
+</tr>
+
+<tr>
+<td align="left">int1 -gt int2</td>
+<td align="left">int1 mayor que int2</td>
+</tr>
+</tbody>
+</table>
+
+<p>una versión actual de bash permite el uso de dobles corchetes en vez de simples para hacer una operación lógica, estos adicionalmente permiten la comparación de una cádena de caracteres con una expresión regular a través del operador =~.<br />
+El siguiente código revisa si el dato entrado es un número entre otras cosas:</p>
+
+<pre><code>#!/bin/bash
+if[[ &quot;$1&quot; =~ ^-?[0-9]+$ ]]
+then
+  echo Ha ingresado un número&quot;
+else
+  echo &quot;Por favor ingrese un número&quot; &gt;&amp;2
+  exit 1
+fi
+</code></pre>
+
+<p>También podemos usar dobles paréntesis para evaluar operaciones lógicas con números de una manera más sencilla que con las expresiones necesarias en los corchetes.</p>
+
+<pre><code>$ num=12;if((num&gt;=10));then echo &quot;mayor que 10&quot;;fi
+</code></pre>
+
+<p>Si queremos crear expresiones lógica más complejas podemos usar las compuertas AND, OR y NOT que tienen una representación diferente si usamos los corchetes simples o dobles.</p>
+
+<table>
+<thead>
+<tr>
+<th><strong>Compuerta</strong></th>
+<th align="center"><strong>[]</strong></th>
+<th align="left"><strong>[[]] o (())</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>AND</td>
+<td align="center">-a</td>
+<td align="left">&amp;&amp;</td>
+</tr>
+
+<tr>
+<td>OR</td>
+<td align="center">-o</td>
+<td align="left">`</td>
+</tr>
+
+<tr>
+<td>NOT</td>
+<td align="center">!</td>
+<td align="left">!</td>
+</tr>
+</tbody>
+</table>
+
+<p>El siguiente script mira si el número está entre 1 y 10:</p>
+
+<pre><code>#!/bin/bash
+if [[ $1 -ge 1 &amp;&amp; $1 -le 10 ]]
+then
+  echo &quot;el número se encuentra entre 1 y 10&quot;
+else
+  echo &quot;Ingrese un número válido&quot; &gt;&amp;2
+  exit 1
+fi
+</code></pre>
+
+<p><strong>HOMEWORK</strong></p>
+
+<ul>
+<li>Cree un script que cuente 10 segundo mientras ud se cuenta las pulsaciones, que luego pida ingresar ese número y calcule los ppm(pulsaciones por minuto).</li>
+<li>Edite la solución al ejercicio de los usuarios de la sesión anterior para que realice manejo de error.</li>
+<li>Con la variable de entorno RANDOM cree un script que genere un archivo de datos con 3 columnas de estos números que no sobre pase un tamaño (espacio en disco) dado por el usuario.</li>
+<li>Con un script reporte las carpetas del home(o de otra carpeta) que sobrepasen en espacio un umbral dado por línea de comandos sugiriendo borrarlas, si el usuario así lo desea, bórrelas.</li>
+<li>Genere un mensaje de uso (-h) para los scripts anteriores.</li>
+</ul>
+
+<p><strong>ANSWERS</strong></p>
+
+<ul>
+<li>Lo puede realizar sencillamente en una sola línea de comandos:</li>
+</ul>
+
+<pre><code>$ sleep 10;echo &quot;ingrese conteo&quot;;read conteo;echo $((conteo*6))
+</code></pre>
+
+<p>O bien en un script para que de mejor información:</p>
+
+<pre><code>echo presione &quot;Enter para iniciar conteo&quot;
+read intro
+for i in $(seq 1 1 10)
+do
+sleep 1
+echo $i
+done
+echo &quot;Ingrese conteo&quot;
+read conteo
+echo &quot;Sus pulsaciones por minuto son: $((conteo*6))&quot;
+</code></pre>
+
+<ul>
+<li>El ejercicio pide dar un reporte de la cantidad de los archivos y las carpetas en el home del usuario, para asegurar que el usuario sea válido basta con agregar una condición:</li>
+</ul>
+
+<pre><code>#!/bin/bash
+if [ -d /home/$1 ]
+then
+  folders=$(ls -lr /home/$1 | grep -c '^d')
+  files=$(ls -lr /home/$1 | grep -v -c '^d')
+  echo &quot;El usuario $1 tiene $folders carpetas y $files archivos.&quot;
+else
+  echo &quot;El usuario no existe.&quot;
+fi
+</code></pre>
+
+<ul>
+<li>Primero miramos si el archivo existe y lo borramos para no hacerlo más grande, luego hacemos un blucle que termina cuando el tamaño del archivo &ldquo;size&rdquo; es mayor que el tamaño entrado por el usuario a través de línea de comandos.</li>
+</ul>
+
+<pre><code>#!/bin/bash
+
+max_size=$1
+size=0
+
+if [ -e 3Drandom.dat ]
+then
+  rm -rf 3Drandom.dat
+fi
+
+while (( $size &lt;= $max_size ))
+do
+  echo $RANDOM $RANDOM $RANDOM &gt;&gt; 3Drandom.dat
+  size=$(ls -l 3Drandom.dat | awk '{print $5}')
+  echo $size $max_size
+done
+</code></pre>
+
+<h3 id="a-name-files-a-file-io"><a name="files"></a>FIle IO</h3>
+
+<p>Sabemos que a través de una redirección podemos escribir en archivos, pero frecuentemente necesitamos también leer datos de estos. Podríamos usar scripts en awk pero no siempre es tan ventajoso. Veamos unos ejemplos de como hacerlo en bash leyendo el archivo <a href="thttp://c3.itm.edu.co/bash/lineas.txt" target="_blank">lineas.tx</a>:<br />
+Lectura con cat</p>
+
+<pre><code>#!/bin/bash
+FILE=lineas.txt
+conteo=1
+cat $FILE | while read line; do
+  echo &quot;Línea # $conteo: $line&quot;
+  ((conteo++))
+done
+echo &quot;El número total de líneas en $FILE es $conteo&quot;
+</code></pre>
+
+<p>¿Qué problemas presenta esta forma de leer?</p>
+
+<p>El siguiente código es el más intuitivo pero también la peor forma de leer un archivo:</p>
+
+<pre><code>FILE=lineas.txt
+for line in $(cat $FILE);do
+  echo $fileline 
+done
+</code></pre>
+
+<p>La forma correcta de leer un archivo es:</p>
+
+<pre><code>conteo=1
+FILE=lineas.txt
+while read line;do
+  echo &quot;Linea # $conteo: $line&quot;
+  ((conteo++))
+done &lt; $FILE
+echo &quot;El número total de líneas en $FILE es $conteo&quot;
+</code></pre>
+
+<p><strong>HOMEWORK</strong></p>
+
+<ul>
+<li>Descargue los archivos <a href="http://c3.itm.edu.co/bash/participantes.lst" target="_blank">participantes.lst</a> y <a href="http://c3.itm.edu.co/bash/certificado_Gerardo_Gutierrez.svg" target="_blank">certificado.svg</a>. Identifique el archivo svg y genere un certificado en este formato para cada participante en un archivo diferente.</li>
+</ul>
+
+<h3 id="a-name-bc-a-bc"><a name="bc"></a>bc</h3>
+
+<p>Ya que bash solo procesa enteros, para realizar tareas numéricas encesitamos de una herramienta diferente que nos permita la utilización de reales.
+bc es un lenguaje de programación que soporta precisión arbitraria y nos permite realizar scripts o usarlo de manera interactiva. Soporta las operaciones básicas:</p>
+
+<pre><code>$ echo &quot;12*3&quot; | bc
+$ echo &quot;1.013/115&quot; | bc
+$ echo &quot;6^6^6&quot; | bc
+$ echo &quot;(6^6)^6&quot; | bc
+</code></pre>
+
+<p>Para usar funciones como las trigonométricas o Bessel tenemos que invocar la librería matemática, veams un ejemplo:</p>
+
+<pre><code>$ echo &quot;e(1)&quot; | bc -l
+$ echo &quot;j(0,10)&quot; | bc -l
+$ echo &quot;4*a(1)&quot; | bc -l
+</code></pre>
+
+<p>Podemos definir la precisión necesaria de la siguiente manera</p>
+
+<pre><code>$ echo &quot;scale=30;sqrt(2)&quot;| bc
+</code></pre>
+
+<p><strong>HOMEWORK</strong></p>
+
+<ul>
+<li>Obtenga el tiempo que toma calcular pi con 500 cifras decimales.<br /></li>
+<li>Genere los números de exp(x) entre 0 y 2 y agregueles ruido con distribución normal. i.e. sume un número aleatorio con cualquier desviación estandard.</li>
+</ul>
+
+<h3 id="a-name-arrays-a-arrays"><a name="arrays"></a>Arrays</h3>
+
+<p>Los arreglos (arrays) son variables que guardan más de un valor a la vez. En BaSH se limitan a una sola dimensión y son declaradas durante su uso, miremos los ejemplos:</p>
+
+<pre><code>$ array[1]=hola;echo ${array[1]};
+$ dias=(lun mar mie jue vie sab dom); echo $(dias[3])
+$ echo ${dias[*]}
+
+</code></pre>
+
+<p>Vemos que también se pueden crear varios valores a la vez durante la asignación y como acceder a dichos valores. Veamos entonces un ejemplo de como acceder de a un elemento del arreglo a la vez:</p>
+
+<pre><code>$ animales=(&quot;un perro&quot; &quot;un gato&quot; &quot;una tortuga&quot;)
+$ for i in ${animales[*]}; do echo $i;done
+$ for i in ${animales[@]}; do echo $i;done
+$ for i in &quot;${animales[*]}&quot;; do echo $i;done
+$ for i in &quot;${animales[@]}&quot;; do echo $i;done
+</code></pre>
+
+<p>Vemos que podemos acceder a cada elemento del arreglo con <code>*</code> o con @ y su comportamiento es igual hasta que se encomillan. Con <code>*</code> obtenemos una sola palabra con los contenidos del arreglo, en cambio con @ obtenemos (en neutro caso) 3 palabras, cada una con el contenido de cada elemento del arreglo.</p>
+
+<p>Discutamos las siguientes operaciones:</p>
+
+<pre><code>$ echo ${#animales[@]}
+$ echo ${#animales[0]}
+$ animales+=(&quot;un caballo&quot; &quot;un cuy&quot;)
+$ for i in &quot;${animales[@]}&quot;; do echo $i; done | sort
+$ unset animales
+</code></pre>
+
+<h3 id="a-name-torque-a-bash-qsub"><a name="torque"></a>BaSH &amp; qsub</h3>
+
+<p><strong>TORQUE Resource manager</strong> es un software que permite «agendar» tareas computacionales,i.e.
+«tareas batch». Provee control sobre estas tareas y los recursos computacinoales de sistemas distribuidos. Posee los siguientes componentes:<br />
+<strong>Servidor:</strong> En este caso se llama &ldquo;pbs_server&rdquo;. Permite operaciones básicas como crear, modificar, borrar y ejecutar un trabajo.<br />
+<strong>Ejecutor:</strong> Es un demonio, llamado en nuestro caso &ldquo;pbs_mom&rdquo;, que pone el comando en ejecución cuando recibe una copia del trabajo de el server.<br />
+<strong>Agendador:</strong> Otro demonio que tiene las políticas para decidir que trabajo se ejecuta, donde y cuando. Usamos el agendador MAUI el cual se puede comunicar con varios MOMs para comunicar al servidor el estado de los recursos y para conocer del servidor el estado de los trabajos a ejecutar.</p>
+
+<p>El flujo de trabajo de torque es como se ilustra en el diagrama:
+<img src="../../images/torque-wf.png" alt="torque" /></p>
+
+<p><strong>Hola Torque</strong></p>
+
+<p>Usted puede solicitar a TORQUE el estado de un nodo con el comando &ldquo;pbsnodes&rdquo; o de todos los nodos con &ldquo;pbsnodes -a&rdquo;, con los cuales debe obtener una salida como esta para cada nodo en el sistema:</p>
+
+<pre><code>wn1
+     state = free
+     np = 32
+     ntype = cluster
+     status = rectime=1376977699,varattr=,jobs=,state=free,netload=28936987148,gres=,
+              loadave=1.04,ncpus=32,physmem=57801956kb,availmem=100795756kb,
+              totmem=106629856kb,idletime=1149356,nusers=1,nsessions=2,sessions=2996358788,
+              uname=Linux gfif-wn1 3.2.0-4-amd64 #1 SMP Debian 3.2.41-2 x86_64,opsys=linux
+</code></pre>
+
+<p>«free» significa que el nodo está en capacidad de correr tareas, «np» es el número de procesadores.</p>
+
+<p><strong>Enviar un trabajo</strong></p>
+
+<p>Para enviar un trabajo o tarea al sistema TORQUE es necesario crear un script de shell (puede ser bash, sh, ksh, etc) con directivas especiales a modo de comentario&hellip;</p>
+
+<pre><code>#! /bin/bash
+#PBS -N prueba
+#PBS -o prueba.out
+#PBS -e prueba.err
+#PBS -l walltime=00:01:00
+
+date
+hostname
+</code></pre>
+
+<p>Archivo que hemos llamado prueba.bash para correrlo así</p>
+
+<pre><code>$ qsub prueba.bash
+</code></pre>
+
+<p>¿Cómo espera usted que sea la salida de este trabajo?
+Si está corriendo en múltiples máquinas ¿Dónde se espera encontrar el stdout?</p>
+
+<p><strong>HOMEWORK</strong></p>
+
+<ul>
+<li>Cree un script en bash con instrucciones de torque que duerma 20 segundos y reporte el nombre del nodo en el que corrió y la cantidad de procesadores que éste tiene.</li>
+</ul>
+
+<p><strong>Monitorear el trabajo</strong></p>
+
+<p>El comando &ldquo;qstat -a&rdquo; nos muestra el estado de los trabajos de todas las colas, obtenemos uua salida como esta</p>
+
+<pre><code>Job ID               Username Queue    Jobname          SessID NDS   TSK Memory Time  S Time
+-------------------- -------- -------- ---------------- ------ ----- --- ------ ----- - -----
+1171.gfif.udea.e     gerardo  batch    prueba            21476     2   2    --  00:01 R   --
+</code></pre>
+
+<p>Algunos comandos de pbs para monitoreo y control son</p>
+
+<p><strong>qstat -a</strong>: Verifica el estado de los trabajos, las colas y el servidor PBS.<br />
+<strong>qstat -f</strong>: Obtiene toda la información del trabajo lanzado, como: Recursos pedidos, cola, fuente, destino, propietario, recursos límite, etc.<br />
+<strong>qdel job.ID</strong>: Borra un trabajo.<br />
+<strong>qhold job.ID</strong>: Pone un trabajo en estado de espera si se encuentra en cola.<br />
+<strong>qrls job.ID</strong>: Saca a un trabajo del estado de espera.</p>
+
+<p>Algunos comandos útiles de maui</p>
+
+<p><strong>showq</strong>: Muestra una lista detallada de los trabajos lanzados.<br />
+<strong>showbf</strong>: uestra los recursos libres.<br />
+<strong>checkjob job.ID</strong>: muestra una descripción detallada del trabajo.<br />
+<strong>showstart job.ID</strong>: Muestra el tiempo estimado de comienzo del trabajo.</p>
+
+<p><strong>El script de PBS</strong><br />
+Algunas opciones de PBS para el script son</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Opción</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">#PBS -N myJob</td>
+<td align="left">Asigna el nombre a un trabajo</td>
+</tr>
+
+<tr>
+<td align="left">#PBS -l nodes=4:ppn=2</td>
+<td align="left">El número de nodos y procesos por nodo</td>
+</tr>
+
+<tr>
+<td align="left">#PBS -q queuename</td>
+<td align="left">Asigna la cola en al que su trabajo va a estar.</td>
+</tr>
+
+<tr>
+<td align="left">#PBS -l walltime=01:00:00</td>
+<td align="left">El tiempo de reloj «de pared» durante el cual su trabajo puede correr.</td>
+</tr>
+
+<tr>
+<td align="left">#PBS -o mypath/my.out</td>
+<td align="left">La dirección y el nombre del archivo para guardar el stdout.</td>
+</tr>
+
+<tr>
+<td align="left">#PBS -e mypath/my.err</td>
+<td align="left">La dirección y el nombre del archivo para guardar el stderr.</td>
+</tr>
+
+<tr>
+<td align="left">#PBS -j oe</td>
+<td align="left">Une el stdout con el stderr.</td>
+</tr>
+
+<tr>
+<td align="left">#PBS -M user@mail</td>
+<td align="left">email del usuario al cual enviar reportes.</td>
+</tr>
+
+<tr>
+<td align="left">#PBS -m b</td>
+<td align="left">Envia un email cuando el trabajo comienza.</td>
+</tr>
+
+<tr>
+<td align="left">#PBS -m e</td>
+<td align="left">Envia un email cuando el trabajo termina.</td>
+</tr>
+
+<tr>
+<td align="left">#PBS -m a</td>
+<td align="left">Envia un email cuando el trabajo aborta por un error.</td>
+</tr>
+
+<tr>
+<td align="left">#PBS -V</td>
+<td align="left">Exporta todas las variables de entorno al trabajo.</td>
+</tr>
+</tbody>
+</table>
+
+<p>La opción -l pasa una lista de argumentos a qsub que indican la cantidad de recusros reservados para el conjunto de tareas, por ejemplo:</p>
+
+<pre><code>#PBS -l mem=1gb,nodes=1:ppn=1,walltime=1:00:00
+#PBS -l mem=1gb,nodes=sas+1:ppn=1,walltime=1:00:00
+#PBS -l mem=32g,nodes=quadcore+4:ppn=8,walltime=1:00:00
+#PBS -l pmem=1gb,nodes=quadcore+2:ppn=4,walltime=1:00:00
+</code></pre>
+
+<p>Algunas variables de entorno de PBS son<br />
+PBS_O_HOME  La ruta al home de el que se corrió qsub<br />
+PBS_O_WORKDIR  El directorio en el que se corrió qsub<br />
+PBS_O_LOGNAME  El nombre de usuario que corrió qsub<br />
+PBS_O_HOST  El nombre de la máquina en la que se corrió qsub<br />
+PBS_O_QUEUE  La cola a la que el trabajo fue enviado<br />
+PBS_JOBID  El identificador que asigna PBS al trabajo<br />
+PBS_JOBNAME  El nombre del trabajo|<br />
+PBS_NODEFILE  El archivo que contiene la lista de nodos para tareas en paralelo|</p>
+
+<p><strong>Multiples trabajos</strong><br />
+Si quisieramos realizar muchas tareas con un mismo script o con un mismo código podríamos hacer un script en bash que llame varias veces a qsub cambiando los parámetros necesarios. Para evitar esto, torque permite lanzar mucho procesos invocando una sola vez el comando qsub, esto se llama, arreglos de tareas.<br />
+Para enviar arreglos de tareas usamos la opción #PBS -t en su script de bash conuna lista de números como argumento</p>
+
+<pre><code>#PBS -t 0-5
+#PBS -t 10-20,30,40
+</code></pre>
+
+<p><strong>HOMEWORK</strong></p>
+
+<ul>
+<li>Modifique el script anterior para que corra 10 veces y reporte las variables de entorno de pbs. Imprima también la variable PBS_ARRAYID.<br /></li>
+<li>Modifique el script anterior para que cada trabajo corra en un nodo diferente.<br /></li>
+<li>Descargue el archivo <a href="http://c3.itm.edu.co/bash/password.bash" target="_blank">password.bash</a>. Este programa recibe una contraseña por línea de comandos. Encuentre, usando el diccionario de linux y torque, el password de dicho programa.<br /></li>
+<li>Descargue el archivo ejecutable <a href="http://c3.itm.edu.co/bash/integral" target="_blank">integral</a> que calcula la integral de cos²(x)/x² entre 2 y un número entrado por línea de comandos.
+Tal integral debe converger a más o menos 0.273993, realice la siguiente prueba<br /></li>
+</ul>
+
+<pre><code>$ time ./integral 100 1 0
+</code></pre>
+
+<p>Veamos que el código recibe 3 argumentos, el primero es el límite superior de la integral, el segundo es el número de procesos en los que se va a dividir y el tercero es el procesador actual.
+Con esto realice una trabajo de torque que haga la integral hasta 10⁵ en varios procesadores del clúster.</p>
+
+<ul>
+<li>Descarge el archivo comprimido <a href="zhttp://c3.itm.edu.co/bash/ejercicio-torque.tbz" target="_blank">ejercicio-torque.tbz</a>, decomprímalo y realice un script con torque que por cada archivo reemplace el hash con su equivalente en letras, quite los espacios y las líneas que quedan con números, luego con los archivos resultantes genere uno solo en el host.</li>
+</ul>
+
+					</div>
+				</article>
+
+			</div>
+		</div> 
+
+        <div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+
+				<div id="share">
+                    
+				</div>
+			</div>
+		</div> 
+		<div class="clearfix"></div>
+
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+
+				<div id="comments">
+                    
+				</div>
+			</div>
+		</div> 
+		<div class="clearfix"></div>
+
+	</div>	
+
+</main>
+
+<footer id="footer">
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Contact</h3>
+				<div class="widget-body">
+					<p><br>
+						<a href="mailto:ggutierg@gmail.com">ggutierg@gmail.com</a><br>
+						<br>
+						
+					</p>
+				</div>
+			</div>
+			
+
+			
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Follow me</h3>
+				<div class="widget-body">
+					<p class="follow-me-icons">
+                        
+                            
+                        
+                            
+                                <a href="https://twitter.com/muzzgo" target="_blank"><i class="fa fa-twitter-square fa-2"></i></a>
+                            
+                        
+                            
+                                <a href="https://www.instagram.com/muzzgash" target="_blank"><i class="fa fa-instagram fa-2"></i></a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="https://www.linkedin.com/in/gerardo-guti%c3%a9rrez-b8695386" target="_blank"><i class="fa fa-linkedin-square fa-2"></i></a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="https://github.com/muzgash" target="_blank"><i class="fa fa-github fa-2"></i></a>
+                            
+                        
+                            
+                        
+					</p>
+				</div>
+			</div>
+			
+
+			
+
+			
+
+		</div> 
+	</div>
+</footer>
+
+<footer id="underfooter">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-6 widget">
+				<div class="widget-body">
+					<p></p>
+				</div>
+			</div>
+
+			<div class="col-md-6 widget">
+				<div class="widget-body">
+					<p class="text-right">
+						Copyright &copy; , Gerardo Gutiérrez<br>
+						Design: <a href="http://www.gettemplate.com" rel="designer">Initio by GetTemplate</a> - 
+                        Powered by: <a href="https://gohugo.io/" rel="poweredby">Hugo</a>
+                    </p>
+				</div>
+			</div>
+
+		</div> 
+	</div>
+</footer>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="http://gerardogutierrez.co/en/js/template.js"></script>
+<script id="dsq-count-scr" src="///count.js" async></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-114325062-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+
+	<title>Development tools in GNU/Linux</title>
+
+	<link rel="shortcut icon" href="http://gerardogutierrez.co/images/favicon.png">
+
+	
+	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	
+	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+	
+	<link rel="stylesheet" href="http://gerardogutierrez.co/css/styles.css">
+
+	
+
+    
+        <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=123456789012345678901234&product=inline-share-buttons"></script>
+    
+
+</head>
+<body class="home">
+
+<header id="header">
+	<div id="head" class="parallax" parallax-speed="2">
+		<h1 id="logo" class="text-center">
+			<img class="img-circle" src="http://gerardogutierrez.co/images/guy.jpg" alt="">
+			<span class="title">Gerardo Gutiérrez</span>
+			<span class="tagline"><br>
+				<a href="">ggutierg@gmail.com</a>
+            </span>
+		</h1>
+	</div>
+
+    <nav class="navbar navbar-default navbar-sticky">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">
+                
+                
+                <li class="active"><a href="/">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">IA y Ciencia de Datos<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+						
+						<li>
+							<a href="/data/finance">Finanzas</a>
+						</li>
+						
+						<li>
+							<a href="/data/geophysics">Geofísica</a>
+						</li>
+						
+						<li>
+							<a href="/data/politics">Política</a>
+						</li>
+						
+						<li>
+							<a href="/data/cn">Redes Complejas</a>
+						</li>
+						
+						<li>
+							<a href="/data/sn">Redes Sociales</a>
+						</li>
+						
+                        
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">IoT <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+						
+						<li>
+							<a href="/iot/marbles">Biorreactor</a>
+						</li>
+						
+						<li>
+							<a href="/iot/security">Sistema de Seguridad</a>
+						</li>
+						
+                        
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+						
+						<li>
+							<a href="/doc/courses">Cursos</a>
+						</li>
+						
+						<li>
+							<a href="/doc/tutorials">Tutoriales</a>
+						</li>
+						
+                        
+                    </ul>
+                </li>
+                <li class="active"><a href="/coffee">Café</a></li>
+                <li class="active"><a href="/about">About</a></li>
+                
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+</header>
+
+
+<main id="main">
+
+	<div class="container">
+
+		<div class="row topspace">
+			<div class="col-sm-8 col-sm-offset-2">
+
+ 				<article class="post">
+					<header class="entry-header">
+ 						<div class="entry-meta">
+ 							<span class="posted-on"><time class="entry-date published" date="2013-06-17 12:00:00 &#43;0000 &#43;0000">February, 17068</time></span>
+ 						</div>
+ 						<h1 class="entry-title"><a href="http://gerardogutierrez.co/courses/dev/" rel="bookmark">Development tools in GNU/Linux</a></h1>
+					</header>
+					<div class="entry-content">
+						
+
+<h1 id="herramientas-de-desarrollo-gnu-linux">Herramientas de desarrollo GNU/Linux</h1>
+
+<h2 id="contenido">Contenido</h2>
+
+<h3 id="construcción">Construcción</h3>
+
+<ul>
+<li><a href="#librerias">Construcción de librerías en C</a></li>
+<li><a href="#make">Makefile</a></li>
+<li><a href="#scons">Scons</a></li>
+<li><a href="#cmake">CMake</a></li>
+</ul>
+
+<h3 id="control-de-versiones">Control de versiones</h3>
+
+<ul>
+<li><a href="#Subverion">Subversion</a></li>
+<li><a href="#Mercurial">Mercurial</a></li>
+<li><a href="#git">git</a></li>
+</ul>
+
+<h2 id="a-id-librerias-construcción-de-librerías-en-c-a"><a id="librerias">Construcción de librerías en C</a></h2>
+
+<p>Realizaremos un ejercicio manual para la intriducción de un código que usaremos a través de todo el curso y para visualizar las ventajas de las herramientas automáticas de construcción.</p>
+
+<p>Creemos los siguientes archivos de código en C:</p>
+
+<p>libreriaPi.h</p>
+
+<pre><code>void funcion (double *t, double *k, double *l);
+</code></pre>
+
+<p>libreriaPi.c</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+#include &lt;stdlib.h&gt;
+
+void funcion (double *t, double *k, double *l)
+{
+              (*t) += (*l)/(*k); 
+              (*k) += 2.0; 
+              (*l) *= -1.0; 
+
+}
+</code></pre>
+
+<p>programaPi.c</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+#include &lt;stdlib.h&gt;
+
+#include &quot;libreriaPi.h&quot;
+
+  
+int main(int argc, char *argv[])
+{
+   double t, k = 3.0, l = -1.0;
+   int i, s;
+
+   if(argc &lt; 2){
+     fprintf(stderr, &quot;%s &lt;no. de iteracines&gt;\n&quot;, argv[0]);
+     exit(1);
+   }
+       
+   t = 1.0; 
+   for(i = 0, s = atoi(argv[1]); i &lt; s; i++)
+   {
+      funcion(&amp;t, &amp;k, &amp;l);
+   }
+   t *= 4; 
+
+   printf(&quot;Valor de Pi calculado: %1.16f,  Valor de Pi en math.h: %.16f\n&quot;, t, M_PI); 
+   printf(&quot;Diferencia: %.16f\n&quot;, fabs(M_PI - t)); 
+
+   return 0; 
+}
+</code></pre>
+
+<h3 id="creando-una-librería-estática">Creando una librería estática</h3>
+
+<p>Una librería estática se crea con el archiver (ar) a partir de un archivo tipo objeto que creamos desde nuestro código en C. Los pasos a seguir son los siguientes :</p>
+
+<p>Creamos un objeto a partir de nuestro código en C:</p>
+
+<pre><code>gcc -c libreriaPi.c -o libreriaPi.o
+</code></pre>
+
+<p>Una vez tenemos nuestro fichero objeto llamamos al archiver(ar) para que nos genere la librería:</p>
+
+<pre><code>ar rcs libpi.a libreriaPi.o
+</code></pre>
+
+<p><strong>NOTA:</strong>La librería tiene que empezar obligatoriamente con las tres letras lib y tiene que tener la extensión .a</p>
+
+<h3 id="creando-una-librería-compartida">Creando una librería compartida</h3>
+
+<p>En el caso de las librerías compartidas también es necesario crear un fichero objeto, hay que tener en cuenta que al crear el fichero con el mismo nombre que en el caso de la librería estática, estamos sobrescribiendo y eliminando el fichero anterior, algo conveniente teniendo en cuenta que la librería estática ya esta creada.</p>
+
+<p>Creamos el objeto:</p>
+
+<pre><code>gcc -c -fPIC libreriaPi.c -o libreriaPi.o
+</code></pre>
+
+<p>Una vez creado el objeto procedemos a crear la librería dinámica:</p>
+
+<pre><code>gcc -shared -Wl,-soname,libpi.so.1 -o libpi.so.1.0.1  libreriaPi.o
+</code></pre>
+
+<p>El nombre de la librería tiene que empezar por lib y terminar en so y es opcional el numero de la versión</p>
+
+<h3 id="enlazando-la-librería-estática">Enlazando la librería estática</h3>
+
+<p>Para enlazar la librería estática a nuestro programa principal usamos la instrucción</p>
+
+<pre><code>gcc -static programaPi.c -L. -lpi -o piEstatico
+</code></pre>
+
+<p>la opción -lpi indica el nombre de la librería sin las tres letras lib y sin su extensión. -l + nombre (sin lib y extensión )</p>
+
+<h3 id="enlazando-la-librería-compartida">Enlazando la librería compartida</h3>
+
+<p>Para ligar la librería dinámica usamos:</p>
+
+<pre><code>gcc main.c -o piDinamico -L. -lpi
+</code></pre>
+
+<p>Como en el caso anterior la opción -lpi indica el nombre de la librería sin las tres letras lib y sin su extensión. -l + nombre (sin lib y extensión )</p>
+
+<p><strong>NOTA:</strong> en el caso del ejecutable piDinamico cuando ejecutemos saldra</p>
+
+<pre><code>./piDinamico: error while loading shared libraries: libpi.so: cannot open shared object file: No such file or directory
+</code></pre>
+
+<p>para solucionar esto ejecutamos</p>
+
+<pre><code>export LD_LIBRARY_PATH=.
+</code></pre>
+
+<h2 id="a-id-make-makefile-a"><a id="make">Makefile</a></h2>
+
+<p>make es una de las herramientas más usadas para la construcción de proyectos de software. Los usamos cada vez que descargamos unas fuentes para sistemas basados en linux. Existe una gran diferencia con otras formas de &ldquo;instalar&rdquo; un software en el sistema, como rpm o dpkg, éstos últimos comprimen los binarios en lo que llamamos un paquete (de redhat o debian respectivamente) y contienen también scripts de postconfiguración que ubicarán adecuadamente todos los archivos comprimidos.</p>
+
+<p>Un archivo Makefile (el que es interpretado por make) contiene las instrucciones que logran  compilar y organizar los archivos de ejecución y configuración de un software en el sistema. Este archivo nos facilitará entonces automatizar el proceso de construcción hemos hecho a mano en la sección anterior.</p>
+
+<p>El archivo makefile básico tiene la sintaxis</p>
+
+<pre><code>objetivo: dependencias
+    comando
+</code></pre>
+
+<p><strong>Nota:</strong> el espacio de abajo de la regla &ldquo;objetivo:dependencias&rdquo; debe existir y es un espacio tabulado</p>
+
+<p>Aplicado a nuestro ejemplo anterior sería</p>
+
+<pre><code>all: libreriaPi.c libreriaPi.h
+    gcc libreriaPi.c programaPi.c -o pi.out
+</code></pre>
+
+<p>Llamaremos al archivo &ldquo;Makefile&rdquo;. En él hemos creado el objetivo &ldquo;all&rdquo; que make llamará por defecto.
+Ejecutamos el comando</p>
+
+<pre><code>make
+</code></pre>
+
+<p>Bien podríamos haber usado la sintaxis</p>
+
+<pre><code>CC=gcc
+pi.out: libreriaPi.c libreriaPi.h
+    $(CC) libreriaPi.c programaPi.c -o $@
+</code></pre>
+
+<p>Aquí hemos introducido elconcepto de variables en make y un macro que viene por defecto. $@ reemplaza el nombre del objetivo, es decir, en este caso donde se encuentra $@ make pone pi.out.
+Ejecutemos nuevamente el comando make.</p>
+
+<p>También puden existir reglas que no sean de compilación. En este punto nos sería muy útil una función que nos limpie el ejecutable. Tenemos entonces el nuevo archivo Makefile</p>
+
+<pre><code>CC=gcc
+pi.out: libreriaPi.c libreriaPi.h
+    $(CC) libreriaPi.c programaPi.c -o $@
+
+clean: 
+    rm -rf *.out
+</code></pre>
+
+<ul>
+<li>¿Qué pasa si ejecutamos?</li>
+</ul>
+
+<pre><code>make
+make clean
+</code></pre>
+
+<p>Aún no hemos hecho una compilación correcta pues no estamos creando una librería, creemos una regla de make para esto:</p>
+
+<pre><code>CC=gcc
+%.o:%.c
+    $(CC) -c $&lt; -o $@
+clean: 
+    rm -rf *.out
+</code></pre>
+
+<p>En el ejemplo usamos % que refiere a el argumento de make que debe terner un .o al final para que siga esa regla. También usamos $&lt; que refiere a la primera cadena que se encuentra después de los :. Esta cadena completa es igual a</p>
+
+<pre><code>gcc -c libreriaPi.c /o libreriaPi.o
+</code></pre>
+
+<p>Aún no hemos generado la librería, para ello debemos usar el archiver y tener un nombre con una sintaxis específica. Modifiquemos un poco el anterior makefile</p>
+
+<pre><code>CC=gcc
+libpi.a:libreriaPi.c libreriaPi.h
+    $(CC) -c $&lt; -o libreriaPi.o
+    ar rcs $@ libreriaPi.o
+clean: 
+    rm -rf *.out
+</code></pre>
+
+<ul>
+<li>¿Por qué cambiar el objetivo del código objeto a la librería?</li>
+</ul>
+
+<p>Sólo nos falta hacer una regla para la compilación del programa princial, nuestro nuevo makefile queda</p>
+
+<pre><code>CC=gcc
+
+pi.out: programaPi.c libreriaPi.h libpi.a
+    $(CC) -static $&lt; -L. -lpi -o $@
+
+libpi.a:libreriaPi.c libreriaPi.h
+    $(CC) -c $&lt; -o libreriaPi.o
+    ar rcs $@ libreriaPi.o
+clean: 
+    rm -rf *.out *.a *.o
+</code></pre>
+
+<p>Finalmente nuestro proceso de compilación estático queda</p>
+
+<pre><code>make clean
+make libpi.a
+make pi.out
+</code></pre>
+
+<p><strong>Ejercicios</strong>
+* Realice un makefile pero con compilación dinámica.
+* Observe el siguiente makefile y ejecute make all</p>
+
+<pre><code>CC=gcc
+
+all: clean libpi.a pi.out
+
+pi.out: programaPi.c libreriaPi.h libpi.a
+        $(CC) -static $&lt; -L. -lpi -o $@
+
+libpi.a: libreriaPi.c $(DEPS)
+        $(CC) -c $&lt; -o libreriaPi.o
+        ar rcs $@ libreriaPi.o
+
+clean:
+        rm -rf *.out *.o *.a
+</code></pre>
+
+<ul>
+<li>Si no lo ha haecho separe las fuentes en ./inc/ y ./src/ genere las librerías en ./lib/ y los ejecutables en ./bin/ con su makefile en .</li>
+</ul>
+
+<h2 id="a-id-scons-scons-a"><a id="scons">Scons</a></h2>
+
+<p>Es una alternativa a make para el mismo objetivo. Está escrita en python y tiene su sintaxis pero la podemos usar para la construcción de cualquier tipo de proyecto. ASegúrese de que tiene instalado el comando scons o en sistemas debian ejecute como superusuario</p>
+
+<pre><code>apt-get install scons
+</code></pre>
+
+<p>Como ejemplo básico compilaremos un hello world con el siguiente script que llamaremos SConstruct <del>#900:Exactamente con S y C mayúsculas</del></p>
+
+<pre><code>entorno=Environment() #Esto es un comentario
+entorno.Program(target='hello',source=['hello.c'])
+</code></pre>
+
+<p>En scons se debe crear un entorno de compilación. Éste contiene las variables que indican el compilador a usar, las opciones de enlazado y compilación, entre otras.</p>
+
+<p>Para que nuestro conjunto de instrucciones sea interpretado simplemente ejecutamos el comando</p>
+
+<pre><code>scons
+</code></pre>
+
+<p>Volvamos a nuestro ejemplo de calcular Pi y con él hagamos una compilación estática con un script de scons.
+Debemos usar la función Library del entorno</p>
+
+<pre><code>entorno=Environment() #Esto es un comentario
+entorno.Library(target=&quot;libpi.a&quot;,source=&quot;libreriaPi.c&quot;)
+</code></pre>
+
+<p>Debemos obtener la salida</p>
+
+<pre><code>scons: Reading SConscript files ...
+scons: done reading SConscript files.
+scons: Building targets ...
+gcc -o libreriaPi.o -c libreriaPi.c
+ar rc libpi.a libreriaPi.o
+ranlib libpi.a
+scons: done building targets.
+</code></pre>
+
+<p>Notemos que las líneas de compilación y de archivación son similares a las que teníamos antes. En este caso scons usa ranlib en vez de la opción s de ar para indexar el archivo.
+Ahora agregaremos una línea para compilar el programa principal donde indicaremos que librería usar y donde se encuentra. Nuestro archivo SConstruct queda entonces</p>
+
+<pre><code>entorno=Environment() #Esto es un comentario
+entorno.Library(target=&quot;libpi.a&quot;,source=&quot;libreriaPi.c&quot;)
+entorno.Program(target=&quot;piEstatico&quot;,source=&quot;programaPi.c&quot;,LIBS=['pi'],LIBPATH='.', LINKFLAGS='-static')
+</code></pre>
+
+<p>El argumento de la función LIBS recibe una lista de cadenas de caracteres que indican cada una de las librerías a usar.</p>
+
+<ul>
+<li>Si tuvieramos que usar la libreria math.h cómo tendría que cambiar ese argumento?
+Debemos obtener una salida como</li>
+</ul>
+
+<pre><code>scons: Reading SConscript files ...
+scons: done reading SConscript files.
+scons: Building targets ...
+gcc -o programaPi.o -c programaPi.c
+gcc -o piEstatico -static programaPi.o -L. -lpi
+scons: done building targets.
+</code></pre>
+
+<p>Cuya penúltima línea es la deseada.</p>
+
+<p>Ahora para crear la librería dinámica y ligarla al programa principal usamos lafunción SharedLibrary</p>
+
+<pre><code>entorno=Environment() #Esto es un comentario
+entorno.SharedLibrary(target=&quot;libpi.so&quot;,source=&quot;libreriaPi.c&quot;)
+entorno.Program(target=&quot;piDinamico&quot;, source=&quot;programaPi.c&quot;,LIBS='pi',LIBPATH='.')
+</code></pre>
+
+<p>y debemos obtener una salida como la siguiente</p>
+
+<pre><code>scons: Reading SConscript files ...
+scons: done reading SConscript files.
+scons: Building targets ...
+gcc -o libreriaPi.os -c -fPIC libreriaPi.c
+gcc -o libpi.so -shared libreriaPi.os
+gcc -o piDinamico programaPi.o -L. -lpi
+scons: done building targets.
+</code></pre>
+
+<ul>
+<li>Qué debemos ahcer para que ejecute correctamente?</li>
+</ul>
+
+<p>Si queremos limpiar nuestra área de trabajo, ya scons tiene por defecto la opción para ellos. Basta con digitar</p>
+
+<pre><code>scons -c
+</code></pre>
+
+<p>Podemos usar todas las utilidades de python como la libreria os para crear carpetas y sus variables para no reescribir mucho código</p>
+
+<pre><code>import os
+if not os.path.exists(&quot;libs&quot;):
+    os.makedirs(&quot;libs&quot;)
+LIB=&quot;./libs/&quot;
+entorno=Environment() #Esto es un comentario
+entorno.SharedLibrary(target=LIB+&quot;libpi.so&quot;,source=&quot;libreriaPi.c&quot;)
+entorno.Program(target=&quot;piDinamico&quot;, source=&quot;programaPi.c&quot;,LIBS='pi',LIBPATH=LIB)
+os.environ[&quot;LD_LIBRARY_PATH&quot;]=LIB
+os.system(&quot;./piDinamico 1000&quot;)
+</code></pre>
+
+<h2 id="a-id-cmake-cmake-a"><a id="cmake">CMake</a></h2>
+
+<p>CMake es otra herramienta de construcción de software que nos permite facilmente abordar proyectos complejos con una facilidad aún mayor que los anteriores pues fue diseñado para soportar software con una jerarquía de directorios compleja.</p>
+
+<p>Miremos su implementación básica con el código de hola mundo</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+
+int main()
+{
+    printf(&quot;Hello world\n&quot;);
+    return 0;
+}
+
+</code></pre>
+
+<p>Nuestro archivo de cmake debe llamarse &ldquo;CMakeLists.txt&rdquo;</p>
+
+<pre><code>add_executable(hello hello.c)
+</code></pre>
+
+<p>Ejecutamos el comando cmake indicándole donde se encuentra el archivo CMakeLists.txt</p>
+
+<pre><code>cmake .
+</code></pre>
+
+<p>Este comando nos generó un Makefile que para obtener el ejecutable simplemente corremos el comando</p>
+
+<pre><code>make
+</code></pre>
+
+<p>Podemos limpiar de algunas cosas nustro directorio</p>
+
+<pre><code>make clean
+</code></pre>
+
+<p>No existe un cmake clean para borrar los archivos temporales de cmake, lo usual es crear una carpeta dentro del directorio del proyecto que por costumbre en los usuarios de cmake se llama build. Allí podremos correr el comando</p>
+
+<pre><code>cmake ..
+</code></pre>
+
+<p>Y todos los archivos temporales de cmake quedarán en esa carpeta que podrá ser eliminada completamente una vez que no sea necesaria.</p>
+
+<p>Ahora miremos u ejemplo un tanto más elaborado. Reutilicemos el código de calcular pi y agreguemos este archivo de cmake</p>
+
+<pre><code>include_directories(.)
+add_library(pi SHARED libreriaPi.h libreriaPi.c)
+add_executable(findPi programaPi.c)
+target_link_libraries(findPi pi)
+</code></pre>
+
+<p>En el archivo de cmake anterior hemos incluído la construcción de una librería dinámica que debemos enlazar al ejecutable.</p>
+
+<p>Hagamos</p>
+
+<pre><code>du -csh *
+</code></pre>
+
+<p>Y observemos el tamaño en disco de la librería y el ejecutable</p>
+
+<p>Ahora hagamos una compilación estática modificando el archivo de cmake de la siguiente forma</p>
+
+<pre><code>include_directories(.)
+add_library(pi STATIC libreriaPi.h libreriaPi.c)
+add_executable(findPi programaPi.c)
+target_link_libraries(findPi  pi)
+</code></pre>
+
+<p>Miremos nuevamente el tamaño de los archivos y responda
+* ¿Por qué el ejecutable es del mismo tamaño?
+* ¿Está enlazando la librería correcta?
+* ¿Cómo enlazamos estàticamente la librería?
+* Hagamos que el archivo soporte nuestra jerarquía de directorios estandar.</p>
+
+<p>Ahora que queremos instalar las librerías en ./lib y los ejecutables en ./bin agregamos las siguientes funciones a nuestro archivo CMakeLists.txt</p>
+
+<pre><code>install(TARGETS pi DESTINATION lib)
+install(TARGETS findPi DESTINATION bin)
+</code></pre>
+
+<p>Al agregar esta nueva función cmake crea en el Makefile la regla para instalar las librerías y ejecutables en este caso. Intentemos ejecutar la regla</p>
+
+<pre><code>make install
+</code></pre>
+
+<p>Observemos que cmake intenta instalar en las rutas del sistema, nosotros queremos ubicaro en una ruta personal dentro de la carpeta del proyecto. Esto se hace ejecutando cmake de la siguiente forma</p>
+
+<pre><code>cmake .. -DCMAKE_INSTALL_PREFIX=..
+</code></pre>
+
+<p>Queremos ahora compilar un c&rsquo;odigo que realizamos con una librería externa. TOmemos el siguiente código de una transformada de Fourier con gsl</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;math.h&gt;
+#include&lt;gsl/gsl_errno.h&gt;
+#include&lt;gsl/gsl_fft_real.h&gt;
+
+double function(double x, double freq1, double freq2)
+{
+    return sin(freq1*x)+sin(freq2*x);
+}
+
+
+int main()
+{
+    int i,n=1000;
+    double data[n];
+    FILE *original,*transformed;
+    original = fopen(&quot;original.dat&quot;,&quot;w&quot;);
+    transformed = fopen(&quot;transformed.dat&quot;,&quot;w&quot;);
+
+    gsl_fft_real_wavetable * wavetable;
+    gsl_fft_real_workspace * workspace;
+
+    wavetable = gsl_fft_real_wavetable_alloc(n);
+    workspace = gsl_fft_real_workspace_alloc(n);
+
+    for(i=0;i&lt;n;i++)
+    {
+        data[i]=function(4*M_PI*i/n,0.9,50.8);
+        fprintf(original,&quot;%f\n&quot;,data[i]);
+    }
+
+    gsl_fft_real_transform(data,1,n,wavetable,workspace);
+
+    for(i=0;i&lt;n;i++)
+    {
+        fprintf(transformed,&quot;%f\n&quot;,data[i]);
+    }
+
+
+    fclose(original);
+    fclose(transformed);
+    return 0;
+}
+</code></pre>
+
+<p>Qué pasa si usamos un archivo CMakeLists.txt como el inicial?</p>
+
+<pre><code>add_executable(fft fft_gsl.c)
+</code></pre>
+
+<p>Una opción podría ser enlazar las librerías que ya conocemos su nombre modificando el archivo CMakeLists.txt de la siguiente forma</p>
+
+<pre><code>add_executable(fft fft_gsl.c)
+target_link_libraries(fft gsl gslcblas m)
+</code></pre>
+
+<p>Con esta solución tenemos un par de problemas, tenemos que saber de antemano si la librería se encuentra instalada y si la lista de librerías a enlaar es muy grande la tenemos que copiar entera como en un make.</p>
+
+<p>Otra forma puede ser usando el comando gsl-congif modificando el cmake de la siguiente manera</p>
+
+<pre><code>find_program(GSL_CONFIG gsl-config)
+if(GSL_CONFIG)
+  execute_process( COMMAND ${GSL_CONFIG} --libs OUTPUT_VARIABLE GSL_LIBS )
+endif()
+add_executable(fft fft_gsl.c)
+target_link_libraries(fft ${GSL_LIBS})
+</code></pre>
+
+<p>Una alternativa está en crear un módulo de cmake que encuentre automáticamente las librerías y ubique en una variable la ubicación y los sufijos de enlazado. Creemos una carpeta que se llame cmake_modules en la raíz del proyecto y allí creemos un archivo llamado FindGSL.cmake con el contenido siguiente</p>
+
+<pre><code>find_path (GSL_INCLUDES gsl/gsl_math.h)
+find_library (M_LIB m )
+find_library (GSL_LIB NAMES gsl)
+set (GSL_CBLAS_LIB &quot;gslcblas&quot;)
+set (GSL_LIBRARIES &quot;${GSL_LIB}&quot; &quot;${GSL_CBLAS_LIB}&quot; &quot;${M_LIB}&quot;)
+</code></pre>
+
+<p>Y modificamos el CMakeLists.txt de la siguiente forma</p>
+
+<pre><code>set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} &quot;${CMAKE_SOURCE_DIR}/cmake_modules/&quot;)
+find_package(GSL)
+add_executable(fft fft_gsl.c)
+target_link_libraries(fft ${GSL_LIBRARIES})
+</code></pre>
+
+<p><strong>Ejercicios</strong></p>
+
+<ul>
+<li>Para una transformada fftw haga el módulo que encuentre la librería y ubique en variables las directivas d e enlazado.</li>
+</ul>
+
+<h2 id="a-id-subversion-subversion-a"><a id="Subversion">Subversion</a></h2>
+
+<p>El repositorio no contiene los archivos como tales, están codificados eficientemente de tal manera que se pueda acceder a una copia de cualquier versión de los archivos que han sido guardados durante la historia del repo.
+Para poder trabajar en el repositorio necesitamos realizar una copia de trabajo local, para esto hacemos</p>
+
+<pre><code>svn checkout svn+ssh://gerardo.gutierrez@c3.itm.edu.co:/home/gerardo.gutierrez/control_de_versiones/svn/pi
+</code></pre>
+
+<p>Verán una jerarquía de directorios determiandas por el grupo de desarrollo. Generalmente son las tres que se encuentran allí:
+* trunk: la rama principal de trabajo
+* branches: ramas adicionales donde se realizan desarrollos paralelos
+* tags: Contiene la información de versionado del proyecto</p>
+
+<p>Para realizar una actualización del software descargado usamos el comando</p>
+
+<pre><code>svn update
+</code></pre>
+
+<p>Ahora agreguemos el archivo del programa principal al repositorio. Para hacer que nuestra copia de trabajo tenga registro del archivo debemos hacer</p>
+
+<pre><code>svn add programaPi.c
+</code></pre>
+
+<p>Ahora para actualizar nuestra copia remota hacemos</p>
+
+<pre><code>svn commit 
+</code></pre>
+
+<p>E ingresa un mensaje de commit reportando los cambios que se realizaron al proyecto.</p>
+
+<p>Si uno quisiera hacer una rama para desarrollar alguna característica nueva sin dañar la rama principal podemos hacer una operación de copia</p>
+
+<pre><code>svn copy svn+ssh://gerardo.gutierrez@c3.itm.edu.co:/home/gerardo.gutierrez/control_de_versiones/svn/pi/trunk svn+ssh://gerardo.gutierrez@c3.itm.edu.co:/home/gerardo.gutierrez/control_de_versiones/svn/pi/branches/rama_make
+</code></pre>
+
+<p>Hagamos un cambio a nuestra rama agregando el makefile que teníamos posteriormente</p>
+
+<pre><code>svn add Makefile
+svn commit
+</code></pre>
+
+<p>En este momento tenemos una rama que está con un desarrollo adelantado con respecto a la rama principal, podemos complicar un poco más el asunto. Supongamos que el desarrollador principal del proyecto creó un readme <strong>en la rama principal</strong></p>
+
+<pre><code>touch README
+svn add README
+svn commit
+</code></pre>
+
+<p>Ahora nuestra rama_make no está sincronizada con la principal. Cuando vayamos a hacer la actualización de la rama principal con el nuevo desarrollo debemos asegurarnos que la rama de trabajo está al día con respecto a la pincipal. Esto se hace con la operación merge</p>
+
+<pre><code>cd branches/rama_make
+svn merge svn+ssh://gerardo.gutierrez@c3.itm.edu.co:/home/gerardo.gutierrez/control_de_versiones/svn/pi/trunk
+svn commit
+</code></pre>
+
+<p>Ya tenemos la rama actualizada y podemos incluir nuestro nuevo desarrollo a la rama principal sin temor a generar conflictos.</p>
+
+<pre><code>svn merge ../branches/rama_make
+</code></pre>
+
+<p>Algunos comandos muy útiles son</p>
+
+<pre><code>svn log
+svn remove
+svn help
+</code></pre>
+
+<h2 id="a-id-mercurial-mercurial-a"><a id="Mercurial">Mercurial</a></h2>
+
+<p>Antes de realizar cualquier operación con mercurial, debemos generar un nombre de usuario en su sistema. Para esto ejecutamos el comando</p>
+
+<pre><code>hg config --edit
+</code></pre>
+
+<p>Para hacer una copia de trabajo del repositorio remoto hacemos</p>
+
+<pre><code>hg -v clone ssh://gerardo.gutierrez@c3.itm.edu.co/control_de_versiones/mercurial/pi/
+</code></pre>
+
+<p>Supongamos de nuevo que queremos agregar el archivo del programa principal</p>
+
+<pre><code>hg add programaPi.c
+hg commit
+hg push
+</code></pre>
+
+<p>Mercurial como todos los sistemas de control de versiones le pedirá un mensaje de commitdonde usted deberá documentar los cambios realizados. con el comando push lo que hacemos es actualizar el repositorio remoto con los cambios en la copia de trabajo.</p>
+
+<p>Si necesitamos actualizar la copia de trbajo porque alguien hizo un cambio ejecutamos</p>
+
+<pre><code>hg pull
+</code></pre>
+
+<p>Queremos ahora empezar el desarrollo de la rama que incluirá un makefile</p>
+
+<pre><code>hg branch rama_make
+</code></pre>
+
+<p>Nos devuelve un mensaje indicando que nuestra copia de trabajo ahora será la nueva rama creada. Para sincronizar los cambios debemos hacer</p>
+
+<pre><code>hg commit
+hg push
+</code></pre>
+
+<p>Ahora incluyamos el archivo Makefile. Recordemos</p>
+
+<pre><code>hg add Makefile
+hg commit
+hg push
+</code></pre>
+
+<p>Si queremos volver a la rama principal(default) usamos el comando update seguido del nombre de la rama</p>
+
+<pre><code>hg update default
+</code></pre>
+
+<p>Supongamos de nuevo el problema anterior. La rama en la que estoy desarollando estaba al día con la rama principal, pero alguien le agregó algo nuevo a esta última. Debemos actualziar la rama de trabajo para poder luego hacer el merge de manera correcta. En la rama de desarrollo hacemos</p>
+
+<pre><code>hg heads
+hg merge #changeset 
+hg commit
+hg push
+</code></pre>
+
+<p>Para actualizar la rama principal realizamos la misma operación pero estando en ella.</p>
+
+<p>Algunos otros comando útiles</p>
+
+<pre><code>hg parents
+hg status
+hg sum
+hg remove
+</code></pre>
+
+<h2 id="a-id-git-git-a"><a id="git">git</a></h2>
+
+<p>Un sistema de control de versiones le permite tener registro de los cambios realizados sobre un conjunto de archivos, restaurar una versión previa y continuar su trabajo desde allí. El conjunto de achivos y su historia se llama repositorio.
+Git es un sistema de control de versiones distribuido, cada copia (clon) del repositorio es un repositorio en sí, es decir, al hacer una copia del respositorio se copia también toda su historia.</p>
+
+<p>Para crear el repositorio con el contenido de la carpeta vamos a la lĺinea de comandos y hacemos:</p>
+
+<pre><code>$ git init --bare /ruta/a/la/carpeta/documento
+</code></pre>
+
+<p>Esto creo un repositorio abstracto, contiene solamente los archivos que vimos anteriormente en la carpeta .git, esta vez trabajaremos con un documento en latex, entonces he llamado a nuestro repositorio &ldquo;documento&rdquo;</p>
+
+<p>Debe observar un mensaje de que ha sido creado el repositorio:</p>
+
+<pre><code>Initialized empty Git repository in /ruta/a/la/carpeta/documento/.git/
+</code></pre>
+
+<p>Si entramos a la carpeta y listamos los archivos ocultos vemos que se ha creado una carpeta .git, esta carpeta contiene todos los registros de la ubicación del repositorio (local o en la red) y los registros de cambios en los archivos.</p>
+
+<p>Ahora, ubicados FUERA de la carpeta donde se encuentra nuestro repositorio, creemos una copia de éste con el comando:</p>
+
+<pre><code>$ git clone documento clon1
+</code></pre>
+
+<p>Nos debe salir un mensaje indicándonos que hemos hecho un clon de un repositorio vacío:</p>
+
+<pre><code>warning: You appear to have cloned an empty repository.
+</code></pre>
+
+<p>Si listamos los archivos veremos que tenemos una nueva llamada clon, si listamos todos los archivos allí, veremos que también existe una carpeta oculta .git pero no existe ningún archivo, copiemos el archivo en LaTEX que descargamos de [<a href="http://gfif.udea.edu.co/~gerardo/articulo.tex|aquí" target="_blank">http://gfif.udea.edu.co/~gerardo/articulo.tex|aquí</a>].
+Para agregar dicho archivo al clon del repositorio hacemos el siguiente comando dentro de la carpeta clon:</p>
+
+<pre><code>$ git add articulo.tex
+</code></pre>
+
+<p>Se deben agregar todo los archivos que van a pertenecer al repositorio pues es tarea del usuario discriminar que se va a reservar y que no, por ejemplo, los archivos temporales, los datos o los binarios no se suelen guardar en un repositorio.</p>
+
+<p>En los sistemas de control de versiones es importante, necesario y obligatorio dejar siempre un mensaje cada que se reporta un cambio en los archivos, al proceso de reporte de cambios lo llamamos <strong>commit</strong> y al mensaje <strong>mensaje de commit</strong></p>
+
+<pre><code>$ git commit
+</code></pre>
+
+<p>Este comando abrirá un editor de texto por defecto y reportará los cambios agregados, es decir, si no agregamos el archivo de latex éste no será reservado en nuestro repositorio.</p>
+
+<p>Hasta este punto todavía no tenemos la información en el repositorio, solo en su copia, para enviarla al repo realizamos el comando</p>
+
+<pre><code>$ git push origin master
+</code></pre>
+
+<p>Donde push refiere a &ldquo;empujar&rdquo; los cambios, estrictamente hablando, envía el commit al repositorio original.</p>
+
+<p>Origin es la forma en la que git guarda la ruta al repositorio original, lo podemos ver haciendo:</p>
+
+<pre><code>cat .git/config
+</code></pre>
+
+<p>Esta ruta puede ser local o en un servidor remoto como C3.
+Master es la rama a la que estamos enviando el commit, ahondaremos en cuanto a las ramas más adelante.</p>
+
+<p>Uno de las funciones principales de los sistemas de control de versiones es la sincronización del trabajo en diferentes ordenadores, supongamos ahora que queremos continuar nuestro trabajo desde la casa, haremos entonces un nuevo clon allí, e nuetro caso, hagámoslo en otra carpeta:</p>
+
+<pre><code>$ git clone clon2
+</code></pre>
+
+<p>Vemos que también el archivo.tex ha sido incluido.</p>
+
+<p>Creemos allí una carpeta que llamaremos img, donde vamos a guardar las imágenes del artículo.
+* ¿Qué pasa si agregamos la carpeta vacía?
+Descarguemos cualquier imagen de la red y ubiquémosla allí. Observemos ahora el estado del nuestro repositorio con el comando:</p>
+
+<pre><code>$ git status
+</code></pre>
+
+<ul>
+<li>¿Qué pasa si en este punto realizamos un push?</li>
+<li>Agreue la carpeta.¿Es recursivo el comando &ldquo;git add&rdquo;?</li>
+<li>Realice el commit.</li>
+<li>Realice el push.</li>
+</ul>
+
+<p>Volvamos ahora a la carpeta clon1, si lsitamos los archivos allí vemos que la copia está desactualizada, le falta la carpeta de imagenes.
+Para actualizar una copia del repositorio podemos hacer:</p>
+
+<pre><code>$ git pull
+</code></pre>
+
+<p>Supongamos ahora que los cambios realizados no son satisfactorios y queremos volver a una versión anterior, esto es, nos queremos devolver a un commit previo. Primero debemos conocer cual es el identificador del commit:</p>
+
+<pre><code>$ git log
+</code></pre>
+
+<p>Veremos un mensaje del tipo:</p>
+
+<pre><code>commit 40997ab90bd69f31d461a9ab0052664f17fb5ef1
+Author: usuario &lt;usuario@localhost&gt;
+Date:   Fri May 16 01:09:31 2014 -0500  
+                                        
+    Agregamos imagenes         
+                                               
+commit 349dd0e3a1f24b39ed43d03f70273b319cf00fdb
+Author: muzgash &lt;usuario@localhost&gt;      
+Date:   Fri May 16 01:09:31 2014 -0500
+ 
+    Agregamos el archivo principal del artículo
+</code></pre>
+
+<p>El número enorme luego de la palabra commit es el identificador de dicho reporte. Para volver a la primera versión por ejemplo basta con pegar los primeros caracteres del identificador en el siguiente comando:</p>
+
+<pre><code>$ git reset --hard 349dd
+</code></pre>
+
+<ul>
+<li>Revisemos el archivo articulo.tex y el log de git.</li>
+</ul>
+
+<p>Vemos que sucede con la siguiente sucesión de eventos:
+* Hagamos una modificación en clon1 con su respectivo commit pero sin push
+* Hagamos también una modificación diferente en clon2 consu respectivo commit.
+* En cualquier copia hagamos un pull.</p>
+
+<p>Observemos la salida del comando:</p>
+
+<pre><code>$ git branch -a
+</code></pre>
+
+<p>Esto nos reporta las <strong>ramas</strong> o branches disponibles en el repositorio, una rama es un espacio de trabajo dentro del repositorio, por defecto se comienza a trabajar en la rama principal que se llama <strong>master</strong>. Cuando se van a realizar cambios o se va a probar algo nuevo en los archivos de trabajo, por lo general se hace en una rama diferente a la principal y luego que todo esté probado se incluye en ésta última.</p>
+
+<p>Para crear una rama usamos el comando</p>
+
+<pre><code>$ git checkout -b nombre_rama
+</code></pre>
+
+<p>La opción &lsquo;b nos lleva de una vez a la rama recién creada. Esta rama se crea en el repositorio local, para subirla al repositorio remoto hacemos</p>
+
+<pre><code>$ git push origin nombre_rama
+</code></pre>
+
+<p>Se creará una rama remotamente y se añadirán allí los cambios locales realizados.
+Para unir dos ramas usamos</p>
+
+<pre><code>$ git merge rama
+
+</code></pre>
+
+<p>Aquí estamos trayendo los cabios realizados en la rama del comando con la rama activa. En estos casos pueden suceder conflictos que git reporta como una modificación en cada archivo.</p>
+
+<p><strong>Ejercicios</strong></p>
+
+<ul>
+<li>Cree una cuenta en github</li>
+<li>Realice un clone del repositorio <a href="https://github.com/muzgash/constants" target="_blank">https://github.com/muzgash/constants</a></li>
+
+<li><p>Cree una rama donde creará una nueva librería que realizará una de estas tareas</p>
+
+<ul>
+<li>Constante de Napier
+<div>$$e=\sum\limits_{n=0}^\infty \frac{2n+2}{(2n+1)!}$$</div></li>
+
+<li><p>Número Áureo
+<div>$$\phi_{n+1}=\phi_n-\frac{\phi_n^2-\phi_n-1}{2\phi_n-1}$$</div></p></li>
+
+<li><p>Constante de Euler-Mascheroni
+<div>$$\gamma=\lim<em>{n\to\infty}\sum\limits</em>{k=1}^n \frac{1}{k}-ln(n)$$</div></p></li>
+
+<li><p>Constante de Catalan
+<div>$$G=\sum\limits_{n=0}^\infty \frac{(-1)^n}{(2n+1)^2}$$</div></p></li>
+</ul></li>
+
+<li><p>Modifique el archivo principal de código donde probará dicha librería y el archivo CMakeLists.txt para la compilación.</p></li>
+
+<li><p>Haga una actualización de su código remotamente y esté al tanto de las ramas de sus compañeros.</p></li>
+
+<li><p>Cuando todas las ramas estén listas, haga un merge de cada una en su repositorio, resuelva los conflictos necesarios y realice un push con el código de tal forma que se pueda compilar y correr correctamente.</p></li>
+</ul>
+
+					</div>
+				</article>
+
+			</div>
+		</div> 
+
+        <div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+
+				<div id="share">
+                    
+				</div>
+			</div>
+		</div> 
+		<div class="clearfix"></div>
+
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+
+				<div id="comments">
+                    
+				</div>
+			</div>
+		</div> 
+		<div class="clearfix"></div>
+
+	</div>	
+
+</main>
+
+<footer id="footer">
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Contacto</h3>
+				<div class="widget-body">
+					<p><br>
+						<a href="mailto:ggutierg@gmail.com">ggutierg@gmail.com</a><br>
+						<br>
+						
+					</p>
+				</div>
+			</div>
+			
+
+			
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Sígueme en</h3>
+				<div class="widget-body">
+					<p class="follow-me-icons">
+                        
+                            
+                        
+                            
+                                <a href="https://twitter.com/muzzgo" target="_blank"><i class="fa fa-twitter-square fa-2"></i></a>
+                            
+                        
+                            
+                                <a href="https://www.instagram.com/muzzgash" target="_blank"><i class="fa fa-instagram fa-2"></i></a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="https://www.linkedin.com/in/gerardo-guti%c3%a9rrez-b8695386" target="_blank"><i class="fa fa-linkedin-square fa-2"></i></a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="https://github.com/muzgash" target="_blank"><i class="fa fa-github fa-2"></i></a>
+                            
+                        
+                            
+                        
+					</p>
+				</div>
+			</div>
+			
+
+			
+
+			
+
+		</div> 
+	</div>
+</footer>
+
+<footer id="underfooter">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-6 widget">
+				<div class="widget-body">
+					<p></p>
+				</div>
+			</div>
+
+			<div class="col-md-6 widget">
+				<div class="widget-body">
+					<p class="text-right">
+						Copyright &copy; , Gerardo Gutiérrez<br>
+						Design: <a href="http://www.gettemplate.com" rel="designer">Initio by GetTemplate</a> - 
+                        Powered by: <a href="https://gohugo.io/" rel="poweredby">Hugo</a>
+                    </p>
+				</div>
+			</div>
+
+		</div> 
+	</div>
+</footer>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="http://gerardogutierrez.co/js/template.js"></script>
+<script id="dsq-count-scr" src="//hugo-initio-site.disqus.com/count.js" async></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-114325062-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Services on Gerardo Gutiérrez</title>
+    <link>http://gerardogutierrez.co/en/service/</link>
+    <description>Recent content in Services on Gerardo Gutiérrez</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-co</language>
+    
+	<atom:link href="http://gerardogutierrez.co/en/service/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Coffee</title>
+      <link>http://gerardogutierrez.co/en/service/service4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/service/service4/</guid>
+      <description>&lt;p&gt;Travel through Colombia in search for coffee, having its constant fragance around the house and knowing how to prepare a gret cup. All those things make every activity more pleasant.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Data Science</title>
+      <link>http://gerardogutierrez.co/en/service/service2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/service/service2/</guid>
+      <description>&lt;p&gt;There is a great deal of data right now, and why not make a big effort to process it&amp;hellip; I&amp;rsquo;ll do it.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>IoT</title>
+      <link>http://gerardogutierrez.co/en/service/service3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/service/service3/</guid>
+      <description>&lt;p&gt;It is equally important the data acquiring process as its analysis. Nowadays with so many wearable devices, cars and appliances connected to the interner, we experience a big growth in data. More devices, more data; more data, more happiness.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

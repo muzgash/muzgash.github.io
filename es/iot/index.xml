@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iots on Gerardo Gutiérrez</title>
+    <link>http://gerardogutierrez.co/es/iot/</link>
+    <description>Recent content in Iots on Gerardo Gutiérrez</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-co</language>
+    <lastBuildDate>Mon, 17 Jun 2013 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://gerardogutierrez.co/es/iot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>M.A.R.B.L.E.S.</title>
+      <link>http://gerardogutierrez.co/es/iot/marbles/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/es/iot/marbles/</guid>
+      <description>MARBLES es del inglés Marvelous Arduino &amp;amp; Raspberrypi Biorreactor Lightweight Electronic System. Es un sistema electrónico controlado remotamente que ajusta la intensidad de la luz, prender y apagar la inyección de CO2 y medir la densidad de algas en un biorreactor pequeño. Puede ser controlado desde un celular o vualquier navegador. Guarda un registro y las graficas de las medidas y la intensidad.
+Toda la información (incluyendo esquemas electrónicos) puede encontrarse en el cuaderno de protocolo creado durante su desarrollo project MARBLES</description>
+    </item>
+    
+    <item>
+      <title>Sistema de Seguridad con Raspberry Pi</title>
+      <link>http://gerardogutierrez.co/es/iot/security/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/es/iot/security/</guid>
+      <description>Los sitemas o servicios de seguridad son muy costosos sobre todo para una casa. Un kit de RaspberryPi con cámara puede costar al rededor de $100 USD.
+Desarrollé un sistema de seguridad que detecta personas y envía un reporte a través de un bot de telegram. Usando una RaspberryPi con cámara infrarroja puede obtener estas imágenes.
+La documentación y los códigos del proyecto están aún por ser subidos a github, pero en el entretanto, estas son las herramientas que usé para su desarrollo:</description>
+    </item>
+    
+  </channel>
+</rss>

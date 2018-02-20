@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+
+	<title>Computación de alto desempeño en C</title>
+
+	<link rel="shortcut icon" href="http://gerardogutierrez.co/images/favicon.png">
+
+	
+	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	
+	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+	
+	<link rel="stylesheet" href="http://gerardogutierrez.co/css/styles.css">
+
+	
+
+    
+        <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=123456789012345678901234&product=inline-share-buttons"></script>
+    
+
+</head>
+<body class="home">
+
+<header id="header">
+	<div id="head" class="parallax" parallax-speed="2">
+		<h1 id="logo" class="text-center">
+			<img class="img-circle" src="http://gerardogutierrez.co/images/guy.jpg" alt="">
+			<span class="title">Gerardo Gutiérrez</span>
+			<span class="tagline"><br>
+				<a href="">ggutierg@gmail.com</a>
+            </span>
+		</h1>
+	</div>
+
+    <nav class="navbar navbar-default navbar-sticky">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">
+                
+                
+                <li class="active"><a href="/">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">IA y Ciencia de Datos<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+						
+						<li>
+							<a href="/data/finance">Finanzas</a>
+						</li>
+						
+						<li>
+							<a href="/data/geophysics">Geofísica</a>
+						</li>
+						
+						<li>
+							<a href="/data/politics">Política</a>
+						</li>
+						
+						<li>
+							<a href="/data/cn">Redes Complejas</a>
+						</li>
+						
+						<li>
+							<a href="/data/sn">Redes Sociales</a>
+						</li>
+						
+                        
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">IoT <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+						
+						<li>
+							<a href="/iot/marbles">Biorreactor</a>
+						</li>
+						
+						<li>
+							<a href="/iot/security">Sistema de Seguridad</a>
+						</li>
+						
+                        
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Educación<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+						
+						<li>
+							<a href="/doc/courses">Cursos</a>
+						</li>
+						
+						<li>
+							<a href="/doc/tutorials">Tutoriales</a>
+						</li>
+						
+                        
+                    </ul>
+                </li>
+                <li class="active"><a href="/coffee">Café</a></li>
+                <li class="active"><a href="/about">About</a></li>
+                
+                
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+</header>
+
+
+<main id="main">
+
+	<div class="container">
+
+		<div class="row topspace">
+			<div class="col-sm-8 col-sm-offset-2">
+
+ 				<article class="post">
+					<header class="entry-header">
+ 						<div class="entry-meta">
+ 							<span class="posted-on"><time class="entry-date published" date="2014-12-05 12:00:00 &#43;0000 &#43;0000">February, 5128</time></span>
+ 						</div>
+ 						<h1 class="entry-title"><a href="http://gerardogutierrez.co/courses/hpc/" rel="bookmark">Computación de alto desempeño en C</a></h1>
+					</header>
+					<div class="entry-content">
+						
+
+<h2 id="contenido">Contenido</h2>
+
+<ul>
+<li><a href="#omp">OpenMP</a></li>
+<li><a href="#ompi">Introducción a la comunicación de procesos con MPI</a></li>
+<li><a href="#oacc">Introducción a la programación en aceleradoras de video con OpenACC</a></li>
+</ul>
+
+<h3 id="a-id-omp-openmp-a"><a id="omp">OpenMP</a></h3>
+
+<p>En la sección anterior vimos cuan complejo puede ser el trabajo con bifuraciones o con hilos, aún más si queremos compartir información entre procesos. OpenMP fue creado para facilitar este trabajo, consiste en un conjunto de instrucciones para loslenguajes C/C++ y fortran de facil despliegue para resolver problemas complejos. OpenMP permite al usuario crear hilos; definir como se van a repartir las tareas y las variables; y sincronizar los hilos.
+Veamos la sintaxis para paralelizar un ciclo simple:</p>
+
+<pre><code class="language-cpp">int main()
+{
+    int i;
+    #pragma omp parallel for
+        for(i=0;i&lt;8;i++) sleep(2);
+}
+</code></pre>
+
+<p>Compilamos normalmente con gcc sleep.c</p>
+
+<p><strong>Preguntas</strong></p>
+
+<ul>
+<li>¿Cuánto tiempo demora en ejecutar?</li>
+<li>¿Cuánto tiempo demora si compilamos esta vez con la opción -fopenmp?</li>
+</ul>
+
+<p>Observemos la salida de los comandos</p>
+
+<pre><code>gcc -E sleep.c
+gcc -E sleep.c -fopenmp
+</code></pre>
+
+<p>La directiva <code>#pragma</code> junto con <code>omp for</code> nos permite decirle al compilador que el siguiente ciclo va a ser ejecutado en hilos.<br />
+Openmp también tiene algunas funciones, para poder invocarlas debemos incluir la librería omp.h. En este caso usamos la función omp_get_thread_num() para saber en que hilo estamos.</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;omp.h&gt;
+
+int main(int argc, char **argv) {
+    int i,n=8;
+    #pragma omp parallel for
+        for(i=0;i&lt;n;i++)
+            printf(&quot;Hilo %d ejecutando  la iteracion %d\n&quot;,omp_get_thread_num(),i);
+        return 0;
+}
+</code></pre>
+
+<p>Ahora agregemos al código anterior una línea que nos permitirá definir el número de hilos de la sección a paralelizar:</p>
+
+<pre><code>#include&lt;omp.h&gt;
+#include&lt;stdio.h&gt;
+int main()
+{
+    int i,n=8;
+    omp_set_num_threads(4);
+    #pragma omp parallel for
+        for(i=0;i&lt;n;i++)
+            printf(&quot;Hilo %d ejecutando  la iteracion %d\n&quot;,omp_get_thread_num(),i);
+        return 0;
+}
+</code></pre>
+
+<p>También podemos paralelizar secciones de código</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;omp.h&gt;
+
+int main()
+{
+    omp_set_num_threads(4);
+        #pragma omp parallel
+        {
+            printf(&quot;Este es el thread numero %d\n&quot;,omp_get_thread_num());
+        }
+}
+</code></pre>
+
+<p>Juguemos ahora con la visibilidad de las variables imprimiendo su dirección dentro de un ciclo paralelizado:</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+
+int main() {
+    int i,n=3,a=1,b=1;
+    #pragma omp parallel for
+        for(i=0;i&lt;n;i++) {
+            printf(&quot;Las direcciones: &amp;a = %x y &amp;b = %x\n&quot;,&amp;a,&amp;b);
+        }
+        return 0;
+}
+</code></pre>
+
+<p><strong>Preguntas</strong></p>
+
+<ul>
+<li>Pruebe cambiando la directiva pragma por: #pragma omp parallel for private(b)</li>
+<li>Pruebe cambiando la directiva pragma por: #pragma omp parallel for default(none)</li>
+<li>¿Qué pasa con el siguiente código?</li>
+</ul>
+
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;omp.h&gt;
+
+int main(int argc, char **argv) {
+    int i,n=10,a=1,b=1,c;
+    #pragma omp parallel for
+    for(i=0;i&lt;n;i++) {
+            c=a+b;
+            printf(&quot;En la iteración %d a = %d, b = %d y c = %d\n&quot;,i,a,b,c);
+            a=b;
+            b=c;
+    }
+    return 0;
+}
+</code></pre>
+
+<p>En el código a continuación no preserva los valores de la variable a luego de la sección paralelizada:</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;omp.h&gt;
+
+int main()
+{
+    int i,n=4,a=0;
+    #pragma omp parallel for private(i,a)
+        for(i=0;i&lt;n;i++){
+            a=a+i;
+                printf(&quot;En el hilo %d a = %d\n&quot;,omp_get_thread_num(),i,a);
+        }
+        printf(&quot;Luego del ciclo paralelo a = %d\n&quot;,a);
+}
+</code></pre>
+
+<p>Para avitar esto cambiamos la directiva por #pragma omp parallel for private(i) lastprivate(a).
+Si queremos realizar varias tareas al mismo tiempo que no están ligadas por un ciclo for usamos la directiva nowait:</p>
+
+<pre><code>#include&lt;omp.h&gt;
+#include&lt;stdio.h&gt;
+int main()
+{
+    int i,n=8;
+    omp_set_num_threads(4);
+    #pragma omp parallel
+    {
+        #pragma omp for nowait
+        for(i=0;i&lt;8;i++) {
+            printf(&quot;Esperando %d segundos\n&quot;,i);
+            sleep(i);
+        }
+        printf(&quot;Hilo %d ejecutando  la iteracion %d\n&quot;,omp_get_thread_num(),i);
+    }
+    return 0;
+}
+</code></pre>
+
+<p>Las variables privadas no quedan con un valor al entrar en una sección o en un for paralelo, unicamente se crea un espacio en memoria privado al que solo puede acceder cada hilo. Veamos un ejemplo:</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;omp.h&gt;
+
+int main()
+{
+    int a=0,b=16;
+        omp_set_num_threads(4);
+        #pragma omp parallel private(b) shared(a)
+        {
+            a+=b;
+                printf(&quot;en el hilo %d el valor de a es %d\n&quot;,omp_get_thread_num(),a);
+        }
+        printf(&quot;Fuera de los hilos el valor de a es %d\n&quot;,a);
+    return 0;
+}
+</code></pre>
+
+<p>Si cmbiamos la diretiva private(b) por firstprivate(b) vemos que el valor de b es copiado en cada una de ls posiciones de memoria de la variable b privada a cada hilo.</p>
+
+<p><strong>Preguntas</strong></p>
+
+<ul>
+<li>¿Qué pasa si en este caso hago provada también a? ¿Cuál es debería ser el valor que acumula?</li>
+<li>¿Por qué al correr varias veces el ejecutable el valor de a es diferente?</li>
+</ul>
+
+<p>Existe una forma de hacer que los hilos escojan pedazos de tamaño determinad del ciclo en paralelo, a esto se le llama agendamiento o <em>scheduling</em>. Openmp usa estático por defecto, también existe el dinámico, guiado y runtime. Veamos la diferencia entre las tres primeras con el siguiente código</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;omp.h&gt;
+int main(int argc, char **argv) {
+    int i,n=48;
+    #pragma omp parallel for schedule(static,3)
+    for(i=0;i&lt;n;i++)
+        printf(&quot;Hilo %d ejecutando  la iteracion %d\n&quot;,omp_get_thread_num(),i);
+    return 0;
+}
+</code></pre>
+
+<p>Cambiemos allí static por dynamic y luego por guided y observemos la diferencia entre las salidas.</p>
+
+<p>Cuando estamos modificando una variable compartida hilos podría ir a actualizarla al mismo tiempo, esto producirá problemas pues no tenemos certeza de cual valor va a ser con el que quede al final dicha variable. En este ejemplo tratamos de sumar los datos de un arreglo</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;omp.h&gt;
+int main()
+{
+    int i,n=10,sum=0,a[10]={1,2,3,4,5,6,7,8,9,10};
+    int sumaParcial;
+    #pragma omp parallel shared(n,a,sum) private(sumaParcial)
+    {
+        sumaParcial=0;
+        #pragma omp for
+        for(i=0;i&lt;n;i++)
+           sumaParcial+=a[i];
+        sum+=sumaParcial;
+         printf(&quot;En el hilo %d sumaparcial=%d y sum=%d\n&quot;,omp_get_thread_num(),sumaParcial,sum);
+    }
+    printf(&quot;Luego de la región paralela sum=%d\n&quot;,sum);
+    return 0;
+}
+</code></pre>
+
+<p>Esto lo podemos solucionar de 2 maneras, una es usando la directiva critical. Esta obliga a los hilos a que no intenten actualizar la variable al mismo tiempo:</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;omp.h&gt;
+int main()
+{
+    int i,n=10,sum=0,a[10]={1,2,3,4,5,6,7,8,9,10};
+    int sumaParcial;
+    #pragma omp parallel shared(n,a,sum) private(sumaParcial)
+    {
+        sumaParcial=0;
+        #pragma omp for
+        for(i=0;i&lt;n;i++)
+           sumaParcial+=a[i];
+        #pragma omp critical
+        {
+            sum+=sumaParcial;
+            printf(&quot;En el hilo %d sumaparcial=%d y sum=%d\n&quot;,omp_get_thread_num(),sumaParcial,sum);
+        }
+    }
+    printf(&quot;Luego de la región paralela sum=%d\n&quot;,sum);
+    return 0;
+}
+</code></pre>
+
+<p>Otra forma es con la instrucción reduction la sintaxis es reduction(operador:variable). Leugo de que la sección paralela concluya, se hará la operación sobre la variable. Es equivalente al caso anterior pero es mucho más legible luego es más recomendada. Con esta instrucción podemos simplificar el código anterior</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;omp.h&gt;
+int main()
+{
+    int i,n=10,sum=0,a[10]={1,2,3,4,5,6,7,8,9,10};
+    #pragma omp parallel for reduction(+:sum)
+    for(i=0;i&lt;n;i++)
+        sum+=a[i];
+    printf(&quot;Luego de la región paralela sum=%d\n&quot;,sum);
+    return 0;
+}
+</code></pre>
+
+<p><strong>Ejercicios</strong></p>
+
+<ul>
+<li>Halle en paralelo el valor aproximado de la función zeta de Riemann para n={2,3,4} hasta el término 800 de la siguiente sumatoria<br /></li>
+</ul>
+
+<div>$$\zeta(n)=\sum\limits_{k=1}^{\infty}\left(\frac{1}{k^n}\right)$$</div>
+
+<p>Los resultados deben ser similares a
+<div>$$\zeta(2)=\left(\frac{\pi^2}{6}\right)$$</div>
+<div>$$\zeta(3)= 1.202056903159594295399738$$</div>
+<div>$$\zeta(4)=\left(\frac{\pi^4}{90}\right)$$</div></p>
+
+<ul>
+<li>Grafique los tiempos que toma su algoritmo para un número de hilos desde la cantidad que soporta su procesador hasta 800.</li>
+<li>Realice la multiplicación de una matriz por un vector en paralelo. Puede usar la siguiente función(las matrices deben estar guardadas en un arreglo unidimensional):</li>
+</ul>
+
+<pre><code>void mxv(int m, int n, float *a, float *b, float *result)
+{
+//Calcula la multiplicación de la matriz a por el vector b.
+    int i,j;
+    for(i=0;i&lt;m;i++)
+    {
+        result[i]=0.0;
+        for(j=0;j&lt;n;j++) result[i]+=a[i*n+j]*b[j]
+    }
+}
+</code></pre>
+
+<ul>
+<li>Encuentre el determinante de una matriz 3x3 a través de la fórmula</li>
+</ul>
+
+<div>$$Det(A)=\sum_{i,j,k}a_{0i} a_{1j} a_{2 k} \epsilon_{ijk}$$</div>
+
+<ul>
+<li>Realice la transpuesta de una matriz.</li>
+<li>Realicemos la siguiente integral por el método de montecarlo en paralelo:</li>
+</ul>
+
+<div>$$\int_1^2\frac{dx}{1-sin(x)*ln(\frac{1}{x})}$$</div>
+
+<p>Debe dar aproximadamente 0.743156. Puede ayudarse del siguiente código</p>
+
+<pre><code>float max(float (*funcion)(float),float xmin, float xmax)
+{
+    float x,y,dmax=0,step=0.001;
+    for(x=xmin;x&lt;=xmax; x+=step)
+    {
+        y=funcion(x);
+        if(y&gt;dmax) dmax=y; 
+    }
+    return dmax;
+}
+float montecarlo(float (*funcion)(float),float xmin, float xmax, float paso, int N) 
+{
+    float ry; //Numero aleatorio en Y
+    float x,y;
+    float ymax;
+    ymax=max(funcion,xmin,xmax);
+    int cont;//iterador de los numeros aleatorios
+    int suma=0;//cantidad de puntos aleatorios debajo de la curva
+    srand48(time(NULL));
+    for(x=xmin;x&lt;=xmax;x+=paso)
+    {
+        y=funcion(x);
+    	for(cont=0;cont&lt;N;cont++)
+	{
+            ry=drand48()*ymax;
+	    if( ry &lt; y )
+	    {
+	        suma++;
+	    }
+	}
+    }
+    return suma*paso*ymax/N;//La fracción de los números aleatorios por el área de la caja
+}
+</code></pre>
+
+<ul>
+<li>Usando torque o condor, envíe al cluster los códigos anteriores de manera que en cada nodo realicen su tarea con 2 hilos. Reporte la diferencia en los tiempos de ejecución con el uso de hilos y sin ellos.</li>
+<li>Dado un conjunto de k + 1 puntos
+<div>$$(x_0,y_0),\,\,(x_1,y_1),\,\,(x_2,y_2),\,\, \dots,\,\, (x_k,y_k),$$</div></li>
+</ul>
+
+<p>donde todos los xj se asumen distintos, el polinomio interpolador en la forma de Lagrange es la combinación lineal.</p>
+
+<div>$$L(x)=\sum\limits_{j=0}^k y_{j}l_{j}(x)$$</div>
+
+<p>de bases polinómicas de Lagrange</p>
+
+<div>$$l_j(x)=\prod\limits_{i=0,i\neq j}^k \frac{(x-x_i)}{x_j-x_i}$$</div>
+
+<p>Genere 10 puntos entre 0 y 1 del integrando anterior, con estos datos realice la intrepolación de lagrane para obtener 10 puntos adicionales.</p>
+
+<ul>
+<li>Dado un conjunto de k + 1 puntos</li>
+</ul>
+
+<div>$$\overline{f(k)}=\sum\limits_{n=0}^{n=N}e^{(2i\pi xk)}f(x)\delta x$$</div>
+
+<ul>
+<li>Encuente la media, varianza, desviación estandar y el coeficiente de correlación de Pearson de los datos que descarga <a href="http://c3.itm.edu.co/computacionDistribuida/shares.tbz2" target="_blank">aquí</a>. También incluya los valores máximo y mínimo con su fecha de ocurrencia.
+Recuerde que</li>
+</ul>
+
+<div>$$\sigma^2=\frac{1}{N}\sum_{i=1}^{N}(x_i-\overline{x})^2$$</div>
+<div>$$C_v=\frac{\sigma}{\overline{x}}$$</div>
+
+<p>Escriba su reporte a un archivo diferente para cada conjunto de datos.</p>
+
+<ul>
+<li>Con los datos anteriores realice también una regresión lineal(sólo a los datos de este año) y halle su coeficiente de determinación. Tenga en cuenta que:
+<div>$$a1=\frac{\sum (x_i-\overline{x})(y_i-\overline{y})}{\sum (x_i-\overline{x})^2}$$</div>
+<div>$$a_0=\overline{y}-a_1\overline{x}$$</div></li>
+</ul>
+
+<p>Donde la línea de regresión tiene la forma</p>
+
+<div>$$y=a_0+a_1 x$$</div>
+<div>$$r=\frac{\sum (x_i-\overline{x})(y_i-\overline{y})}{\sum (x_i-\overline{x})^2 \sum (y_i-\overline{y})^2}$$</div>
+
+<h3 id="a-id-ompi-mpi-a"><a id="ompi">MPI</a></h3>
+
+<p>MPI (&ldquo;Message Passing Interface&rdquo;, Interfaz de Paso de Mensajes) es un estándar que define la sintaxis y la semántica de las funciones contenidas en una biblioteca de paso de mensajes diseñada para ser usada en programas que exploten la existencia de múltiples procesadores.</p>
+
+<h3 id="estructuta-general-de-un-programa-mpi">Estructuta General de un programa MPI</h3>
+
+<ul>
+<li>MPI include header file #include &ldquo;mpi.h&rdquo;</li>
+<li>Inicializar el ambiente  MPI</li>
+<li>Código principal con los pasos de mensajes</li>
+<li>Finalizar el ambiente MPI</li>
+</ul>
+
+<pre><code>MPI_Init (&amp;argc,&amp;argv) 
+MPI_Comm_size (comm,&amp;size) 
+MPI_Comm_rank (comm,&amp;rank) 
+MPI_Abort (comm,errorcode) 
+MPI_Get_processor_name (&amp;name,&amp;resultlength) 
+MPI_Finalize ()
+</code></pre>
+
+<h3 id="hola-mundo">Hola Mundo</h3>
+
+<pre><code>#include &quot;mpi.h&quot;
+   #include &lt;stdio.h&gt;
+
+   int main(argc,argv)
+   int argc;
+   char *argv[]; {
+   int  numtasks, rank, rc; 
+   char processor_name[MPI_MAX_PROCESSOR_NAME];
+   int  namelen;
+
+
+   rc = MPI_Init(&amp;argc,&amp;argv);
+   if (rc != MPI_SUCCESS) {
+     printf (&quot;Error starting MPI program. Terminating.\n&quot;);
+     MPI_Abort(MPI_COMM_WORLD, rc);
+     }
+
+   MPI_Comm_size(MPI_COMM_WORLD,&amp;numtasks);
+   MPI_Comm_rank(MPI_COMM_WORLD,&amp;rank);
+   MPI_Get_processor_name(processor_name,&amp;namelen);
+   printf (&quot;Number of tasks= %d My rank= %d My processor name=%s\n&quot;, numtasks,rank ,processor_name);
+
+   /*******  do some work *******/
+
+   MPI_Finalize();
+
+   }
+</code></pre>
+
+<h3 id="compilación-de-mpi">Compilación de mpi</h3>
+
+<p>Para compilar un código en mpi podemos usar un comando que viene con el paquete de mpi
+llamado mpicc para c o mpicxx para c++ o mpif77,mpif90 para fortran.</p>
+
+<p><code>mpicc hello.c -o hello.out</code></p>
+
+<h3 id="ejecución-de-mpi">Ejecución de mpi</h3>
+
+<p>Para ejecutar programas en mpi necesitamos usa un comando que se llama mpiexec o mpirun,
+este se encarga de orquestar todas las comunicaciones para el paso de mensajes a través de los nodos de calculo.</p>
+
+<p><code>mpirun -np 4 ./hello.out</code></p>
+
+<p>para decir explicitamente en que máquinas queremos ejecutar nuetros procesos podemos crear un archivo que contenga explicitamente los nodos y su numero de cpus, para este ejemplo llamemoslo machines.txt</p>
+
+<pre><code>wn0 slots=2
+wn1 slots=2
+</code></pre>
+
+<p>con este arhcivo le podemos indicar a mpirun que me ejecute los cuatro procesos en esas dos maquinas en dos de sus cpus asi.</p>
+
+<p><code>mpirun -np 4 -machinefile machines.txt ./hello.out</code></p>
+
+<p>Pero para poder que los procesos de todos los usuarios no colisionen se tiene que ajustar los parametros en un script de de torque de la siguiente forma.</p>
+
+<pre><code>#! /bin/bash
+#PBS -N mpi
+#PBS -o mpi.out
+#PBS -e mpi.err
+#PBS -l walltime=00:01:00
+#PBS -l nodes=4:ppn=1
+cd  $PBS_O_WORKDIR
+cat $PBS_NODEFILE
+mpirun -np 4 -machinefile $PBS_NODEFILE ./hello.out{CODE}
+</code></pre>
+
+<h1 id="comunicaciones-p2p">Comunicaciones p2p</h1>
+
+<p>Es la comunicacion entre dos procesos.</p>
+
+<p>MPI_Send(buffer,count,type,dest,tag,comm) &mdash;&gt; MPI_Recv(buffer,count,type,source,tag,comm,status)</p>
+
+<h3 id="ejemplo">Ejemplo</h3>
+
+<pre><code>#include &quot;mpi.h&quot;
+
+#include &lt;stdio.h&gt;
+
+int main(argc,argv) 
+int argc;
+char *argv[];  {
+int numtasks, rank, dest, source, rc, count, tag=1;  
+char inmsg, outmsg='x';
+MPI_Status Stat;
+
+MPI_Init(&amp;argc,&amp;argv);
+MPI_Comm_size(MPI_COMM_WORLD, &amp;numtasks);
+MPI_Comm_rank(MPI_COMM_WORLD, &amp;rank);
+
+if (rank == 0) {
+  dest = 1;
+  source = 1;
+  rc = MPI_Send(&amp;outmsg, 1, MPI_CHAR, dest, tag, MPI_COMM_WORLD);
+  rc = MPI_Recv(&amp;inmsg, 1, MPI_CHAR, source, tag, MPI_COMM_WORLD, &amp;Stat);
+  } 
+
+else if (rank == 1) {
+  dest = 0;
+  source = 0;
+  rc = MPI_Recv(&amp;inmsg, 1, MPI_CHAR, source, tag, MPI_COMM_WORLD, &amp;Stat);
+  rc = MPI_Send(&amp;outmsg, 1, MPI_CHAR, dest, tag, MPI_COMM_WORLD);
+  }
+
+rc = MPI_Get_count(&amp;Stat, MPI_CHAR, &amp;count);
+printf(&quot;Task %d: Received %d char(s) from task %d with tag %d \n&quot;,
+       rank, count, Stat.MPI_SOURCE, Stat.MPI_TAG);
+
+
+
+MPI_Finalize();
+}
+</code></pre>
+
+<p><strong>Ejercicios</strong></p>
+
+<ul>
+<li>Hacer un algoritmo que reciba en el rango cero, nombre del host de donde se ejecutaron los demás rangos</li>
+<li>Hacer un algoritmo que mande un vector a todos los rangos</li>
+<li>Hacer una integral por sumas de Riemann</li>
+</ul>
+
+<p><strong>Ejercicio 1</strong></p>
+
+<pre><code>#include &quot;mpi.h&quot;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int main(argc,argv) 
+int argc;
+char *argv[];  {
+int numtasks, rank, dest, source, rc, count, tag=1,namelen;  
+//char *inmsg;
+char processor_name[MPI_MAX_PROCESSOR_NAME];
+
+MPI_Status Stat;
+MPI_Init(&amp;argc,&amp;argv);
+MPI_Comm_size(MPI_COMM_WORLD, &amp;numtasks);
+MPI_Comm_rank(MPI_COMM_WORLD, &amp;rank);
+
+if (rank == 0) {
+int i;
+        for(i=1;i&lt;numtasks;i++)
+        {
+                MPI_Recv(&amp;namelen, 1, MPI_INT, i, tag, MPI_COMM_WORLD, &amp;Stat);
+                char inmsg[namelen];
+                MPI_Recv(inmsg, namelen, MPI_CHAR, i, tag, MPI_COMM_WORLD, &amp;Stat);
+                printf(&quot;recibido host=%s desde rango=%d\n&quot;,inmsg,i);
+        }
+  } 
+
+else {
+
+  MPI_Get_processor_name(processor_name,&amp;namelen);
+  MPI_Send(&amp;namelen,1, MPI_INT, 0, tag, MPI_COMM_WORLD);
+  MPI_Send(processor_name, namelen, MPI_CHAR, 0, tag, MPI_COMM_WORLD);
+  printf(&quot;enviando host=%s desde rango=%d\n&quot;,processor_name,rank);
+  }
+MPI_Finalize();
+}
+</code></pre>
+
+<p><strong>Ejercicio 2 (Broadcast)</strong></p>
+
+<pre><code>#include &quot;mpi.h&quot;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(argc,argv) 
+int argc;
+char *argv[];  {
+int numtasks, rank, dest, source, rc, count, tag=1,namelen;  
+
+MPI_Status Stat;
+MPI_Init(&amp;argc,&amp;argv);
+MPI_Comm_size(MPI_COMM_WORLD, &amp;numtasks);
+MPI_Comm_rank(MPI_COMM_WORLD, &amp;rank);
+if (rank == 0) {
+	int i;
+	double data[2]={0,2*3.1416};
+	printf(&quot;enviando dato[0]=%lf dato[1]=%lf desde rango=%d\n&quot;,data[0],data[1],i);
+        for(i=1;i&lt;numtasks;i++)
+        {
+                MPI_Send(data,2, MPI_DOUBLE, i, tag, MPI_COMM_WORLD);
+        }
+  }else {
+      double data[2];
+      MPI_Recv(data, 2, MPI_DOUBLE, 0, tag, MPI_COMM_WORLD, &amp;Stat);
+      printf(&quot;recibido dato[0]=%lf dato[1]=%lf desde rango=%d\n&quot;,data[0],data[1],rank);
+  }
+MPI_Finalize();
+}
+</code></pre>
+
+<h2 id="comunicación-colectiva">Comunicación colectiva</h2>
+
+<h3 id="broadcast">Broadcast</h3>
+
+<p><code>MPI_Bcast(void* data, int count, MPI_Datatype datatype, int root, MPI_Comm communicator)</code></p>
+
+<p><strong>Ejemplo</strong></p>
+
+<pre><code>#include &quot;mpi.h&quot;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(argc,argv) 
+int argc;
+char *argv[];  {
+int numtasks, rank, dest, source=0, rc, count, tag=1;  
+
+MPI_Status Stat;
+MPI_Init(&amp;argc,&amp;argv);
+MPI_Comm_size(MPI_COMM_WORLD, &amp;numtasks);
+MPI_Comm_rank(MPI_COMM_WORLD, &amp;rank);
+double data[2];
+if (rank == 0) {
+	data[0]=0;
+	data[1]=2*3.1416;
+}
+
+MPI_Bcast(data, 2, MPI_DOUBLE, source, MPI_COMM_WORLD);
+printf(&quot;recibido dato[0]=%lf dato[1]=%lf en rango=%d\n&quot;,data[0],data[1],rank);
+
+MPI_Finalize();
+}
+</code></pre>
+
+<h3 id="reduce">Reduce</h3>
+
+<ul>
+<li><strong>MPI_MAX</strong> – Returns the maximum element.</li>
+<li><strong>MPI_MIN</strong> – Returns the minimum element.</li>
+<li><strong>MPI_SUM</strong> – Sums the elements.</li>
+<li><strong>MPI_PROD</strong> – Multiplies all elements.</li>
+<li><strong>MPI_LAND</strong> – Performs a logical “and” across the elements.</li>
+<li><strong>MPI_LOR</strong> – Performs a logical “or” across the elements.</li>
+<li><strong>MPI_BAND</strong> – Performs a bitwise “and” across the bits of the elements.</li>
+<li><strong>MPI_BOR</strong> – Performs a bitwise “or” across the bits of the elements.</li>
+<li><strong>MPI_MAXLOC</strong> – Returns the maximum value and the rank of the process that owns it.</li>
+<li><strong>MPI_MINLOC</strong> – Returns the minimum value and the rank of the process that owns it.</li>
+</ul>
+
+<p><code>MPI_Reduce(void* send_data, void* recv_data, int count,MPI_Datatype datatype, MPI_Op op, int root, MPI_Comm communicator)</code></p>
+
+<p><strong>Ejemplo</strong></p>
+
+<pre><code>#include &quot;mpi.h&quot;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(argc,argv) 
+int argc;
+char *argv[];  {
+int numtasks, rank, dest=0, rc, count, tag=1;  
+
+MPI_Status Stat;
+MPI_Init(&amp;argc,&amp;argv);
+MPI_Comm_size(MPI_COMM_WORLD, &amp;numtasks);
+MPI_Comm_rank(MPI_COMM_WORLD, &amp;rank);
+int sum=0;
+
+MPI_Reduce(&amp;rank, &amp;sum, 1,MPI_INT, MPI_SUM, dest,MPI_COMM_WORLD);
+
+if(rank==0)
+{
+printf(&quot;la suma de todos los rangos es =%d\n&quot;,sum);
+}
+MPI_Finalize();
+}
+</code></pre>
+
+<h3 id="scatter">Scatter</h3>
+
+<pre><code>#include &lt;stdio.h&gt;
+#include &quot;mpi.h&quot;
+
+int main( int argc, char **argv )
+{
+    int isend[3], irecv;
+    int rank, size, i;
+
+    MPI_Init( &amp;argc, &amp;argv );
+    MPI_Comm_rank( MPI_COMM_WORLD, &amp;rank );
+    MPI_Comm_size( MPI_COMM_WORLD, &amp;size );
+
+    if(rank == 0){
+      for(i=0;i&lt;size;i++) isend[i] = i+1;
+    }
+
+    MPI_Scatter(&amp;isend, 1, MPI_INT, &amp;irecv, 1, MPI_INT, 0, MPI_COMM_WORLD);
+
+    printf(&quot;rank = %d: irecv = %d&quot;, rank,irecv);
+
+    MPI_Finalize();
+    return 0;
+}
+</code></pre>
+
+<h3 id="gather">Gather</h3>
+
+<pre><code>#include &lt;stdio.h&gt;
+#include &quot;mpi.h&quot;
+
+int main( int argc, char **argv )
+{
+    int isend, irecv[3];
+    int rank, size;
+
+    MPI_Init( &amp;argc, &amp;argv );
+    MPI_Comm_rank( MPI_COMM_WORLD, &amp;rank );
+    MPI_Comm_size( MPI_COMM_WORLD, &amp;size );
+
+    isend = rank + 1;
+
+    MPI_Gather(&amp;isend, 1, MPI_INT, &amp;irecv, 1, MPI_INT, 0, MPI_COMM_WORLD);
+
+    if(rank == 0)
+    printf(&quot;irecv = %d %d %d&quot;, irecv[0], irecv[1], irecv[2]);
+
+    MPI_Finalize();
+    return 0;
+}
+</code></pre>
+
+<p><strong>Ejercicios</strong></p>
+
+<ul>
+<li>Hacer un programa que reparta una matriz con scatter</li>
+<li>Hacer un programa que reciba una matriz con gather</li>
+<li>Paralelizar la serie de Fourier</li>
+<li>Paralelizar la interpolación de Lagrange.</li>
+</ul>
+
+<h3 id="barrier-y-wtime">Barrier y Wtime</h3>
+
+<p>Tamibién tenemos un mecanismo para esperar que los procesos terminen para realizar una tarea posterior, a esto se le llama una barrera. Miremos el siguiente código que espera a quelos procesos terminen de hacer un simple sleep para imprimir un mensaje:</p>
+
+<pre><code>#include&lt;mpi.h&gt;
+#include&lt;stdio.h&gt;
+
+int main(int argc, char*argv[])
+{
+
+        //MPI variables
+        int rank, size;
+
+        //MPI initialization
+        MPI_Init(&amp;argc,&amp;argv);
+        MPI_Comm_rank(MPI_COMM_WORLD,&amp;rank);
+        MPI_Comm_size(MPI_COMM_WORLD,&amp;size);
+
+        sleep(rank);
+    printf(&quot;We are BEFORE the barrier in rank %d\n&quot;,rank);
+
+        MPI_Barrier(MPI_COMM_WORLD);
+
+    printf(&quot;We are now AFTER the barrier in rank %d\n&quot;,rank);
+    
+        MPI_Finalize();
+
+        return 0;
+}
+</code></pre>
+
+<ul>
+<li>¿Qué pasa cuando le quitamos la instrucción &ldquo;MPI_Barrier&rdquo;?</li>
+</ul>
+
+<p>La instrucción MPI_Wtime() nos permite guardar en una variable de tipo double el tiempo actual, úsela en conjunto con una barrera para obtener el tiempo total de ejcución del algoritmo de multiplicación de matrices.</p>
+
+<p><strong>Ejercicio</strong></p>
+
+<p>El siguiente código realiza una multiplicación de matrices haciendo un scatter de las filas de A y un broadcast de las matriz B completa. Córralo con un script en torque o condor.</p>
+
+<pre><code>int main(int argc, char *argv[])
+{
+    //matrix definition
+    int m=4;
+    int matA_send[16]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};                                                                                                                     
+        int matB_send[16]={0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0};                                                                                                                        
+        int matC[16]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};                                                                                                                             
+        int chunk_send[4];                                                                                                                                                          
+        int chunk_recv[4]={0,0,0,0};                                                                                                                                                
+        int i,j;//iterators                                                                                                                                                         
+                                                                                                                                                                                    
+        //MPI variables                                                                                                                                                             
+        int rank, size;                                                                                                                                                             
+                                                                                                                                                                                    
+        //MPI initialization                                                                                                                                                        
+        MPI_Init(&amp;argc,&amp;argv);                                                                                                                                                      
+        MPI_Comm_rank(MPI_COMM_WORLD,&amp;rank);                                                                                                                                        
+        MPI_Comm_size(MPI_COMM_WORLD,&amp;size);                                                                                                                                        
+                                                                                                                                                                                    
+        MPI_Scatter(&amp;matA_send,m,MPI_INT,&amp;chunk_send,m,MPI_INT,0,MPI_COMM_WORLD);                                                                                                   
+                                                                                                                                                                                    
+                                                                                                                                                                                    
+        MPI_Bcast(&amp;matB_send,m*m,MPI_INT,0,MPI_COMM_WORLD);                                                                                                                         
+                                                                                                                                                                                    
+        printf(&quot;Multiplying on rank %d\n&quot;,rank);                                                                                                                                    
+        for(i=0;i&lt;m;i++) {                                                                                                                                                          
+                for(j=0;j&lt;m;j++) chunk_recv[i]+=chunk_send[j]*matB_send[j*m+i];                                                                                                     
+        }                                                                                                                                                                           
+
+        MPI_Gather(&amp;chunk_recv,m,MPI_INT,&amp;matC,m,MPI_INT,0,MPI_COMM_WORLD);
+        MPI_Barrier(MPI_COMM_WORLD);
+
+    if(rank==0) {
+            printf(&quot;Matrix resultado...\n&quot;);
+                for(i=0;i&lt;m;i++) {
+                        for(j=0;j&lt;m;j++) printf(&quot;%d &quot;,matC[i*m+j]);
+                        printf(&quot;\n&quot;);
+                }
+        }
+
+    
+        MPI_Finalize();
+
+        return 0;
+}
+</code></pre>
+
+<p>Modifíquelo para que dentro de cada hilo se realize la multipliucación de cada columna de B por la correspondiente fila de A usando openmp.</p>
+
+<h3 id="a-id-fileio-lectura-de-archivos-a"><a id="fileio">Lectura de archivos</a></h3>
+
+<p>El siguiente código lee un dato espefífico de un archivo sin tener que recorrerlo completamente.
+Usamos la función fseek que ubica el índice que recorre el archivo en una posición determinada. Esta posición depende del numero de bytes(caracteres) que se encuentran en cada fila del archivo.
+Esto implica que el archivo a leer debe tener el mismo núnero de caracteres en cada línea.</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;time.h&gt;
+
+int main(int argc, char *argv[])
+{
+    if(argc!=4) { //Manejo de error
+        fprintf(stderr,&quot;Uso: ./a.out [archivo] [total de lineas] [linea a extraer]\n&quot;);
+        return 1;
+    }
+    FILE *in;
+    float num;//Numero guardado en la fila deseada en el archivo
+    long int total_lines,line; //total de lineas y la linea a buscar
+    char *filename;
+    filename=argv[1];
+    total_lines=atoi(argv[2]);
+    line=atoi(argv[3]);
+    if(line&gt;total_lines) { //No se puede buscar una línea fuera del total del archivo
+        fprintf(stderr,&quot;linea %d es mayor que el total de líneas: %d\n&quot;,line,total_lines);
+        return 1;
+    }
+    
+    clock_t tiempo;
+
+    tiempo=clock();//Empezamos a contar el tiempo que tarda
+
+    in=fopen(filename,&quot;r&quot;);
+
+    //Leyendo el primer dato
+    fscanf(in,&quot;%e&quot;,&amp;num);
+    printf(&quot;Encontró el número %e en la primera línea\n&quot;,num);
+
+    //Leyendo el dato deseado
+    fseek(in,(total_lines-1)*13,SEEK_SET);
+    fscanf(in,&quot;%e&quot;,&amp;num);
+    printf(&quot;Encontró el número %e en la última línea\n&quot;,num);
+
+    //Leyendo el último
+    fseek(in,(line-1)*13,SEEK_SET);
+    fscanf(in,&quot;%e&quot;,&amp;num);
+    printf(&quot;Encontró el número %e en la línea %d\n&quot;,num,line);
+
+    tiempo=clock()-tiempo;
+    printf(&quot;La lectura de estos 3 datos tomó %f segundos\n&quot;,((float)tiempo)/CLOCKS_PER_SEC);
+    
+
+    return 0;
+}
+</code></pre>
+
+<h3 id="a-id-oacc-openacc-a"><a id="oacc">OpenACC</a></h3>
+
+<p>OpenACC es un estandar de programación en tarjetas aceleradoras de video, creado en conjunto por Nvidia, CRAY, PGI y CAPS.
+Su implementación se basa en la de OpenMP en la cual se usan directivas de compilación para que éste haga el trabajo de organizar el binario de tal manera que se ejecuten fragmentos de código determinados en la GPU.</p>
+
+<p>En este momento su desarrollo aún es muy joven y los compiladores que lo soportan son propietarios y cobran por su descarga, gcc está trabajando para introducir openacc en su compilador.
+En este momneto usaremos una versión de evaluación del compilador  de PGI que se encuentra ya instalada en nuestro servidor.
+Para usarlo debemos incluir las siguientes líneas en el archivo de configuración del home .bashrc</p>
+
+<pre><code>export PGI=/opt/pgi;
+export PATH=/opt/pgi/linux86-64/14.10/bin:$PATH;
+export MANPATH=$MANPATH:/opt/pgi/linux86-64/14.10/man;
+export LM_LICENSE_FILE=$LM_LICENSE_FILE:/opt/pgi/license.dat;
+</code></pre>
+
+<p>En el siguiente ejemplo realizamos la operación Y=a*X+Y donde X e Y son arreglos:</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+
+void saxpy(int n, float a, float *x, float *y)
+{
+    int i;
+        for(i=0; i&lt;n; i++)
+            y[i]=a*x[i]+y[i];
+}
+
+int main(int argc, char *argv[])
+{
+    int N=5;
+        float A=2;
+        float X[5]={1,2,3,4,5};
+        float Y[5]={10,20,30,40,50};
+
+        saxpy(N,A,X,Y);
+
+        return 0;
+}
+</code></pre>
+
+<ul>
+<li>¿Cómo paralelizamos este código con openmp?
+Simplemente agregando la línea</li>
+</ul>
+
+<pre><code>#pragma omp parallel for
+</code></pre>
+
+<p>Encima del for que se encuentra en nuestra función saxpy.</p>
+
+<ul>
+<li>¿Cómo lo paralelizamos con openacc?</li>
+</ul>
+
+<p>Simplemente agregando la línea</p>
+
+<pre><code>#pragma acc parallel loop
+</code></pre>
+
+<p>Encima del for que se encuentra en nuestra función saxpy.</p>
+
+<p>Para compilarlo en la línea de comando escribimos</p>
+
+<pre><code>pgcc -acc saxpy.c -Minfo=accel
+</code></pre>
+
+<p>La opción nos va a dar Más INFOrmación sobre el proceso de compilación, vemos la salida</p>
+
+<pre><code>saxpy:
+      8, Accelerator kernel generated
+          9, #pragma acc loop gang, vector(256) /* blockIdx.x threadIdx.x */
+      8, Generating present_or_copyin(x[:n])
+         Generating present_or_copy(y[:n])
+         Generating Tesla code
+</code></pre>
+
+<p>Donde observamos que el compilador copia el arreglo x y el arreglo y de la memoria de la CPU a la de la GPU.</p>
+
+<p>Para ejecutarlo
+<code>let PGI_ACC_NOTIFY=1;./a.out</code></p>
+
+<p>Esta variable de entorno de PGI nos permite obtener algo más de información en tiempo de ejecución, aquí podemos corroborar que nuestro código ejecutó en la GPU.</p>
+
+<p><strong>Ejercicios</strong></p>
+
+<ul>
+<li>Realice una suma de 2 vectores</li>
+<li>Haga evolución el mapa logístico</li>
+</ul>
+
+<div>$$X_{n+1}=RX_n(1-X_n)$$</div>
+
+<p>100 pasos, donde R={1,2.5,2.6,3,3.2,3.5,3.9,4} y las condiciones iniciales tómelas cerca del punto 1-1/R.</p>
+
+<p>Ahora vamos a resolver la ecución de laplace a través del método de jacobi, se trata de llegar al equilibrio tomando el nuevo valor como un promedio de los valores vecinos en un sistema 2D discretizado. Veamos el código de ejemplo(descargue la <a href="http://c3.itm.edu.co/computacionDistribuida/mat.txt" target="_blank">matriz</a> y ejecute de la forma ./a.out mat.txt resultado.txt):</p>
+
+<pre><code>#include&lt;stdio.h&gt;
+#include&lt;math.h&gt;
+
+int main(int argc, char *argv[])
+{
+    FILE *input,*eq;
+        input=fopen(argv[1],&quot;r&quot;);
+        eq=fopen(argv[2],&quot;w&quot;);
+    int i,j,t=0,itermax=500; //Iteradores
+        int n=1000,m=1000; //Dimensiones
+        float A1[n][m];
+        float A2[n][m];
+        float tmp;
+        //Llenando la matriz inicial
+        for(i=0;i&lt;n;i++) {
+                for(j=0;j&lt;m;j++) {
+                    fscanf(input,&quot;%e&quot;,&amp;A1[i][j]);
+                }
+        }
+
+        for(t=0;t&lt;itermax;t++) {
+                //Iteracion sobre la matriz
+                for(i=1;i&lt;n-1;i++) {
+                        for(j=1;j&lt;m-1;j++) {
+                                A2[i][j]=0.25*(A1[i][j+1]+A1[i][j-1]+A1[i+1][j]+A1[i-1][j]);
+                        }
+                }
+
+
+                //Intercambio de las matrices para la evolución
+                for(i=1;i&lt;n-1;i++) {
+                        for(j=1;j&lt;m-1;j++) {
+                                A1[i][j]=A2[i][j];
+                        }
+                }
+        }
+
+        for(i=0;i&lt;n;i++) {
+                for(j=0;j&lt;m;j++) {
+                    fprintf(eq,&quot;%d %d %e \n&quot;,i,j,A1[i][j]);
+                }
+        }
+}
+</code></pre>
+
+<p><strong>Preguntas</strong></p>
+
+<ul>
+<li>¿Cuánto tarda el sistema con el código serial?</li>
+<li>¿Cuánto tarda con openacc?</li>
+</ul>
+
+<p>Ejecute el código exportando la variable PGI_ACC_TIME=1, es decir:</p>
+
+<p><code>export PGI_ACC_TIME=1;./a.out mat.txt result.txt</code></p>
+
+<p>Debe uobtener una salida similar a esta:</p>
+
+<pre><code>Accelerator Kernel Timing data
+/home/gerardo.gutierrez/oacc/jacobi.c
+  main  NVIDIA  devicenum=0
+    time(us): 17,512
+    23: data region reached 500 times
+        23: data copyin transfers: 500
+             device time(us): total=3,341 max=38 min=2 avg=6
+        32: data copyout transfers: 500
+             device time(us): total=983 max=8 min= avg=
+    23: compute region reached 500 times
+        23: kernel launched 500 times
+            grid: [998]  block: [256]
+             device time(us): total=3,718 max=191 min= avg=7
+            elapsed time(us): total=33,788 max=716 min=13 avg=67
+    32: data region reached 500 times
+        32: data copyin transfers: 500
+             device time(us): total=3,828 max=11 min=6 avg=7
+        38: data copyout transfers: 500
+             device time(us): total=1,689 max=16 min= avg=3
+    32: compute region reached 500 times
+        32: kernel launched 500 times
+            grid: [998]  block: [256]
+             device time(us): total=3,953 max=21 min= avg=7
+            elapsed time(us): total=33,598 max=352 min=14 avg=67
+</code></pre>
+
+<p>Note que en las partes donde dice &ldquo;data region&rdquo; en &ldquo;device time&rdquo; hemos invertido mucho tiempo, esto es pues cada paso de t envía los datos de la GPU a la CPU.</p>
+
+<p><strong>Pregunta</strong></p>
+
+<ul>
+<li>¿Qué cree ud que debemos hacer con las matrices A1 y A2 para solventar este problema?
+Realice lo mismo agregando sobre el bucle del tiempo una sección de manejo de datos de la siguiente manera:
+<code>#pragma acc data copy(A1), create(A2)</code></li>
+</ul>
+
+<p>Ejecute nuevamente con la opción PGI_ACC_TIME=1</p>
+
+<p><strong>Preguntas</strong></p>
+
+<ul>
+<li>¿Qué ocurrió con los tiempos en la región de datos?</li>
+<li>¿Qué cree que significan las cláusulas copy y create?</li>
+</ul>
+
+<p><strong>Ejercicio</strong></p>
+
+<ul>
+<li>Resuelva la ecuación de laplace usando diferencias finitas hasta 500 pasos de tiempo con los mismo datos iniciales anteriores.</li>
+<li>Pruebe aumentando el tamaño de la matriz y chequeando los tiempos de cálculo que tarda la <em>región de cómputo</em></li>
+</ul>
+
+					</div>
+				</article>
+
+			</div>
+		</div> 
+
+        <div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+
+				<div id="share">
+                    
+				</div>
+			</div>
+		</div> 
+		<div class="clearfix"></div>
+
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+
+				<div id="comments">
+                    
+				</div>
+			</div>
+		</div> 
+		<div class="clearfix"></div>
+
+	</div>	
+
+</main>
+
+<footer id="footer">
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Contacto</h3>
+				<div class="widget-body">
+					<p><br>
+						<a href="mailto:ggutierg@gmail.com">ggutierg@gmail.com</a><br>
+						<br>
+						
+					</p>
+				</div>
+			</div>
+			
+
+			
+			<div class="col-md-3 widget">
+				<h3 class="widget-title">Sígueme en</h3>
+				<div class="widget-body">
+					<p class="follow-me-icons">
+                        
+                            
+                        
+                            
+                                <a href="https://twitter.com/muzzgo" target="_blank"><i class="fa fa-twitter-square fa-2"></i></a>
+                            
+                        
+                            
+                                <a href="https://www.instagram.com/muzzgash" target="_blank"><i class="fa fa-instagram fa-2"></i></a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="https://www.linkedin.com/in/gerardo-guti%c3%a9rrez-b8695386" target="_blank"><i class="fa fa-linkedin-square fa-2"></i></a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="https://github.com/muzgash" target="_blank"><i class="fa fa-github fa-2"></i></a>
+                            
+                        
+                            
+                        
+					</p>
+				</div>
+			</div>
+			
+
+			
+
+			
+
+		</div> 
+	</div>
+</footer>
+
+<footer id="underfooter">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-6 widget">
+				<div class="widget-body">
+					<p></p>
+				</div>
+			</div>
+
+			<div class="col-md-6 widget">
+				<div class="widget-body">
+					<p class="text-right">
+						Copyright &copy; , Gerardo Gutiérrez<br>
+						Design: <a href="http://www.gettemplate.com" rel="designer">Initio by GetTemplate</a> - 
+                        Powered by: <a href="https://gohugo.io/" rel="poweredby">Hugo</a>
+                    </p>
+				</div>
+			</div>
+
+		</div> 
+	</div>
+</footer>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="http://gerardogutierrez.co/js/template.js"></script>
+<script id="dsq-count-scr" src="//hugo-initio-site.disqus.com/count.js" async></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-114325062-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

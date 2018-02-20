@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Courses on Gerardo Gutiérrez</title>
+    <link>http://gerardogutierrez.co/en/courses/</link>
+    <description>Recent content in Courses on Gerardo Gutiérrez</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-co</language>
+    <lastBuildDate>Mon, 17 Jun 2013 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://gerardogutierrez.co/en/courses/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Development tools in GNU/Linux</title>
+      <link>http://gerardogutierrez.co/en/courses/dev/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/courses/dev/</guid>
+      <description>Under Translation</description>
+    </item>
+    
+    <item>
+      <title>GNU/Linux and BaSH</title>
+      <link>http://gerardogutierrez.co/en/courses/bash/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/courses/bash/</guid>
+      <description>UNDER TRANSLATION #!/bin/bash
+Duration: 40 Hours
+Teacher: Gerardo Gutiérrez
+Contacto: muzgash@gmail.com
+Sylabus  Command Line  Command Line Environment variables Redirectoins and quoting Regular Expressions SED AWK  Bash - Scripting  Scripting
+ Loops
+ File IO
+ bc
+ Arrays  “Parallel” BaSH
+ BaSH &amp;amp; qsub
+   Command Line In order to get familiar with the system, in this section we are going to do basic commands that help us in any unix-like system.</description>
+    </item>
+    
+    <item>
+      <title>High performance computing in C</title>
+      <link>http://gerardogutierrez.co/en/courses/hpc/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/courses/hpc/</guid>
+      <description>Under translation</description>
+    </item>
+    
+  </channel>
+</rss>

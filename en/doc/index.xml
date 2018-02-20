@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on Gerardo Gutiérrez</title>
+    <link>http://gerardogutierrez.co/en/doc/</link>
+    <description>Recent content in Docs on Gerardo Gutiérrez</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-co</language>
+    <lastBuildDate>Mon, 17 Jun 2013 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://gerardogutierrez.co/en/doc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Courses</title>
+      <link>http://gerardogutierrez.co/en/doc/courses/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/doc/courses/</guid>
+      <description>During my emplyment at ITM, I have been giving lectures on Linux, scientific programming and hpc that I would like to share here as well:
+ GNU/Linux and BaSH Development tools in linux High performance computing  </description>
+    </item>
+    
+    <item>
+      <title>Tutorials</title>
+      <link>http://gerardogutierrez.co/en/doc/tutorials/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/doc/tutorials/</guid>
+      <description>Under Construction</description>
+    </item>
+    
+  </channel>
+</rss>

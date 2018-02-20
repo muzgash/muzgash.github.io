@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gerardo Gutiérrez</title>
+    <link>http://gerardogutierrez.co/en/</link>
+    <description>Recent content on Gerardo Gutiérrez</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-co</language>
+    <lastBuildDate>Mon, 17 Jun 2013 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://gerardogutierrez.co/en/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Coffee</title>
+      <link>http://gerardogutierrez.co/en/coffee/coffee1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/coffee/coffee1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://gerardogutierrez.co/en/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/about/</guid>
+      <description>Education  Physics. Bachelor degree at Universidad de Antioquia (2018). Seismic inversion with deep learning.  Experience  Google Inc.. Developer of a Qt GUI for IPython. (May - Aug, 2016) Universitat Rovira i Virgili. Intern researching competitive dynamics in multiplex complex networks. (Jan - Mar, 2015) Instituto Tecnológico Metropolitano. Developer, reseracher and consultant in hpc for seismic data analysis. (Feb 2014 - Apr 2017) i!O. Developer and data scientist.</description>
+    </item>
+    
+    <item>
+      <title>Complex Networks</title>
+      <link>http://gerardogutierrez.co/en/data/cn/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/data/cn/</guid>
+      <description>Everything in nature can be explained as a set of interactions between entieties, flock of birds, chemical reactions, gossip spreading, etc. A network is just a structure in which we can describe those interactions. Here, the entities are called nodes or vertices and the connections between them are called links or edges. When the edges are not regular nor random we are talking about a complex network.
+Since this is merely a methodology that can be applied to every field of knowledge, I have been toying around with complex networks long time ago to study basic principles of social networks, the votig intention for local elections and consumer behaviour in physical and virtual purchase channels.</description>
+    </item>
+    
+    <item>
+      <title>Courses</title>
+      <link>http://gerardogutierrez.co/en/doc/courses/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/doc/courses/</guid>
+      <description>During my emplyment at ITM, I have been giving lectures on Linux, scientific programming and hpc that I would like to share here as well:
+ GNU/Linux and BaSH Development tools in linux High performance computing  </description>
+    </item>
+    
+    <item>
+      <title>Development tools in GNU/Linux</title>
+      <link>http://gerardogutierrez.co/en/courses/dev/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/courses/dev/</guid>
+      <description>Under Translation</description>
+    </item>
+    
+    <item>
+      <title>Finance</title>
+      <link>http://gerardogutierrez.co/en/data/finance/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/data/finance/</guid>
+      <description>I have always had an interest in economics and how computers can help develop that knowledge either with data or phenomenologial models.
+As of last year I am developing a set of tools that aid trading decisions, starting from very basic statistical crunching of stock market data to getting my way up to machine learning inference. In this topic I am very intereste in a kind of learning based in genetic algorithms.</description>
+    </item>
+    
+    <item>
+      <title>GNU/Linux and BaSH</title>
+      <link>http://gerardogutierrez.co/en/courses/bash/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/courses/bash/</guid>
+      <description>UNDER TRANSLATION #!/bin/bash
+Duration: 40 Hours
+Teacher: Gerardo Gutiérrez
+Contacto: muzgash@gmail.com
+Sylabus  Command Line  Command Line Environment variables Redirectoins and quoting Regular Expressions SED AWK  Bash - Scripting  Scripting
+ Loops
+ File IO
+ bc
+ Arrays  “Parallel” BaSH
+ BaSH &amp;amp; qsub
+   Command Line In order to get familiar with the system, in this section we are going to do basic commands that help us in any unix-like system.</description>
+    </item>
+    
+    <item>
+      <title>Geophysics</title>
+      <link>http://gerardogutierrez.co/en/data/geophysics/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/data/geophysics/</guid>
+      <description>From 2014 to 2018 I worked as a developer for a project funded by [Ecopetrol] in which the main goal was to come up with new techniques to analize data in order to find more accurately deposits of oil and gas.
+I started as a high performance computing consultant and teacher, but as the years passed I got really interested in the subject and ideas started to flow. AI entered the scene and right now, with some friends, we are solving what is called the inverse problem with generative adversarial neural networks.</description>
+    </item>
+    
+    <item>
+      <title>High performance computing in C</title>
+      <link>http://gerardogutierrez.co/en/courses/hpc/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/courses/hpc/</guid>
+      <description>Under translation</description>
+    </item>
+    
+    <item>
+      <title>M.A.R.B.L.E.S.</title>
+      <link>http://gerardogutierrez.co/en/iot/marbles/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/iot/marbles/</guid>
+      <description>MARBLES is short for Marvelous Arduino &amp;amp; Raspberrypi Biorreactor Lightweight Electronic System. It is a remotely controlled electronic system that helps adjust the light intensity, turn on/off the CO2 injection and measure the density of algae in a small bioreactor. It can b controlled from your cellphone or any webbrowser and it plots all the measures and the intensity during the duration of the setup.
+All the information on the lab notebook (including circuit designs) can be found in the blog of the project MARBLES</description>
+    </item>
+    
+    <item>
+      <title>Politics</title>
+      <link>http://gerardogutierrez.co/en/data/politics/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/data/politics/</guid>
+      <description>UNDER CONSTRUCTION</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Security System</title>
+      <link>http://gerardogutierrez.co/en/iot/security/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/iot/security/</guid>
+      <description>Video surveillance systems or services are way too expensive for a home security project. A raspberryPi kit with a camera cost roughly $100 USD.
+I developed a security system that detects people and sends a report picture with a telegram bot. Using a Raspberry pi and a NOIR filter camera I could obtain these images:
+The entire prohect is yet to be uploaded to github but meanwhile this is the list of docs and tools I used:</description>
+    </item>
+    
+    <item>
+      <title>Social Networks</title>
+      <link>http://gerardogutierrez.co/en/data/sn/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/data/sn/</guid>
+      <description>UNDER CONSTRUCTION</description>
+    </item>
+    
+    <item>
+      <title>Tutorials</title>
+      <link>http://gerardogutierrez.co/en/doc/tutorials/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/doc/tutorials/</guid>
+      <description>Under Construction</description>
+    </item>
+    
+    <item>
+      <title>Coffee</title>
+      <link>http://gerardogutierrez.co/en/service/service4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/service/service4/</guid>
+      <description>&lt;p&gt;Travel through Colombia in search for coffee, having its constant fragance around the house and knowing how to prepare a gret cup. All those things make every activity more pleasant.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Data Science</title>
+      <link>http://gerardogutierrez.co/en/service/service2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/service/service2/</guid>
+      <description>&lt;p&gt;There is a great deal of data right now, and why not make a big effort to process it&amp;hellip; I&amp;rsquo;ll do it.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>IoT</title>
+      <link>http://gerardogutierrez.co/en/service/service3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/service/service3/</guid>
+      <description>&lt;p&gt;It is equally important the data acquiring process as its analysis. Nowadays with so many wearable devices, cars and appliances connected to the interner, we experience a big growth in data. More devices, more data; more data, more happiness.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Courses on Gerardo Gutiérrez</title>
+    <link>http://gerardogutierrez.co/courses/</link>
+    <description>Recent content in Courses on Gerardo Gutiérrez</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-co</language>
+    <lastBuildDate>Fri, 05 Dec 2014 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://gerardogutierrez.co/courses/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Computación de alto desempeño en C</title>
+      <link>http://gerardogutierrez.co/courses/hpc/</link>
+      <pubDate>Fri, 05 Dec 2014 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/courses/hpc/</guid>
+      <description>Contenido  OpenMP Introducción a la comunicación de procesos con MPI Introducción a la programación en aceleradoras de video con OpenACC  OpenMP En la sección anterior vimos cuan complejo puede ser el trabajo con bifuraciones o con hilos, aún más si queremos compartir información entre procesos. OpenMP fue creado para facilitar este trabajo, consiste en un conjunto de instrucciones para loslenguajes C/C++ y fortran de facil despliegue para resolver problemas complejos.</description>
+    </item>
+    
+    <item>
+      <title>Development tools in GNU/Linux</title>
+      <link>http://gerardogutierrez.co/courses/dev/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/courses/dev/</guid>
+      <description>Herramientas de desarrollo GNU/Linux Contenido Construcción  Construcción de librerías en C Makefile Scons CMake  Control de versiones  Subversion Mercurial git  Construcción de librerías en C Realizaremos un ejercicio manual para la intriducción de un código que usaremos a través de todo el curso y para visualizar las ventajas de las herramientas automáticas de construcción.
+Creemos los siguientes archivos de código en C:
+libreriaPi.h
+void funcion (double *t, double *k, double *l);  libreriaPi.</description>
+    </item>
+    
+    <item>
+      <title>GNU/Linux y BaSH</title>
+      <link>http://gerardogutierrez.co/courses/bash/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/courses/bash/</guid>
+      <description>#!/bin/bash
+Duración: 40 Hours
+Profesor: Gerardo Gutiérrez
+Contacto: muzgash@gmail.com
+Contenido  Línea de Comandos  Línea de comandos Variables de entorno Redirecciones y encomillado Expresiones regulares SED AWK  Bash - Scripting  Scripting
+ Bucles y condicionales
+ Manejo de Archivos
+ bc
+ Arreglos  “Parallel” BaSH
+ BaSH y qsub
+   Línea de comandos Para familiarizarnos un poco con el sistema en esta sección nos dedicaremos a realizar las tareas básicas necesarias para desarrollar el quehacer diario en cualquier sistema computacional, reconozcamos algunos comandos:</description>
+    </item>
+    
+  </channel>
+</rss>

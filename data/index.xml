@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data on Gerardo Gutiérrez</title>
+    <link>http://gerardogutierrez.co/data/</link>
+    <description>Recent content in Data on Gerardo Gutiérrez</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-co</language>
+    <lastBuildDate>Mon, 17 Jun 2013 12:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://gerardogutierrez.co/data/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Finanzas</title>
+      <link>http://gerardogutierrez.co/data/finance/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/data/finance/</guid>
+      <description>Siempre he tenido un interés por las ciencias econḿicas y como los computadores pueden ayudar a desarrollar conocimientos ya sea desde los datos o la fenomenología.
+Desde el año pasado estoy desarrollando un conjunto de herramienas para ayudar al comerciante de acciones o divisas, comenzando con el analisis estadístico básico de las series de tiempo de los mercados hasta llegar a algoritmos más sofisticados como los de inteligencia artificial.
+Con este horizonte he estado trabajando en un tipo de aprendizaje basado en algoritmos genéticos.</description>
+    </item>
+    
+    <item>
+      <title>Geofísica</title>
+      <link>http://gerardogutierrez.co/data/geophysics/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/data/geophysics/</guid>
+      <description>Desde 2014 trabajé como desarrollador de un proyecto patrocinado por [Ecopetrol] cuyo principal objetivo era encontrar nuevas metodologías y algoritmos para analizar datos del subsuelo y así encontrar mas eficientemente depósitos de gas y petróleo.
+Comencé como consultor y profesor en computación de alto rendimiento, luego de comprometerme más con los temas del proyecto comencé a desarrollar ideas propias. La inteligencia artificial hizo su aparición y con unos amigos decidimos abordar el problema inverso con redes neuronales adversarias generativas.</description>
+    </item>
+    
+    <item>
+      <title>Política</title>
+      <link>http://gerardogutierrez.co/data/politics/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/data/politics/</guid>
+      <description>EN CONSTRUCCIÓN</description>
+    </item>
+    
+    <item>
+      <title>Redes Complejas</title>
+      <link>http://gerardogutierrez.co/data/cn/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/data/cn/</guid>
+      <description>Todo en la naturalesza puede ser explicado como la interacción entre entidades, por ejemplo, el movimiento de una bandada de pájaros, la propagación de un chisme oalgunas reacciones químicas, entre otros. Una red es simplemente una estructura en la cual describir estas interacciones. En las redes las entidades mencionadas son llamadas nodos o vértices y las conexiones entre ellas vínculos o aristas. Cuando las conexiones no son regulares ni aleatorias estamos hablando de una red compleja.</description>
+    </item>
+    
+    <item>
+      <title>Redes Sociales</title>
+      <link>http://gerardogutierrez.co/data/sn/</link>
+      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/data/sn/</guid>
+      <description>EN CONSTRUCCIÓN</description>
+    </item>
+    
+  </channel>
+</rss>
