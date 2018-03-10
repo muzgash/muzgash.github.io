@@ -3,11 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://gerardogutierrez.co/en/coffee/coffee1/</loc>
+    <loc>http://gerardogutierrez.co/en/coffee/</loc>
   </url>
   
   <url>
     <loc>http://gerardogutierrez.co/en/about/</loc>
+  </url>
+  
+  <url>
+    <loc>http://gerardogutierrez.co/en/courses/hpc/</loc>
+    <lastmod>2014-12-05T12:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -37,11 +42,6 @@
   
   <url>
     <loc>http://gerardogutierrez.co/en/data/geophysics/</loc>
-    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://gerardogutierrez.co/en/courses/hpc/</loc>
     <lastmod>2013-06-17T12:00:00+00:00</lastmod>
   </url>
   
@@ -80,13 +80,8 @@
   </url>
   
   <url>
-    <loc>http://gerardogutierrez.co/en/coffee/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://gerardogutierrez.co/en/courses/</loc>
-    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
+    <lastmod>2014-12-05T12:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -108,7 +103,7 @@
   
   <url>
     <loc>http://gerardogutierrez.co/en/</loc>
-    <lastmod>2013-06-17T12:00:00+00:00</lastmod>
+    <lastmod>2014-12-05T12:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

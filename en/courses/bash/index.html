@@ -3,8 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	<meta name="description" content="curriculum vitae of Gerado Gutierrez. Projects including iot, data science, finance, programming, artificial intelligence and lots of coffee">
+	<meta name="author"      content="Gerardo Gutierrez">
+	<meta name="robots" content="index, follow">
 
 	<title>GNU/Linux and BaSH</title>
 
@@ -56,7 +57,7 @@
             <ul class="nav navbar-nav">
                 
                 
-                <li class="active"><a href="/">Home</a></li>
+                <li class="active"><a href="/en">Home</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data Science & AI <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -114,8 +115,8 @@
                         
                     </ul>
                 </li>
-                <li class="active"><a href="/coffee">Coffee</a></li>
-                <li class="active"><a href="/about">About</a></li>
+                <li class="active"><a href="/en/coffee">Coffee</a></li>
+                <li class="active"><a href="/en/about">About</a></li>
                 
                 
             </ul>
@@ -252,7 +253,7 @@ $ whatis
 
 <p>The alias command can rename another commando or set of them. In this example we are going to rename mkdir and cd command to mkcd to create a folder and access it immediately.</p>
 
-<p>Podríamos decir que diariamente se comprimen y descomprimen archivos descargados a través de la red, esto por su facilidad para ser transferidos por ella. Linux viene por defecto con un solo método de compresión llamado &ldquo;tarball&rdquo;. Realicemos lo siguiente:</p>
+<p>Linux comes with a default compression method called &ldquo;tarball&rdquo;, let&rsquo;s execute the following commands:</p>
 
 <pre><code>$ touch foo
 $ touch bar
@@ -260,9 +261,9 @@ $ tar -cf foobar.tar foo bar
 $ ls -l *
 </code></pre>
 
-<p>En este bloque creamos 2 archivos vacios que a continuación comprimimos con el comando tar(ver man), luego investigamos los archivos con el comando ls -l. ¿Por qué si los archivos vacíos pesan 0 bits, el comprimido pesa más?.</p>
+<p>In this block we created two empty files, then compressed them with the command tar (see man). Why do the empty files use 0 bits and the compressed versions use more bits?</p>
 
-<h3 id="a-name-environment-a-variables-de-entorno-y-ambiente-de-trabajo"><a name="environment"></a>Variables de entorno y ambiente de trabajo</h3>
+<h3 id="a-name-environment-a-environment-variables"><a name="environment"></a>Environment variables</h3>
 
 <p>Linux pone a disposición del usuario información en una sesión de trabajo, información como donde se encuentran los comandos y los comandos mismos. Ésta la podemos categorizar en: Comandos y variables.
 Las variables se subdividen en varibales del shell(que veremos más adelante) y variables de entorno que investigamos así:</p>

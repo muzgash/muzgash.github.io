@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://gerardogutierrez.co/es/coffee/coffee1/</loc>
+    <loc>http://gerardogutierrez.co/es/coffee/</loc>
   </url>
   
   <url>
@@ -81,11 +81,6 @@
   
   <url>
     <loc>http://gerardogutierrez.co/es/service/service2/</loc>
-  </url>
-  
-  <url>
-    <loc>http://gerardogutierrez.co/es/coffee/</loc>
-    <priority>0</priority>
   </url>
   
   <url>

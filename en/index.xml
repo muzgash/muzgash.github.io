@@ -5,18 +5,18 @@
     <link>http://gerardogutierrez.co/en/</link>
     <description>Recent content on Gerardo Gutiérrez</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>es-co</language>
-    <lastBuildDate>Mon, 17 Jun 2013 12:00:00 +0000</lastBuildDate>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Dec 2014 12:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://gerardogutierrez.co/en/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Coffee</title>
-      <link>http://gerardogutierrez.co/en/coffee/coffee1/</link>
+      <link>http://gerardogutierrez.co/en/coffee/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://gerardogutierrez.co/en/coffee/coffee1/</guid>
+      <guid>http://gerardogutierrez.co/en/coffee/</guid>
       <description></description>
     </item>
     
@@ -27,6 +27,15 @@
       
       <guid>http://gerardogutierrez.co/en/about/</guid>
       <description>Education  Physics. Bachelor degree at Universidad de Antioquia (2018). Seismic inversion with deep learning.  Experience  Google Inc.. Developer of a Qt GUI for IPython. (May - Aug, 2016) Universitat Rovira i Virgili. Intern researching competitive dynamics in multiplex complex networks. (Jan - Mar, 2015) Instituto Tecnológico Metropolitano. Developer, reseracher and consultant in hpc for seismic data analysis. (Feb 2014 - Apr 2017) i!O. Developer and data scientist.</description>
+    </item>
+    
+    <item>
+      <title>Computación de alto desempeño en C</title>
+      <link>http://gerardogutierrez.co/en/courses/hpc/</link>
+      <pubDate>Fri, 05 Dec 2014 12:00:00 +0000</pubDate>
+      
+      <guid>http://gerardogutierrez.co/en/courses/hpc/</guid>
+      <description>UNDER TRANSLATION Syllabus  OpenMP Process communication with MPI Introduction to OpenACC  OpenMP En la sección anterior vimos cuan complejo puede ser el trabajo con bifuraciones o con hilos, aún más si queremos compartir información entre procesos. OpenMP fue creado para facilitar este trabajo, consiste en un conjunto de instrucciones para loslenguajes C/C++ y fortran de facil despliegue para resolver problemas complejos. OpenMP permite al usuario crear hilos; definir como se van a repartir las tareas y las variables; y sincronizar los hilos.</description>
     </item>
     
     <item>
@@ -55,7 +64,10 @@ Since this is merely a methodology that can be applied to every field of knowled
       <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
       
       <guid>http://gerardogutierrez.co/en/courses/dev/</guid>
-      <description>Under Translation</description>
+      <description>UNDER TRANSLATION GNU/Linux Development tools Syllabus Building  C libraries Makefile Scons CMake  Version Control  Subversion Mercurial git  C libraries Realizaremos un ejercicio manual para la intriducción de un código que usaremos a través de todo el curso y para visualizar las ventajas de las herramientas automáticas de construcción.
+Creemos los siguientes archivos de código en C:
+libreriaPi.h
+void funcion (double *t, double *k, double *l);  libreriaPi.</description>
     </item>
     
     <item>
@@ -95,15 +107,6 @@ Sylabus  Command Line  Command Line Environment variables Redirectoins and quoti
       <guid>http://gerardogutierrez.co/en/data/geophysics/</guid>
       <description>From 2014 to 2018 I worked as a developer for a project funded by [Ecopetrol] in which the main goal was to come up with new techniques to analize data in order to find more accurately deposits of oil and gas.
 I started as a high performance computing consultant and teacher, but as the years passed I got really interested in the subject and ideas started to flow. AI entered the scene and right now, with some friends, we are solving what is called the inverse problem with generative adversarial neural networks.</description>
-    </item>
-    
-    <item>
-      <title>High performance computing in C</title>
-      <link>http://gerardogutierrez.co/en/courses/hpc/</link>
-      <pubDate>Mon, 17 Jun 2013 12:00:00 +0000</pubDate>
-      
-      <guid>http://gerardogutierrez.co/en/courses/hpc/</guid>
-      <description>Under translation</description>
     </item>
     
     <item>
