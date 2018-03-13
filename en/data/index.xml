@@ -48,8 +48,8 @@ I started as a high performance computing consultant and teacher, but as the yea
       
       <guid>http://gerardogutierrez.co/en/data/politics/</guid>
       <description>UNDER CONSTRUCTION
- .accordion { background-color: #eee; color: #444; cursor: pointer; padding: 18px; width: 100%; border: none; text-align: left; outline: none; font-size: 30px; transition: 0.4s; } .active, .accordion:hover { background-color: #ccc; } .panel { padding: 0 18px; display: none; background-color: white; overflow: hidden; } span { font-size: 20px; }  Gustavo Petro  Mentions    Hashtags    Users    Words   
-Sergio Fajardo  Mentions    Hashtags    Users    Words</description>
+TO SEE THE PLOTS YOU MUST INSTALL THE CHROME EXTENSION
+ .custom_accordion { background-color: #eee; color: #444; cursor: pointer; padding: 18px; width: 100%; border: none; text-align: left; outline: none; font-size: 30px; transition: 0.4s; } .active, .accordion:hover { background-color: #ccc; color: #444; } .panel { padding: 0 18px; background-color: white; color: #444; overflow: hidden; } span { font-size: 20px; }  Gustavo Petro  Mentions    Hashtags    Users    Words</description>
     </item>
     
     <item>
