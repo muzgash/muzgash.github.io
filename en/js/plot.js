@@ -60,18 +60,23 @@ graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/fajardo/users.
 graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/fajardo/mentions.csv",'fajardoMentions','Mentions')
 graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/fajardo/words.csv",'fajardoWords','Words')
 
-/*graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/petro/hashtags.csv",'petroHashtags','Hashtags')
+graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/petro/hashtags.csv",'petroHashtags','Hashtags')
 graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/petro/users.csv",'petroUsers','Users')
 graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/petro/mentions.csv",'petroMentions','Mentions')
-graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/petro/words.csv",'petroWords','Words')*/
+graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/petro/words.csv",'petroWords','Words')
 
 graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/delacalle/hashtags.csv",'delacalleHashtags','Hashtags')
 graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/delacalle/users.csv",'delacalleUsers','Users')
 graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/delacalle/mentions.csv",'delacalleMentions','Mentions')
 graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/delacalle/words.csv",'delacalleWords','Words')
 
-/*graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/vargas/hashtags.csv",'vargasHashtags','Hashtags')
+graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/vargas/hashtags.csv",'vargasHashtags','Hashtags')
 graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/vargas/users.csv",'vargasUsers','Users')
 graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/vargas/mentions.csv",'vargasMentions','Mentions')
 graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/vargas/words.csv",'vargasWords','Words')
-*/
+
+graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/duque/hashtags.csv",'duqueHashtags','Hashtags')
+graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/duque/users.csv",'duqueUsers','Users')
+graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/duque/mentions.csv",'duqueMentions','Mentions')
+graficar("http://c3.itm.edu.co/~gerardo.gutierrez/social/politics/duque/words.csv",'duqueWords','Words')
+
